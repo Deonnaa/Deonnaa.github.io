@@ -14,8 +14,45 @@ Day 2
 * Eclipse
 * Expressions
   * Expressions: Where the Work Gets Done
+   * ``` java
+     age = 29          //Assignment Expression
+     5 + 3             //Arithmetic expressions 
+     i < 10            //Relational expressions
+     i < 10 && j > 5   //Logical expressions
+     ``` 
   * Expression Evaluation: The Result
+   * ``` java
+     Evaluating 3 + 5 results in 8.
+     Evaluating 3 < 5 results in true.
+     Evaluating 3 < 5 and 10 < 7 results in false.
+     ```  
   * Assignment Expressions
+   * ``` java
+     int myAge;
+     myAge = 12;
+     int yourAge = myAge = 9; //x and y both have value 9
+     ```
+  * ``` java
+    int myAge = 12;
+    System.out.println("myAge is " + myAge);
+    System.out.println(myAge = 99);
+    System.out.println("myAge is now " + myAge);
+     ```
+   * ``` java
+     123
+     ```
+   * ``` java
+     123
+     ```     
+   * ``` java
+     123
+     ```     
+   * ``` java
+     123
+     ```
+  * ``` java
+    123
+     ```   
   * Arithmetic Expressions
   * Relational Expressions
   * Logical Expressions
