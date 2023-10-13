@@ -14,52 +14,113 @@ Day 2
 * Eclipse
 * Expressions
   * Expressions: Where the Work Gets Done
-   * ``` java
+     ``` java
      age = 29          //Assignment Expression
      5 + 3             //Arithmetic expressions 
      i < 10            //Relational expressions
      i < 10 && j > 5   //Logical expressions
      ``` 
   * Expression Evaluation: The Result
-   * ``` java
+     ``` java
      Evaluating 3 + 5 results in 8.
      Evaluating 3 < 5 results in true.
      Evaluating 3 < 5 and 10 < 7 results in false.
      ```  
   * Assignment Expressions
-   * ``` java
+     ``` java
      int myAge;
      myAge = 12;
      int yourAge = myAge = 9; //x and y both have value 9
      ```
-  * ``` java
+    ``` java
     int myAge = 12;
     System.out.println("myAge is " + myAge);
     System.out.println(myAge = 99);
     System.out.println("myAge is now " + myAge);
      ```
-   * ``` java
-     123
+     ``` java
+     boolean value = false;
+     System.out.println("value is " + value);
+     System.out.println(value = true);
+     System.out.println("value is now " + value);
      ```
-   * ``` java
-     123
-     ```     
-   * ``` java
-     123
-     ```     
-   * ``` java
-     123
-     ```
-  * ``` java
-    123
-     ```   
   * Arithmetic Expressions
+     ``` java
+     length + 6.13     //Add Subtract
+     5 - radius
+     
+     width * height    //Multiply Divide
+     total / 2
+     
+     15 % 4            //Modulus
+     year % 100
+     ```     
   * Relational Expressions
+     ```java
+     hoursWorked < 40       // <,>,= operators
+     age <= 12
+     
+     income > 55000         
+     numPlayers >= 3
+     
+     menuItem == choice     //equal to(==), not equal to (!=)
+     choice != 'q'
+     ```      
   * Logical Expressions
-  * Short-Circuit Operators
-  * Associativity
-  * Precedence 
+    <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Operator</th>
+      <th>Example</th>
+      <th>Evaluates to <code>true</code> when...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AND</td>
+      <td><code>&&</code></td>
+      <td><code>a && b</code></td>
+      <td><strong>both</strong> a and b are true</td>
+    </tr>
+    <tr>
+      <td>OR</td>
+      <td><code>||</code></td>
+      <td><code>a || b</code></td>
+      <td><strong>either</strong> a or b is true</td>
+    </tr>
+    <tr>
+      <td>AND<sup>1</sup></td>
+      <td><code>&</code></td>
+      <td><code>a & b</code></td>
+      <td><strong>both</strong> a and b are true</td>
+    </tr>
+    <tr>
+      <td>OR<sup>1</sup></td>
+      <td><code>|</code></td>
+      <td><code>a | b</code></td>
+      <td><strong>either</strong> a or b is true</td>
+    </tr>
+  </tbody>
+</table>
+
+
+ * Short-Circuit Operators
+ * Associativity
+  	* Java reads statements left to right. When it sees operators, it looks for data to use with the operators. Associativity determines in which order a given operator looks for its operands.
+  * Precedence
+  * ```java
+    int b = 5;
+    int c = 2;
+    a = b * (c + 10); // * looks right for a right-hand operand.
+                      // parentheses cause c + 10 to execute first
+    ```
   * Precedence Order
+  	* Notice that assignment, =, has the lowest precedence of all. This is so that all calculations in a statement complete before the result is assigned to a variable. 
+   	* ```java
+      b < 42 || c > 50 && c < 100
+      ( b < 42 ) || ( c > 50 && c < 100 )
+      ``` 
   * Labs
 * Conditionals: if and else
   * Sequential Execution
@@ -100,8 +161,38 @@ Day 3
   * Labs
 * Conditionals: switch
   * switch Statements: Multi-Way Decisions
+  	* Of the data types we know, we can use int, char, and String data types in switch statements.
+
+   	* ```java
+      char grade = 'A';
+      String message;
+
+      switch (grade) {
+      case 'A':
+      message = "Keep it up";
+      break;
+      case 'B':
+      message = "Good job";
+      break;
+      case 'C':
+      message = "Doing alright";
+      break;
+      case 'D':
+      message = "Let's talk";
+      break;
+      case 'F':
+      message = "You should come to class";
+      break;
+      default:
+      message = "That's not a grade";
+      }
+      ```
+     
+   	* 1234
   * break; and default: in switch Statements
+  	* 123
   * When to Use a switch Control Statement
+  	* 123
   * Labs
 * while Loops
   * Looping
@@ -172,8 +263,14 @@ Day 5
 Day 6
 * Arrays
   * Variables - Single vs. Collections
+  	* Data collections are, as the name implies, collections of multiple pieces of data.
+   * Arrays are one of the primary data collections in Java.
+   * An array allows us to have a single variable that points to multiple pieces of data. 
   * Arrays
   * Declaring an Array
+```java
+
+```  
   * Creating an Array
   * Array Element Default Values
   * Reading and Storing Data
@@ -185,13 +282,63 @@ Day 6
 * Introduction to Objects
   * Classes
   * Creating Objects
+```java
+Car myCar; //Doesnt grab any memory to store on heap yet
+myCar = new Car(); //2 Lines new gives address on heap
+
+Car myCar = new Car(); //1 line
+```
+
+```java
+Car anotherCar = new Car();
+
+Car aCar = myCar; //same location in memory 
+```
   * Reference Variables
+```java
+//SphereReferences.java
+Sphere sphRef = new Sphere();
+sphRef.radius = 10;
+System.out.print("Original sphRef radius: " + sph.radius); //10.0
+
+Sphere otherSphereRef = sphRef;
+System.out.print("otherSphereRef radius: " + otherSphereRef.radius); //10.0
+otherSphereRef.radius = 20; //changes address in heap for both
+
+System.out.print("Original sphRef radius: " + sph.radius); //20.0
+System.out.print("otherSphereRef radius: " + otherSphereRef.radius); //20.0
+
+//Sphere.java
+public class Sphere(){
+	public double radius;
+
+	public double getVolume(){
+	double vol = 4.0 / 3.0 * 3.14 * radius * radius * radius
+	return vol;
+	}
+}
+
+```    
   * State and Behavior
   * Field Initialization
   * The static Keyword
   * Some Objects You've Already Met
   * Labs
 * Project: Deaf Grandma
+```java
+//Grandma.java
+public class Grandma(){
+public String [] heardYa = {"HEARD YOU", "HI"};
+public String [] heardYa = {"HEARD YOU", "HI"};
+public String [] heardYa = {"HEARD YOU", "HI"};
+
+	
+
+
+}
+
+
+```    
 
 Day 7
 * Advanced For Loops
@@ -449,7 +596,24 @@ Day 5
 
 -----
 ### Week 16
+* 123
+ * 123 
 
 `Final Project`
 
 `Final Review`
+* ``` java
+     123
+     ```
+   * ``` java
+     123
+     ```     
+   * ``` java
+     123
+     ```     
+   * ``` java
+     123
+     ```
+  * ``` java
+    123
+     ```  
