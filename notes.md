@@ -785,11 +785,291 @@ public class DailyRainfall {
  	2. if Statement
  	3. if Syntax
  	4. Code Blocks
- 	5. if and else if
- 	6. if and else
- 	7. Nested Control Statements
+```java
+//IfElse/src/drills/SalaryDecisions.java
+public class SalaryDecisions {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int min, max, salary;
+
+		System.out.println("Let's see if the salary you've been offered is acceptable.");
+
+		System.out.print("Enter your minimum salary requirement: ");
+		min = sc.nextInt();
+
+		System.out.print("Enter the maximum you would ask for: ");
+		max = sc.nextInt();
+
+		System.out.print("Enter the salary offered: ");
+		salary = sc.nextInt();
+
+//			System.out.println("Is this salary acceptable? " + isAcceptableSal);
+		boolean isAcceptableSal = false;
+		// TODO: Change the code to print "The salary is acceptable." if isAcceptableSal
+		// is true. Use a code block for the if statement.
+		// Comment out the old System.out.println statement
+		isAcceptableSal = salary >= min && salary <= max;
+		if (isAcceptableSal == true) {
+			System.out.println("The salary acceptable! ");
+		}
+
+		// TODO: Change the code to print "The salary is more than $10000 over max" if
+		// the condition is true.
+		// Do not use the condition "isDreamy == true". You can just use the variable
+		// itself because it is a boolean.
+		// Comment out the old System.out.println statement
+//			System.out.println("Is the salary more than $10000 over your max? " + isDreamy);
+		boolean isDreamy = salary > 10000 + max;
+		if (isDreamy) {
+			System.out.println("The salary is more than $10000 over max");
+		}
+
+		// TODO: Change the code to print "The salary is $5000 or more below min" if the
+		// condition is true.
+		// Do not use the isLaughable variable. Just use the condition itself inside
+		// your if statement.
+		// Comment out the old System.out.println statement and the isLaughable
+		// variable.
+//			System.out.println("Is the salary laughable? " + isLaughable);
+		boolean isLaughable = salary <= min - 5000;
+		if (salary <= min - 5000) {
+			System.out.println("The salary is $5000 or more below min");
+		}
+		sc.close();
+	}
+}
+```
+*
+   	5. if and else if
+```java
+//IfElse/src/drills/SalaryDecisions2.java
+public class SalaryDecisions2 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int min, max, salary;
+
+		System.out.println("Let's see if the salary you've been offered is acceptable.");
+
+		System.out.print("Enter your minimum salary requirement: ");
+		min = sc.nextInt();
+
+		System.out.print("Enter the maximum you would ask for: ");
+		max = sc.nextInt();
+
+		System.out.print("Enter the salary offered: ");
+		salary = sc.nextInt();
+
+		boolean isAcceptableSal = false;
+		boolean isDreamy = salary > 10000 + max;
+
+		// TODO: Change this code to use "else if" statements for the other conditions
+		isAcceptableSal = salary >= min && salary <= max;
+
+		if (isAcceptableSal == true) {
+			System.out.println("The salary is acceptable.");
+		} else if (isDreamy) {
+			System.out.println("The salary is more than $10000 over max");
+		} else if (salary <= min - 5000) {
+			System.out.println("This salary is a joke.");
+		}
+		sc.close();
+	}
+}
+```
+* 	
+  	6. if and else
+```java
+//IfElse/src/drills/SalaryDecisions3.java
+public class SalaryDecisions3 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int min, max, salary;
+
+		System.out.println("Let's see if the salary you've been offered is acceptable.");
+
+		System.out.print("Enter your minimum salary requirement: ");
+		min = sc.nextInt();
+
+		System.out.print("Enter the maximum you would ask for: ");
+		max = sc.nextInt();
+
+		System.out.print("Enter the salary offered: ");
+		salary = sc.nextInt();
+
+		// TODO: add an else statement to print the message "At least I got an offer."
+		// What salary range causes the else block to execute? Add it as a comment in
+		// your else block.
+		// salary < min && salary > (min - 5000)
+		// salary > max && salary < (max + 10000)
+		boolean isAcceptableSal = false;
+		isAcceptableSal = (salary >= min) && (salary <= max);
+		if (isAcceptableSal == true) {
+			System.out.println("The salary is acceptable.");
+		} else if (salary > (10000 + max)) {
+			System.out.println("The salary is more than $10000 over max");
+		} else if (salary <= (min - 5000)) {
+			System.out.println("This salary is a joke.");
+		} else {
+			System.out.println("At least I got an offer.");
+		}
+		sc.close();
+	}
+}
+```
+*
+  	7. Nested Control Statements
  	8. Comparing Strings in Java
- 	9. Labs
+```java
+//IfElse/src/drills/StringComparison.java
+public class StringComparison {
+
+	public static void main(String[] args) {
+		compareNames();
+	}
+
+	public static void compareNames() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Short, hungry, hairy - you're my kind of lad.");
+		System.out.println("What is your name?");
+		String name = sc.next();
+
+		// Run the program with a proper name.
+		// Fix the code to no longer use `==`.
+		if (name.equals("Frodo")) {
+			System.out.println("And brave, too!");
+		} else if (name.equals("Sam")) {
+			System.out.println("And so loyal!");
+		} else if (name.equals("Merry")) {
+			System.out.println("Oh, a hungry one!");
+		} else if (name.equals("Pippin")) {
+			System.out.println("A sidekick, huh? At least you know rings.");
+		} else {
+			System.out.println("Hmmm. Doesn't ring a bell.");
+		}
+		sc.close();
+	}
+}
+```
+*	
+  	9. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/IfElse/labs.md)
+```java
+//Lab 1 - NumSign.java
+public class NumSign {
+
+	public static void main(String[] args) {
+		// Write a program that accepts a number as input and prints a message stating
+		// whether the number is positive or negative.
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Give me a number: ");
+		int number = sc.nextInt();
+		sc.nextLine();
+
+		if (number > 0) {
+			System.out.println("This number is positive");
+		} else {
+			System.out.println("This number is negative");
+		}
+		sc.close();
+	}
+}
+```
+```java
+//Lab 2 - NumSignZero.java
+public class NumSignZero {
+
+	public static void main(String[] args) {
+		// Write a program that accepts a number as input and prints a message stating
+		// whether the number is positive or negative.
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Give me a number: ");
+		int number = sc.nextInt();
+		sc.nextLine();
+
+		if (number > 0) {
+			System.out.println("This number is positive");
+		} else if (number == 0) {
+			System.out.println("This number is 0");
+		} else {
+			System.out.println("This number is negative");
+		}
+		sc.close();
+	}
+}
+```
+```java
+//Lab 3 - NumFactors.java
+public class NumFactors {
+
+	public static void main(String[] args) {
+		// Write a program that accepts a number as input and prints a message stating
+		// whether the number is positive or negative.
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Give me a number: ");
+		int number = sc.nextInt();
+		sc.nextLine();
+
+		if (number % 2 == 0) {
+			System.out.println("This number is even!");
+			if (number % 100 == 0) {
+				System.out.println("...And divisible by 100!");
+			} else if (number % 10 == 0) {
+				System.out.println("...And divisible by 10!");
+			} else {
+			}
+		} else {
+			System.out.println("This number is odd!");
+		}
+		sc.close();
+	}
+}
+```
+```java
+//Lab 4 - IfCelsFahr.java
+public class IfCelsFahr {
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		double fahrenheit = 0.0;
+		double celsius = 0.0;
+		double inputNum = 0.0;
+		String scale = "";
+
+		System.out.print("Please Enter your Temperature: ");
+		inputNum = scanner.nextDouble();
+		scanner.nextLine();
+
+		System.out.print("Please Enter the Scale: ");
+		scale = scanner.nextLine();
+		scanner.close();
+
+		if (scale.equals("F") || scale.equals("f") || scale.equals("Fahrenheit") || scale.equals("fahrenheit")) {
+			fahrenheit = inputNum;
+			celsius = 5.0 / 9.0 * (fahrenheit - 32);
+			System.out.print(fahrenheit + " degrees Fahrenheit is ");
+			System.out.println(celsius + " degrees Celsius.");
+		} else if (scale.equals("C") || scale.equals("c") || scale.equals("Celsius") || scale.equals("celsius")) {
+			celsius = inputNum;
+			fahrenheit = (9.0 / 5.0 * celsius) + 32;
+			System.out.print(celsius + " degrees Celsius is ");
+			System.out.println(fahrenheit + " degrees Fahrenheit.");
+		} else {
+			System.err.println("Invalid Scale.");
+		}
+	}
+}
+```
 4. Pair Programming
 5. Project: Simple Calculator
 6. Project: Mad Libs (6.)
