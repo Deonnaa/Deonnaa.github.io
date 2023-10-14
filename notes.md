@@ -265,7 +265,7 @@ public class MyName {
 	}
 }
 ```  
-7. Screen Output and Keyboard Input
+6. Screen Output and Keyboard Input
 	1. Screen Output
  	2. Formatting Output
 ```java
@@ -304,34 +304,232 @@ public class StringOutput {
 *   
  	4. Reading from the Keyboard
 ```java
-//screenoutputkeyboardinput/drills/ScannerInput.java
-
-
+java.util.Scanner scanner = new java.util.Scanner(System.in);
+scanner.close();
+```
+```java
+String str = scanner.next();
+int i = scanner.nextInt();
+boolean b = scanner.nextBoolean();
+double d = scanner.nextDouble();
 ```
 ```java
 //screenoutputkeyboardinput/drills/ScannerInput.java
+public class ScannerInput {
 
+	public static void main(String[] args) {
+		java.util.Scanner keyboard = new java.util.Scanner(System.in);
+
+		int yearBorn;
+
+		System.out.print("Please enter the year you were born: ");
+		yearBorn = keyboard.nextInt();
+
+		System.out.println("You were born in " + yearBorn + "! Crazy me too!");
+
+		keyboard.close();
+	}
+}
+```
+```java
+//screenoutputkeyboardinput/drills/ScannerInput.java
+public class ScannerInput {
+
+	public static void main(String[] args) {
+		java.util.Scanner keyboard = new java.util.Scanner(System.in);
+
+		int yearBorn;
+
+		System.out.print("Please enter the year you were born: ");
+		yearBorn = keyboard.nextInt();
+		// yearBorn = hello world or "1992"
+
+//		Exception in thread "main" java.util.InputMismatchException
+//		  at java.util.Scanner.throwFor(Scanner.java:864)
+//		  at java.util.Scanner.next(Scanner.java:1485)
+//		  at java.util.Scanner.nextInt(Scanner.java:2117)
+//		  at java.util.Scanner.nextInt(Scanner.java:2076)
+//		  at ScannerInputSolution.main(ScannerInputSolution.java:12)
+
+//		 This is because Java accepts all user input as a String and then 
+//		 tries to convert it to the correct type.
+
+		System.out.println("You were born in " + yearBorn + "! Crazy me too!");
+
+		keyboard.close();
+	}
+}
 
 ```
 *     
- 	5. Labs
-8. Eclipse
+ 	5. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/ScreenOutputKeyboardInput/labs.md)
+```java
+//Lab1 - FiveIntegers.java
+public class FiveIntegers {
 
+	public static void main(String[] args) {
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+
+		int num1;
+		int num2;
+		int num3;
+		int num4;
+		int num5;
+
+		System.out.print("Please enter a number: ");
+		num1 = sc.nextInt();
+
+		System.out.print("Please enter another number: ");
+		num2 = sc.nextInt();
+
+		System.out.print("Please enter another number: ");
+		num3 = sc.nextInt();
+
+		System.out.print("Please enter another number: ");
+		num4 = sc.nextInt();
+
+		System.out.print("Please enter another number: ");
+		num5 = sc.nextInt();
+
+		System.out.println(num1 + " " + num2 + " " + num3 + " " + num4 + " " + num5);
+		System.out.println(num1 + "\t" + num2 + "\t" + num3 + "\t" + num4 + " \t" + num5);
+		System.out.println(num1 + "\n" + num2 + "\n" + num3 + "\n" + num4 + "\n" + num5);
+
+		scanner.close();
+	}
+}
+```
+```java
+//Lab2 - ThreeVariables.java
+public class ThreeVariables {
+
+	public static void main(String[] args) {
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+
+		System.out.println("Enter a Department Code: ");
+		String departmentCode;
+		departmentCode = sc.next();
+
+		System.out.println("Enter a Salary: ");
+		float salary;
+		salary = sc.nextFloat();
+
+		System.out.println("Enter an Employee Id: ");
+		int employeeId;
+		employeeId = sc.nextInt();
+
+		System.out.println(departmentCode + " " + salary + " " + employeeId);
+		System.out.println(departmentCode + "\t" + salary + "\t" + employeeId);
+		System.out.println(departmentCode + "\n" + salary + "\n" + employeeId);
+
+		scanner.close();
+	}
+}
+
+```
+7. Eclipse
+```java
+//To see a list of all of the shortcut keys, use Cmd-Shift-L.
+```
 Day 2
 1. Eclipse
 2. Expressions
 	1. Expressions: Where the Work Gets Done
  	2. Expression Evaluation: The Result
  	3. Assignment Expressions
- 	4. Arithmetic Expressions
- 	5. Relational Expressions
+```java
+//Expressions/src/drills/Assignment.java
+public class Assignment {
+
+	public static void main(String[] args) {
+		intAssignment();
+		booleanAssignment();
+	}
+
+	static void intAssignment() {
+		int myAge = 12;
+		System.out.println("myAge is " + myAge);
+		System.out.println(myAge = 99);
+		System.out.println("myAge is now " + myAge);
+	}
+
+	static void booleanAssignment() {
+		boolean value = false;
+		System.out.println("value is " + value);
+		System.out.println(value = true);
+		System.out.println("value is now " + value);
+	}
+}
+```
+```java
+System.out.println(Math.abs(variableName)); //.abs allows for -/+ numbers to be +
+System.out.println(Math.abs(methodName()));
+```
+*
+   	4. Arithmetic Expressions
+```java
+//Expressions/src/drills/Arithmetic.java
+
+
+```
+```java
+//Expressions/src/drills/MilesPerGallon.java
+
+
+```
+*	
+  	5. Relational Expressions
+```java
+//Expressions/src/drills/Relational.java
+
+
+```
+*
  	6. Logical Expressions
- 	7. Short-Circuit Operators
+```java
+//Expressions/src/drills/Logical.java
+
+
+```
+* 	
+  	7. Short-Circuit Operators
  	8. Associativity
  	9. Precedence
- 	10. Precedence Order
- 	11. Labs
-3. Conditionals: if and else
+```java
+//Expressions/src/drills/Precedence.java
+
+
+```
+*
+  	10. Precedence Order
+ 	11. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Expressions/labs.md)
+```java
+//Lab1 - Circle1.java
+
+
+```
+```java
+//Lab2 - Circle2.java
+
+
+```
+```java
+//Lab3 - FahrToCels.java
+
+
+```
+```java
+//Lab4 - CalculateTip.java
+
+
+```
+```java
+//Lab5 - DailyRainfall.java
+
+
+```
+
+4. Conditionals: if and else
 	1. Sequential Execution
  	2. if Statement
  	3. if Syntax
@@ -341,9 +539,9 @@ Day 2
  	7. Nested Control Statements
  	8. Comparing Strings in Java
  	9. Labs
-4. Pair Programming
-5. Project: Simple Calculator
-6. Project: Mad Libs
+5. Pair Programming
+6. Project: Simple Calculator
+7. Project: Mad Libs
 
 Day 3
 1. More Expressions
@@ -714,12 +912,13 @@ Day 5
 -----
 ### Resources
 [Java Language Keywords](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html)
+[Operator Precedence in Java](https://introcs.cs.princeton.edu/java/11precedence/)
 
 -----
 ### Project List
-1. [Make Change] 
-2. [Deaf Grandma]
-3. [Food Truck]
+1. [Make Change]() 
+2. [Deaf Grandma]()
+3. [Food Truck]()
 4. 
 5. 
 6. 
