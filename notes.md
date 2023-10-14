@@ -7,9 +7,7 @@ Day 1
 2. Simple Programs
 	1. Programming
 ```java
-//simpleprograms/drills/
-//Hello.java
-
+//simpleprograms/drills/Hello.java
 public class Hello {
 
 	public static void main(String[] args) {
@@ -195,7 +193,7 @@ public class StudentScores {
 	}
 }
 ```     
-5. Introduction to Methods
+4. Introduction to Methods
 	1. Methods
  	2. Calling Methods
 ```java
@@ -265,7 +263,7 @@ public class MyName {
 	}
 }
 ```  
-6. Screen Output and Keyboard Input
+5. Screen Output and Keyboard Input
 	1. Screen Output
  	2. Formatting Output
 ```java
@@ -427,7 +425,7 @@ public class ThreeVariables {
 }
 
 ```
-7. Eclipse
+6. Eclipse
 ```java
 //To see a list of all of the shortcut keys, use Cmd-Shift-L.
 ```
@@ -912,6 +910,7 @@ Day 5
 -----
 ### Resources
 [Java Language Keywords](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html)
+
 [Operator Precedence in Java](https://introcs.cs.princeton.edu/java/11precedence/)
 
 -----
