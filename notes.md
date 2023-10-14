@@ -467,27 +467,142 @@ System.out.println(Math.abs(methodName()));
    	4. Arithmetic Expressions
 ```java
 //Expressions/src/drills/Arithmetic.java
+public class Arithmetic {
 
+	public static void main(String[] args) {
+		// Run this program with several numbers. What happens to the remainder when you do
+		// integer division?
+			doDivision();
+		
+		// Comment out the call to doDivision();
+		// Uncomment the call to doModulus();
+		 	//doModulus();
+	}
+	
+	static void doDivision() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Refresher:\n\tDivision:\tquotient = dividend / divisor");
+		System.out.print("Enter the dividend: ");
+		int dividend = sc.nextInt();
+		System.out.print("Enter the divisor: ");
+		int divisor = sc.nextInt();
+		int quotient = dividend / divisor;
+		System.out.println("quotient = " + quotient);
+		sc.close();
+	}
+	
+	static void doModulus() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Refresher:\n\tDivision:\tquotient = dividend / divisor");
+		System.out.println("\tRemainder: amount left over from division");
 
+		// Complete the method and use the modulus operator to find the remainder.		
+		System.out.print("Enter the dividend: ");
+		int dividend = sc.nextInt();
+		System.out.print("Enter the divisor: ");
+		int divisor = sc.nextInt();
+		int remainder = dividend % divisor;
+		System.out.println("remainder = " + remainder);
+		sc.close();
+	}
+}
 ```
 ```java
 //Expressions/src/drills/MilesPerGallon.java
-
-
+public class MilesPerGallon {
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+		
+		double milesTraveled = 0.0;
+		double gallonsUsed = 0.0;
+		double milesPerGallon = 0.0;
+		
+		System.out.print("Please enter the number of miles" + " traveled: ");
+		//TODO: get the miles traveled
+		milesTraveled = scanner.nextDouble();
+		
+		System.out.print("Please enter the number of gallons" + " used: ");
+		//TODO: get the gallons used
+		gallonsUsed = scanner.nextDouble();
+		
+		//TODO: calculate miles per gallon
+		milesPerGallon = milesTraveled / gallonsUsed;
+		
+		System.out.print("You traveled " + milesPerGallon);
+		System.out.println(" miles for every gallon of fuel" + " used.");
+		scanner.close();
+	}
+}
 ```
 *	
   	5. Relational Expressions
 ```java
 //Expressions/src/drills/Relational.java
+public class Relational {
 
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("Enter the first number: ");
+		int first = keyboard.nextInt();
+		System.out.print("Enter the second number: ");
+		int second = keyboard.nextInt();
 
+		boolean result = first >= second;
+		System.out.println("Is first greater than or equal to second? " + result);
+
+		// Add additional tests with the other logical operators.
+		// boolean result = first <= second;
+		// boolean result = first == second;
+		// boolean result = first != second;
+
+		keyboard.close();
+	}
+}
 ```
 *
  	6. Logical Expressions
 ```java
 //Expressions/src/drills/Logical.java
+public class Logical {
 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 
+		int min, max, salary;
+
+		System.out.println("Let's see if the salary you've been offered is what you expected.");
+
+		System.out.print("Enter your minimum salary requirement: ");
+		min = sc.nextInt();
+
+		System.out.print("Enter the maximum you would ask for: ");
+		max = sc.nextInt();
+
+		System.out.print("Enter the salary offered: ");
+		salary = sc.nextInt();
+
+		boolean isExpectedSalary = false;
+
+		// Add code to check if the salary is in the range of min and max and assign
+		// that value to isExpectedSalary
+		isExpectedSalary = ((salary >= min) && (salary <= max));
+		System.out.println("Is this salary what you expect for the position? " + isExpectedSalary);
+
+		// Add code to check and output whether the salary is "dreamy," where dreamy
+		// means it is more than $10,000 greater than your max.
+		boolean isDreamy = (salary) > (10000 + max);
+		System.out.println("Is the salary more than $10000 over your max? " + isDreamy);
+
+		// Add code to check and output whether the salary is "laughable," where
+		// laughable means it is at least $5,000 less than your minimum salary
+		// requirement.
+		boolean isLaughable = (salary) <= (min - 5000);
+		System.out.println("Is the salary laughable? " + isLaughable);
+
+		sc.close();
+	}
+}
 ```
 * 	
   	7. Short-Circuit Operators
@@ -495,39 +610,177 @@ System.out.println(Math.abs(methodName()));
  	9. Precedence
 ```java
 //Expressions/src/drills/Precedence.java
+public class Precedence {
 
+	public static void main(String[] args) {
+		// The methods in this program have bugs. Uncomment methods one at a time to see
+		// output.
+		// Change the statements in each method to produce the expected result.
+		// You can only use parentheses.
 
+		// result1Method();
+		// result2Method();
+		// result3Method();
+	}
+
+	// Group expressions with parentheses to get the expected result.
+	static void result1Method() {
+		int result = (2 + 1) * 4;
+		// Expected: 12
+		System.out.println(result);
+	}
+
+	static void result2Method() {
+		int a = 2, b = 1, c = 3;
+		int result = a * (c + 3) % 2;
+		// Expected: 0
+		System.out.println(result);
+	}
+
+	static void result3Method() {
+		int a = 2, b = 1, c = 3;
+		boolean result = c % a == 0 && (c > 2 || b > 0);
+		// Expected: false
+		System.out.println(result);
+	}
+}
 ```
 *
   	10. Precedence Order
  	11. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Expressions/labs.md)
 ```java
 //Lab1 - Circle1.java
+public class Circle1 {
 
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+		double radius;
+		double circumference;
+
+		System.out.print("Enter a radius: ");
+		radius = scanner.nextFloat();
+
+		circumference = 2 * 3.141592653589793 * radius;
+
+		System.out.println("Radius: " + radius);
+		System.out.println("Circumference: " + circumference);
+
+		scanner.close();
+	}
+}
 ```
 ```java
 //Lab2 - Circle2.java
+public class Circle2 {
 
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+		double radius;
+		double circumference;
+		double area;
+
+		System.out.print("Enter a radius: ");
+		radius = scanner.nextFloat();
+
+		circumference = 2 * 3.141592653589793 * radius;
+		area = (radius * radius) * 3.141592653589793;
+
+		System.out.println("Radius: " + radius);
+		System.out.println("Circumference: " + circumference);
+		System.out.println("Area: " + area);
+
+		scanner.close();
+	}
+}
 ```
 ```java
 //Lab3 - FahrToCels.java
+public class FahrToCels {
 
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+		double fahrenheit;
+		double celsius;
+
+		System.out.print("Enter Degree Fahrenheit: ");
+		fahrenheit = scanner.nextDouble();
+
+		celsius = 5.0 / 9.0 * (fahrenheit - 32);
+
+		System.out.println("Celsius: " + celsius);
+
+		scanner.close();
+	}
+}
 ```
 ```java
 //Lab4 - CalculateTip.java
+public class CalculateTip {
 
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+		double check;
+
+		System.out.print("Enter Check Amount: ");
+		check = scanner.nextDouble();
+
+		double check10 = check * .1;
+		double check15 = check * .15;
+		double check20 = check * .20;
+
+		System.out.println("10% Tip " + check10 + " -- Total: $" + (check10 + check));
+		System.out.println("15% Tip " + check15 + " -- Total: $" + (check15 + check));
+		System.out.println("20% Tip " + check20 + " -- Total: $" + (check20 + check));
+
+		scanner.close();
+	}
+}
 ```
 ```java
 //Lab5 - DailyRainfall.java
+public class DailyRainfall {
 
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+		System.out.println("Enter the rainfall level for Sunday: ");
+		double sunday = scanner.nextDouble();
+
+		System.out.println("Enter the rainfall level for Monday: ");
+		double monday = scanner.nextDouble();
+
+		System.out.println("Enter the rainfall level for Tuesday: ");
+		double tuesday = scanner.nextDouble();
+
+		System.out.println("Enter the rainfall level for Wednesday: ");
+		double wednesday = scanner.nextDouble();
+
+		System.out.println("Enter the rainfall level for Thursday: ");
+		double thursday = scanner.nextDouble();
+
+		System.out.println("Enter the rainfall level for Friday: ");
+		double friday = scanner.nextDouble();
+
+		System.out.println("Enter the rainfall level for Saturday: ");
+		double saturday = scanner.nextDouble();
+
+		// Calculate the total rainfall and the average rainfall for the week
+		double total = sunday + monday + tuesday + wednesday + thursday + friday + saturday;
+		double average = total / 7;
+
+		// Print the results of the processing
+		System.out.println("Total rainfall for the Week: " + total);
+		System.out.println("Average rainfall for the Week: " + average);
+
+		scanner.close();
+	}
+}
 ```
-
-4. Conditionals: if and else
+3. Conditionals: if and else
 	1. Sequential Execution
  	2. if Statement
  	3. if Syntax
@@ -537,9 +790,9 @@ System.out.println(Math.abs(methodName()));
  	7. Nested Control Statements
  	8. Comparing Strings in Java
  	9. Labs
-5. Pair Programming
-6. Project: Simple Calculator
-7. Project: Mad Libs
+4. Pair Programming
+5. Project: Simple Calculator
+6. Project: Mad Libs (6.)
 
 Day 3
 1. More Expressions
