@@ -2599,7 +2599,65 @@ public class Iterating {
 	11. Passing Arrays to Methods
 ```java
 //Arrays/src/drills/ArrayReferences.java
+public class ArrayReferences {
 
+	public static void main(String[] args) {
+		String[] daysOfWeek = new String[7];
+		daysOfWeek[0] = "Sunday";
+		daysOfWeek[1] = "Monday";
+		daysOfWeek[2] = "Tuesday";
+		daysOfWeek[3] = "Wednesday";
+		daysOfWeek[4] = "Thursday";
+		daysOfWeek[5] = "Friday";
+		daysOfWeek[6] = "Saturday";
+
+		// Print the array
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			System.out.print(daysOfWeek[i]);
+			if (i != daysOfWeek.length - 1) { // don't do this for the last index
+				System.out.print(", ");
+			}
+		}
+		System.out.println();
+
+		// * Call the changeArray method and pass the daysOfWeek array reference.
+		ArrayReferences test = new ArrayReferences();
+		test.changeArray(daysOfWeek);
+
+		// Print the array again to see that its elements have changed,
+		// but it is the same array.
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			System.out.print(daysOfWeek[i]);
+			if (i != daysOfWeek.length - 1) { // don't do this for the last index
+				System.out.print(", ");
+			}
+		}
+
+		// * Refactor the printing of the array into a method and pass it the daysOfWeek
+		// array reference.
+//		test.printArray(daysOfWeek);
+	}
+
+	public void changeArray(String[] inputArr) {
+		// * Change Wednesday to "HUMPDAY" and Friday to "Viernes".
+		// * (There is no need to iterate, just change the right index.)
+		inputArr[3] = "HUMPDAY";
+		inputArr[5] = "Viernes";
+
+		// * Reassign inputArr to a new array containing the values
+		// * "Su", "M", "T", "W", "Th", "F", "Sa"
+		inputArr = new String[] { "Su", "M", "T", "W", "Th", "F", "Sa" };
+	}
+
+	public void printArray(String[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]);
+			if (i != arr.length - 1) { // don't do this for the last index
+				System.out.print(", ");
+			}
+		}
+	}
+}
 ```
 *   	
 	12. Three Ways of Creating Arrays
@@ -2913,13 +2971,257 @@ public class DMVSimulator {
 Day 7
 1. Advanced For Loops
 	1. Nested for Loops
-	2. Enhanced For Loops
-	3. Break and Continue With Enhanced For Loops
-	4. Labs
 ```java
-123
+//AdvancedForLoops/src/drills/NestedFor1.java
+public class NestedFor1 {
 
+	public static void main(String[] args) {
+		for (int outer = 1; outer <= 2; outer++) {
+			for (int inner = 1; inner <= 10; inner++) {
+				int product = outer * inner;
+				System.out.print(product + "\t");
+			}
+			System.out.println();
+		}
+		// Run the above code.
+		// How many times does the the second output statement execute? 2*10
+	}
+}
 ```
+```java
+//AdvancedForLoops/src/drills/NestedFor2.java
+public class NestedFor2 {
+
+	public static void main(String[] args) {
+		for (int outer = 0; outer < 5; outer++) {
+			for (int inner = 0; inner < 10; inner++) {
+				System.out.print(inner + " "); // prints our space in nest loop
+			}
+			System.out.println(); // inside for loop will make a new line
+		}
+
+		// Write a nested for loop to print the numbers 0 to 9 five times.
+		// Output:
+		// 0 1 2 3 4 5 6 7 8 9
+		// 0 1 2 3 4 5 6 7 8 9
+		// 0 1 2 3 4 5 6 7 8 9
+		// 0 1 2 3 4 5 6 7 8 9
+		// 0 1 2 3 4 5 6 7 8 9
+	}
+}
+```
+*	
+ 	2. Enhanced For Loops
+```java
+//AdvancedForLoops/src/drills/ForEach.java
+public class ForEach {
+
+	// Use the code in each "forLoop" method to write a foreach loop
+	// in the corresponding "forEachLoop" method. Verify that the loop outputs
+	// are the same.
+	public static void main(String[] args) {
+		forLoop1();
+		forEachLoop1();
+		forLoop2();
+		forEachLoop2();
+		forLoop3();
+		forEachLoop3();
+	}
+
+	static void forLoop1() {
+		int[] intArr = { 10, 20, 30, 40 };
+		for (int i = 0; i < intArr.length; i++) {
+			int num = intArr[i];
+			System.out.print(num + " ");
+		}
+		System.out.println("--end forLoop1");
+	}
+
+	static void forEachLoop1() {
+		int[] intArr = { 10, 20, 30, 40 };
+		for (int num : intArr) {
+			System.out.print(num + " ");
+		}
+		System.out.println("--end forEachLoop1");
+	}
+
+	static void forLoop2() {
+		String[] strings = new String[4];
+		strings[0] = "First";
+		strings[1] = "Second";
+		strings[2] = "Third";
+		strings[3] = "Fourth";
+		for (int i = 0; i < strings.length; i++) {
+			String s = strings[i];
+			System.out.print(s + " ");
+		}
+		System.out.println("--end forLoop2");
+	}
+
+	static void forEachLoop2() {
+		String[] strings = new String[4];
+		strings[0] = "First";
+		strings[1] = "Second";
+		strings[2] = "Third";
+		strings[3] = "Fourth";
+		for (String s : strings) {
+			System.out.print(s + " ");
+		}
+		System.out.println("--end forEachLoop2");
+	}
+
+	static void forLoop3() {
+		double doubleArr[] = { 1.1, 2.2, 3.3, 4.4 };
+		for (int i = 0; i < doubleArr.length; i++) {
+			System.out.print(doubleArr[i] + " ");
+		}
+		System.out.println("--end forLoop3");
+	}
+
+	static void forEachLoop3() {
+		double doubleArr[] = { 1.1, 2.2, 3.3, 4.4 };
+		// foreach loop here
+		for (double d : doubleArr) {
+			System.out.print(d + " ");
+		}
+		System.out.println("--end forEachLoop3");
+	}
+}
+```
+*
+ 	3. Break and Continue With Enhanced For Loops
+```java
+//AdvancedForLoops/src/drills/ForEachBreakContinue.java
+public class ForEachBreakContinue {
+
+	public static void main(String[] args) {
+		// Write a foreach loop to display only odd numbers.
+		// Output: 55 105 99 71 39 43
+		int[] odds = new int[] { 55, 105, 99, 71, -100, 39, 43 };
+		for (int num : odds) {
+			if (num % 2 == 0) {
+				continue;
+			}
+			System.out.print(num + " ");
+		}
+
+		System.out.println();
+
+		// Change the loop to break if -100 is found.
+		// Output: 32 154 34 54
+		int[] wow = new int[] { 32, 154, 34, 54, -100, 39, 43 };
+		for (int num : wow) {
+			if (num == -100) {
+				break;
+			}
+			System.out.print(num + " ");
+		}
+	}
+}
+```
+*	
+ 	4. Labs
+```java
+//Lab 1 - MinMaxFor.java
+public class MinMaxFor {
+	public static void main(String[] args) {
+		// Write a program that declares an array of five integers, int[] numbers = {28,
+		// 33, 55, 21, 35};.
+		int numbers[] = { 28, 33, 55, 21, 35 }; 
+		int min = numbers[0];
+		int max = numbers[0];
+
+		// Use a for loop to determine the smallest and largest number in the array, and
+		// print them.
+		for (int i = 1; i < numbers.length; i++) {
+			if (min > numbers[i]) {
+				min = numbers[i];
+			}
+			if (max < numbers[i]) {
+				max = numbers[i];
+			}
+		}
+		System.out.println("Min: " + min);
+		System.out.println("Max: " + max);
+	}
+}
+```
+```java
+//Lab 2 - MinMaxForEach.java
+public class MinMaxForEach {
+	public static void main(String[] args) {
+		int numbers[] = { 28, 33, 55, 21, 35 };
+		int min = numbers[0];
+		int max = numbers[0];
+
+		for (int num : numbers) {
+			if (min > num) {
+				min = num;
+			}
+			if (max < num) {
+				max = num;
+			}
+		}
+		System.out.println("Min: " + min);
+		System.out.println("Max: " + max);
+	}
+}
+```
+```java
+//Lab 3 - MinMaxWhile.java
+public class MinMaxWhile {
+	public static void main(String[] args) {
+		int numbers[] = { 28, 33, 55, 21, 35 };
+		int min = numbers[0];
+		int max = numbers[0];
+
+		int i = 0;
+		while (i < numbers.length) {
+			if (min > numbers[i]) {
+				min = numbers[i];
+			}
+			if (max < numbers[i]) {
+				max = numbers[i];
+			}
+			i++;
+		}
+		System.out.println("Min: " + min);
+		System.out.println("Max: " + max);
+	}
+}
+```
+```java
+//Lab 4 - MinMaxPrompt.java
+public class MinMaxPrompt {
+  public static void main(String[] args) {
+    java.util.Scanner keyboard = new java.util.Scanner(System.in);
+
+    int numValues = 5;
+    int[] numbers = new int[numValues];
+
+    for (int i = 0; i < numbers.length; i++) {
+      System.out.print("Enter an integer: ");
+      numbers[i] = keyboard.nextInt();
+    }
+    keyboard.close();
+
+    int min = numbers[0];
+    int max = numbers[0];
+
+    for (int num : numbers) {
+      if (min > num) {
+        min = num;
+      }
+      if (max < num) {
+        max = num;
+      }
+    }
+    System.out.println("Min: " + min);
+    System.out.println("Max: " + max);
+  }
+}
+```
+*
 2. Advanced Arrays
 	1. Array Syntax
 	2. Returning Array References from Methods
@@ -2929,12 +3231,12 @@ Day 7
 	6. ForEach Loops for Iterating Arrays
 	7. Multidimensional Array Shortcuts
 	8. Variable Arguments Arrays
-	9. Labs
+	9. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/AdvancedForLoops/labs.md)
 ```java
-123
+//Lab 1 - 
 
 ```
-3. Project: Tic Tac Toe(3)
+3. Project: Tic Tac Toe
 
 `Homework Project: Make Change (Cash Register`
 
