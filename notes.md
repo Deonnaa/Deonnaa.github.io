@@ -3224,16 +3224,184 @@ public class MinMaxPrompt {
 *
 2. Advanced Arrays
 	1. Array Syntax
-	2. Returning Array References from Methods
-	3. Arrays of Arrays
-	4. Accessing Elements of Multidimensional Arrays
-	5. Iterating Multidimensional Arrays
-	6. ForEach Loops for Iterating Arrays
-	7. Multidimensional Array Shortcuts
-	8. Variable Arguments Arrays
-	9. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/AdvancedForLoops/labs.md)
 ```java
-//Lab 1 - 
+//AdvancedArrays/com.skilldistillery.advancedarrays.drills.ArrayOfObjects
+//PopStar.java
+public class PopStar {
+	public String name;
+
+	public void sing() {
+		// Have the PopStar print their name to the screen, as part of some kind of
+		// lyric.
+		// Be creative.
+		System.out.print("My name is " + name);
+		int numVowels = name.length();
+		System.out.print(", h");
+		for (int i = 0; i < numVowels; i++) {
+			System.out.print("o");
+		}
+		System.out.println("!!");
+	}
+}
+```
+```java
+//AdvancedArrays/com.skilldistillery.advancedarrays.drills.ArrayOfObjects
+//ArrayOfObjects.java
+public class ArrayOfObjects {
+
+	public static void main(String[] args) {
+		// Instantiate an Array to hold PopStar objects
+		PopStar[] theBeatles = new PopStar[4];
+
+		// Create PopStar instances and add them to the array
+		PopStar songWriter1 = new PopStar();
+		songWriter1.name = "Paul";
+		theBeatles[0] = songWriter1;
+
+		PopStar songWriter2 = new PopStar();
+		songWriter2.name = "John";
+		theBeatles[1] = songWriter2;
+
+		PopStar anotherBeatle = new PopStar();
+		anotherBeatle.name = "George";
+		theBeatles[2] = anotherBeatle;
+
+		theBeatles[3] = new PopStar();
+		theBeatles[3].name = "Ringo";
+
+		// Call the method allSing
+		ArrayOfObjects objects = new ArrayOfObjects();
+		objects.allSing(theBeatles);
+	}
+
+	public void allSing(PopStar[] stars) {
+		// Loop through the array and call each PopStar's sing() method.
+		for (PopStar currentSingingPopstar : stars) {
+			currentSingingPopstar.sing();
+		}
+		for (int i = 0; i < stars.length; i++) {
+			stars[i].sing();
+		}
+	}
+}
+```
+*
+ 	2. Returning Array References from Methods
+```java
+//AdvancedArrays/com.skilldistillery.advancedarrays.drills.ReturningArrays
+//PopStar.java
+public class PopStar {
+	public String name;
+
+	public void sing() {
+		// Have the PopStar print their name to the screen, as part of some kind of
+		// lyric.
+		// Be creative.
+		System.out.print("My name is " + name);
+		int numVowels = name.length();
+		System.out.print(", h");
+		for (int i = 0; i < numVowels; i++) {
+			System.out.print("o");
+		}
+		System.out.println("!!");
+	}
+}
+```
+```java
+//ReturningArrays.java
+public class ReturningArrays {
+	public static void main(String[] args) {
+//		Non-Static Method Call
+//		createBand();
+
+		ReturningArrays ra = new ReturningArrays();
+		ra.createBand();
+		PopStar[] output = ra.createBand();
+		
+		//Print out each name
+		for (int i = 0; i < output.length; i++) {
+			System.out.println(output[i].name); // Justin Lance...
+		}
+
+		// for each loop
+//		for (PopStar popStar : output) {
+//		    System.out.println(popStar.name);
+//		}
+		
+		ra.allSing(output); //My name is Justin, hoooooo!! My name is Lance, hooooo!!...		
+
+	}
+
+	public PopStar[] createBand() {
+		// Move the code that creates and fills a PopStar array into this method.
+		// Be sure to return the array from the method
+		// (since it's return type is PopStar[]).
+
+		// Instantiate an Array to hold PopStar objects
+		PopStar[] sync = new PopStar[5];
+
+		// Create PopStar instances and add them to the array
+		PopStar jt = new PopStar();
+		sync[0] = jt;
+		jt.name = "Justin";
+
+		PopStar l = new PopStar();
+		l.name = "Lance";
+		sync[1] = l;
+
+		PopStar jc = new PopStar();
+		sync[2] = jc;
+		jc.name = "JC";
+
+		PopStar jf = new PopStar();
+		jf.name = "Joey";
+		sync[3] = jf;
+
+		PopStar c = new PopStar();
+		c.name = "Chris";
+		sync[4] = c;
+		return sync;
+	}
+
+	public void allSing(PopStar[] sync) {
+		// Loop through the array and call each PopStar's sing() method
+		for (int i = 0; i < sync.length; i++) {
+			PopStar popStar = sync[i];
+			popStar.sing();
+		}
+	}
+}
+```
+*	
+ 	3. Arrays of Arrays
+	4. Accessing Elements of Multidimensional Arrays
+```java
+//AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare
+
+```
+*
+ 	5. Iterating Multidimensional Arrays
+```java
+//AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare
+
+```
+*	
+ 	6. ForEach Loops for Iterating Arrays
+```java
+//AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare
+
+```
+*
+ 	7. Multidimensional Array Shortcuts
+	8. Variable Arguments Arrays
+```java
+//AdvancedArrays/com.skilldistillery.advancedarrays.drills.VarArgsBand
+
+```
+*	
+ 	9. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/AdvancedArrays/labs.md)
+```java
+//Lab 1 - SBScores.java
 
 ```
 3. Project: Tic Tac Toe
