@@ -2440,32 +2440,160 @@ Day 6
   	5. Declaring an Array
 ```java
 //Arrays/src/drills/ArrayDeclare.java
+public class ArrayDeclare {
+
+	public static void main(String[] args) {
+		// Declare a variable for an array of String objects to hold the name of each
+		// weekday.
+		String[] weekdays;
+		weekdays = new String[7];
+
+		// Declare a variable to hold letter grades for each of a student's six classes.
+		char[] grades = new char[6];
+
+		// Declare a variable to hold the average monthly precipitation for a year.
+		double[] monthlyPrecipitation = new double[12];
+	}
+}
 ```
 *
 	6. Creating an Array
 ```java
 //Arrays/src/drills/ArrayCreate.java
+public class ArrayCreate {
 
+	public static void main(String[] args) {
+		// Declare a variable for an array of String objects to hold the name of each
+		// weekday.
+		// Initialize the variable to hold 7 Strings.
+		String[] weekdays;
+		weekdays = new String[7];
+
+		// Declare a variable to hold letter grades for each of a student's six classes.
+		// Initialize the variable to hold 6 chars.
+		char grades[];
+		grades = new char[6];
+
+		// Declare a variable to hold the average monthly precipitation for a year.
+		// Initialize the variable to have the correct number of double slots.
+		double[] avgMonthlyPrecip;
+		avgMonthlyPrecip = new double[12];
+
+		// NOTE: as you can see above, whitespace does not matter.
+	}
+}
 ```
 *  	
 	7. Array Element Default Values
   	8. Reading and Storing Data
 ```java
 //Arrays/src/drills/ArrayAccess.java
+public class ArrayAccess {
 
+	public static void main(String[] args) {
+		// Store the name of each weekday at the correct index.
+		String[] weekdays = new String[7];
+		weekdays[0] = "Sunday";
+		weekdays[1] = "Monday";
+		weekdays[2] = "Tuesday";
+		weekdays[3] = "Wednesday";
+		weekdays[4] = "Thursday";
+		weekdays[5] = "Friday";
+		weekdays[6] = "Saturday";
+
+		// Store the grade A in the FIRST index of the array,
+		// and C in the LAST index of the array.
+		char grades[] = new char[6];
+		grades[0] = 'A';
+		grades[5] = 'C';
+
+		// Run the program and check the output to see if you were correct.
+		System.out.println("Weekdays:");
+		for (int i = 0; i < 7; i++) {
+			System.out.println(i + ":" + weekdays[i]);
+		}
+		System.out.println("Grades:");
+		for (int i = 0; i < 6; i++) {
+			System.out.println(i + ":" + grades[i]);
+		}
+	}
+}
 ```
 * 
    	9. Array Initialization Shortcuts
 ```java
 //Arrays/src/drills/ArrayAccess2.java
+public class ArrayAccess2 {
 
+	public static void main(String[] args) {
+		// Access all the B grades in the grades array and output them to the screen.
+		char[] grades = { 'C', 'F', 'B', 'A', 'C', 'B' };
+		System.out.println(grades[2]); // B
+		System.out.println(grades[5]); // B
+
+		// Use values from the firstNames and lastNames arrays to create the names
+		// Sarah Dobbs and Davey Jones.
+		// Output the names to the screen.
+		String firstNames[] = { "Matthew", "Mark", "Davey", "Sarah", "Linda" };
+		String lastNames[] = { null, "Dobbs", "Cool", "Symbol", "Longshanks", "Jones" };
+		System.out.println(firstNames[3] + " " + lastNames[1]); // Sarah Dobbs
+		System.out.println(firstNames[2] + " " + lastNames[5]); // Davey Jones
+
+		// Declare and initialize an array containing your
+		// pet's name and the street you grew up on.
+		// (If you do not have a pet, use the value null.)
+		String petNames[] = { "Spot", "Max" };
+		String street[] = { "Main St.", "1st St." };
+		System.out.println(petNames[0] + " " + street[1]); // Spot 1st St.
+
+		// Reassign the same array and initialize it with your middle
+		// name and a U.S. President's last name.
+		// (Use the array shortcut. If you do not have a middle name, use the value
+		// null.)
+		petNames = new String[] { "Spot", "Julie" };
+		System.out.println(petNames[1] + " " + street[0]); // Julie Main St.
+	}
+}
 ```
 * 
 	10. Iterating Arrays
 ```java
 //Arrays/src/drills/Iterating.java
+public class Iterating {
 
+	public static void main(String[] args) {
+		// Iterate through the names array to print the index of the name,
+		// and the name, e.g. 0 : Mike.
+		String[] names = { "Mike", "Davey", "Peter", "Mickey" };
+		for (int idx = 0; idx < names.length; idx++) {
+			System.out.println(names[idx]);
+		}
 
+		// Iterate through the precip array, but only print
+		// values greater than 2.5.
+		double[] precip = new double[] { 3.2, 0.5, 1.7, 2.8, 2.0, 3.1, 0.0, 0.2, 9.0 };
+		for (int i = 0; i < precip.length; i++) {
+			if (precip[i] >= 2.5) {
+				System.out.println(precip[i]);
+			}
+		}
+
+		// Iterate through the daysOfWeek array, but do not print
+		// Sunday or Saturday.
+		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			if (daysOfWeek[i].equals("Sunday") || daysOfWeek[i].equals("Saturday")) {
+				continue;
+			}
+			System.out.println(daysOfWeek[i]);
+		}
+
+		// After iterating, print the daysOfWeek array itself:
+		// System.out.println(daysOfWeek).
+		// Note the format, and what doesn't get printed.
+		System.out.println(daysOfWeek);
+	}
+}
 ```
 * 
 	11. Passing Arrays to Methods
@@ -2478,60 +2606,307 @@ Day 6
   	13. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Arrays/labs.md)
 ```java
 //Labs 1 - DayOfWeekIterating1.java
+public class DayOfWeekIterating1 {
+	public static void main(String[] args) {
+		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			if (i != 0 && i != daysOfWeek.length - 1) {
+				System.out.println(daysOfWeek[i]);
+			}
+		}
+	}
+}
 ```
 ```java
 //Labs 1 - DayOfWeekIterating2.java
+public class DayOfWeekIterating2 {
+	public static void main(String[] args) {
+		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			if (daysOfWeek[i].equals("Sunday") || daysOfWeek[i].equals("Saturday")) {
+				continue;
+			}
+			System.out.println(daysOfWeek[i]);
+		}
+	}
+}
 ```
 ```java
 //Labs 2 - AverageScores.java
+public class AverageScores {
 
+	public static void main(String[] args) {
+		int[] scores = new int[5];
+
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.println("Enter scores:");
+		for (int i = 0; i < scores.length; i++) {
+			int scoreNum = i + 1;
+			System.out.print("Score " + scoreNum + ": ");
+			scores[i] = scanner.nextInt();
+		}
+
+		// Call the test method
+		AverageScores test = new AverageScores();
+		test.testCalculateAverage();
+
+		// Test calculateAverage(); Non-Static Instance
+		AverageScores aveScore = new AverageScores();
+		double average = aveScore.calculateAverage(scores);
+
+//		double average = new AverageScores().calculateAverage(scores); //DO NOT CODE LIKE THIS
+
+		System.out.println("The average score is: " + average);
+		scanner.close();
+
+	}
+
+	public double calculateAverage(int[] scores) {
+		double theAverage = 0.0;
+
+		// variable to hold the sum of all scores
+		double sum = 0.0;
+		for (int i = 0; i < scores.length; i++) {
+			sum += scores[i];
+		}
+
+		theAverage = sum / scores.length; // divide by the length because
+											// we don't know how long the passed-in
+											// array is (even though we're the ones passing it)
+		return theAverage;
+	}
+
+	public void displayAverage(double average) {
+		System.out.println(average);
+	}
+
+	public void testCalculateAverage() {
+		int[] ints = { 70, 65, 80, 97 };
+
+		double expected = 78.0;
+
+		// Calculate the average to see what the method produces
+		double result = calculateAverage(ints); // Non-Static to Non-Static
+
+		// Now test the result
+		if (expected == result) {
+			System.out.println("Passed");
+		} else {
+			System.out.println("Failed, expected " + expected + " but got " + result);
+		}
+	}
+}
 ```
 ```java
 //Labs 3 - RandomString.java
+public class RandomString {
+	public static void main(String[] args) {
+		String[] animals = { "Bear", "Fox", "Bobcat" };
 
+		for (int i = 0; i < 10; i++) {
+			int index = (int) (Math.random() * animals.length);
+			System.out.println(animals[index]);
+		}
+	}
+}
 ```
 2. Introduction to Objects
 	1. Classes
 ```java
-//
+//IntroToObjects/src/drills/SphereCreation.java
+public class SphereCreation {
+
+	public static void main(String[] args) {
+		// Create three Sphere "objects."
+		// 1. A baseball, radius 3.7
+		Sphere baseball = new Sphere();
+		baseball.radius = 3.7;
+
+		// 2. A basketball, radius 12.0
+		Sphere basketball = new Sphere();
+		basketball.radius = 12.0;
+
+		// 3. Mercury, radius 244 million centimeters
+		// Try writing this as 244_000_000.0 or 244e5
+		Sphere mercury = new Sphere();
+		mercury.radius = 244_000_000.0;
+
+		// Print each object's volume to the screen using System.out.println.
+		System.out.println(baseball.radius);
+		System.out.println(basketball.radius);
+		System.out.println(mercury.radius);
+	}
+}
 ```
 *  
   2. Creating Objects
   3. Reference Variables
 ```java
-//
+//IntroToObjects/src/drills/SphereReferences.java
+public class SphereReferences {
+
+	public static void main(String[] args) {
+		// Create another reference called otherSphereRef and assign sphRef to it,
+		// so that both references refer to the same Sphere object.
+
+		Sphere sphRef = new Sphere();
+		sphRef.radius = 10.0;
+		System.out.println("Original sphRef radius: " + sphRef.radius);
+
+		// Change otherSphereRef's radius.
+		Sphere otherSphereRef = sphRef;
+		otherSphereRef.radius = 20.0;
+
+		// Output otherSphereRef's radius to the screen.
+		System.out.println("Second sphRef radius: " + otherSphereRef.radius);
+
+		// Output sphRef's radius to the screen. It should have changed.
+		System.out.println("Changed original sphRef: " + sphRef.radius);
+	}
+}
 ```
 *   
   4. State and Behavior
 ```java
-//
+//IntroToObjects/src/drills/SphereWithColor.java
+
+```
+```java
+//IntroToObjects/src/drills/SphereWithColorTest.java
+
 ```
 *   
   5. Field Initialization
   6. The static Keyword
 ```java
-//
+//Static CarManufacturer.java
+public class CarManufacturer {
+	public static void main() {
+		Car.test2Understanding();
+	}
+}
+
+//Static Car.java
+public class Car {
+	public static void test2Understanding() {
+		System.out.println("Test");
+	}
+
+}
 ```
-*   
+```java
+//Non-Static CarManufacturer.java
+public class CarManufacturer {
+	public static void main () {
+		Car anotherCar = new Car();
+		anotherCar.test1Understanding(); 
+	}
+}
+
+//Non-Static Car.java
+public class Car {
+	public void test1Understanding() {
+		System.out.println("Test");
+	}
+
+}
+```
+*
   7. Some Objects You've Already Met
 ```java
-//
+//java.util.Scanner
+java.util.Scanner scanner = new java.util.Scanner(System.in);
+System.out.print("Enter the radius of the sphere: ");
+double radius = scanner.nextDouble();
+scanner.close();
+
+//String: We often do not see new, this is because Strings are so important there are shortcuts to create instances.
+
+//System.out.println()
+//The System class has a static field out, which has a method println
 ```
 *   
   8. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/IntroToObjects/labs.md)
 ```java
 //Lab 1 - Car.java
+public class Car {
+	public String make;
+	public String model;
+	public String color;
+	public int numberOfWheels;
+	public int purchasePrice;
 
+	public String getCarData() {
+		return "Make: " + make + "\n Model: " + model + "\n Color: " + color + "\n Number of Wheels: " + numberOfWheels
+				+ "\n Purchase Price: " + purchasePrice;
+	}
+
+	public void displayCar() {
+		System.out.println(getCarData());
+	}
+}
 ```
 ```java
 //Lab 2 - CarTester.java
+public class CarTester {
 
+	public static void main(String[] args) {
+		Car newCar = new Car();
+		newCar.make = "Jeep";
+		newCar.model = "Rubicon";
+		newCar.color = "White";
+		newCar.numberOfWheels = 4;
+		newCar.purchasePrice = 80000;
+
+		newCar.displayCar();
+
+		Car car2 = new Car();
+		car2.make = "Tesla";
+		car2.model = "Model Y";
+		car2.color = "White";
+		car2.numberOfWheels = 4;
+		car2.purchasePrice = 53000;
+		System.out.println(car2.getCarData());
+	}
+}
 ```
 ```java
 //Lab 3 - DMVSimulator.java
+public class DMVSimulator {
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+		System.out.print("Enter Make: ");
+		String make = scanner.next();
+
+		System.out.print("Enter Model: ");
+		String model = scanner.next();
+
+		System.out.print("Enter Color: ");
+		String color = scanner.next();
+
+		System.out.print("Enter Number of Wheels: ");
+		int wheels = scanner.nextInt();
+
+		System.out.print("Enter Purchase Price: $");
+		int price = scanner.nextInt();
+
+		System.out.println(make + " " + model + " " + color + " " + wheels + " " + price);
+
+		System.out.print("Calculate tax 'C' or Exit 'E': ");
+		String calculateTax = scanner.next();
+
+		if (calculateTax.equals("C") || calculateTax.equals("c")) {
+			System.out.println("Price: $" + price + " Tax: $" + (price * 0.01 * wheels));
+		} else if (calculateTax.equals("E") || calculateTax.equals("e")) {
+			System.out.println("Goodbye!");
+			scanner.close();
+		}
+	}
+}
 ```
 3. Project: Deaf Grandma    
 
@@ -2546,15 +2921,15 @@ Day 7
 
 ```
 2. Advanced Arrays
-  1. Array Syntax
-  2. Returning Array References from Methods
-  3. Arrays of Arrays
-  4. Accessing Elements of Multidimensional Arrays
-  5. Iterating Multidimensional Arrays
-  6. ForEach Loops for Iterating Arrays
-  7. Multidimensional Array Shortcuts
-  8. Variable Arguments Arrays
-  9. Labs
+	1. Array Syntax
+	2. Returning Array References from Methods
+	3. Arrays of Arrays
+	4. Accessing Elements of Multidimensional Arrays
+	5. Iterating Multidimensional Arrays
+	6. ForEach Loops for Iterating Arrays
+	7. Multidimensional Array Shortcuts
+	8. Variable Arguments Arrays
+	9. Labs
 ```java
 123
 
@@ -2570,25 +2945,25 @@ Day 7
 
 Day 1
 1. Packages
-  1. Namespaces
-  2. Introduction to Java Packages
-  3. Creating Packages
-  4. Package Names
-  5. Imports
-  6. Static Imports
-  7. Labs
+	1. Namespaces
+	2. Introduction to Java Packages
+	3. Creating Packages
+	4. Package Names
+	5. Imports
+	6. Static Imports
+	7. Labs
 ```java
 123
 
 ```
 2. String and StringBuilder
-  1. The String Class
-  2. The String Pool
-  3. String Methods
-  4. The StringBuilder Class
-  5. StringBuilder Methods
-  6. Writing toString() Methods
-  7. Labs
+	1. The String Class
+	2. The String Pool
+	3. String Methods
+	4. The StringBuilder Class
+	5. StringBuilder Methods
+	6. Writing toString() Methods
+	7. Labs
 ```java
 123
 
@@ -2597,21 +2972,21 @@ Day 1
 
 Day 2
 1. ASCII and Unicode Data
-  1. Standards
-  2. ASCII
-  3. Unicode
-  4. Labs
+	1. Standards
+	2. ASCII
+	3. Unicode
+	4. Labs
 ```java
 123
 
 ```
 2. Objects and Classes
-  1. Classes and Objects
-  2. Constructors
-  3. The Default Constructor
-  4. Objects in Memory
-  5. Imagining the Heap
-  6. Visibility
+	1. Classes and Objects
+	2. Constructors
+	3. The Default Constructor
+	4. Objects in Memory
+	5. Imagining the Heap
+	6. Visibility
 3. Drawing Objects and Their Relationships
   1. Representing Objects with Diagrams
   2. UML Class Diagram
