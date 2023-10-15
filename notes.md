@@ -1,7 +1,5 @@
 ### [Week 1](https://github.com/SkillDistillery/SD41/blob/main/jfop/README.md)
-
 #### Java Fundamentals of Programming
-
 Day 1
 1. Day One System Setup
 2. Simple Programs
@@ -22,7 +20,7 @@ public class Hello {
   	5. Input - Process - Output
   	6. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/SimplePrograms/labs.md)
 ```java
-//Lab1 - HelloName.java
+//Lab 1 - HelloName.java
 public class HelloName {
 
 	public static void main(String[] args) {
@@ -31,7 +29,7 @@ public class HelloName {
 }
 ```
 ```java
-//Lab2 - TwoPrints.java
+//Lab 2 - TwoPrints.java
 public class TwoPrints {
 
 	public static void main(String[] args) {
@@ -42,7 +40,7 @@ public class TwoPrints {
 }
 ```
 ```java
-//Lab3 - HelloTabs.java
+//Lab 3 - HelloTabs.java
 public class HelloTabs {
 
 	public static void main(String[] args) {
@@ -53,7 +51,7 @@ public class HelloTabs {
 }
 ```
 ```java
-//Lab4 - HelloStars.java
+//Lab 4 - HelloStars.java
 public class HelloStars {
 
 	public static void main(String[] args) {
@@ -68,7 +66,7 @@ public class HelloStars {
 ```
 
 ```java
-//Lab5 - Testing123.java
+//Lab 5 - Testing123.java
 public class Testing123 {
 
 	public static void main(String[] args) {
@@ -159,7 +157,7 @@ public class VariablePrinting {
 *    
    7. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/VariablesAndConstants/labs.md)
 ```java
-//Lab1 - AgeInitial.java
+//Lab 1 - AgeInitial.java
 public class AgeInitial {
 
 	public static void main(String[] args) {
@@ -172,7 +170,7 @@ public class AgeInitial {
 }
 ```
 ```java
-//Lab2 - StudentScores.java
+//Lab 2 - StudentScores.java
 public class StudentScores {
 
 	public static void main(String[] args) {
@@ -241,7 +239,7 @@ public static void main(String[] args)
  	4. Why Use Methods?
  	5. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/IntroToMethods/labs.md)
 ```java
-//Lab1 - MyName.java
+//Lab 1 - MyName.java
 public class MyName {
 
 	public static void main(String[] args) {
@@ -362,7 +360,7 @@ public class ScannerInput {
 *     
  	5. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/ScreenOutputKeyboardInput/labs.md)
 ```java
-//Lab1 - FiveIntegers.java
+//Lab 1 - FiveIntegers.java
 public class FiveIntegers {
 
 	public static void main(String[] args) {
@@ -398,7 +396,7 @@ public class FiveIntegers {
 }
 ```
 ```java
-//Lab2 - ThreeVariables.java
+//Lab 2 - ThreeVariables.java
 public class ThreeVariables {
 
 	public static void main(String[] args) {
@@ -649,7 +647,7 @@ public class Precedence {
   	10. Precedence Order
  	11. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Expressions/labs.md)
 ```java
-//Lab1 - Circle1.java
+//Lab 1 - Circle1.java
 public class Circle1 {
 
 	public static void main(String[] args) {
@@ -671,7 +669,7 @@ public class Circle1 {
 }
 ```
 ```java
-//Lab2 - Circle2.java
+//Lab 2 - Circle2.java
 public class Circle2 {
 
 	public static void main(String[] args) {
@@ -696,7 +694,7 @@ public class Circle2 {
 }
 ```
 ```java
-//Lab3 - FahrToCels.java
+//Lab 3 - FahrToCels.java
 public class FahrToCels {
 
 	public static void main(String[] args) {
@@ -717,7 +715,7 @@ public class FahrToCels {
 }
 ```
 ```java
-//Lab4 - CalculateTip.java
+//Lab 4 - CalculateTip.java
 public class CalculateTip {
 
 	public static void main(String[] args) {
@@ -741,7 +739,7 @@ public class CalculateTip {
 }
 ```
 ```java
-//Lab5 - DailyRainfall.java
+//Lab 5 - DailyRainfall.java
 public class DailyRainfall {
 
 	public static void main(String[] args) {
@@ -1072,130 +1070,1496 @@ public class IfCelsFahr {
 ```
 4. Pair Programming
 5. Project: Simple Calculator
-6. Project: Mad Libs (6.)
+6. Project: Mad Libs
 
 Day 3
 1. More Expressions
-  * Using Boolean Variables
-  * Boolean Expressions
-  * Assignment Operators
-  * Auto-increment
-  * The Ternary Conditional Operator
-  * Labs
+	1. Using Boolean Variables
+ 	2. Boolean Expressions
+ 	3. Assignment Operators
+```java
+index += 1;                  // Same as index = index + 1;
+yearlyTotal += monthlyTotal; // Same as yearlyTotal = yearlyTotal + monthlyTotal;
+product *= factor;           // Same as product = product * factor;
+whatsLeft %= 3;              // Same as whatsLeft = whatsLeft % 3;
+name += "Dobbs";             // Same as name = name + "Dobbs";
+```
+*
+	4. Auto-increment
+```java
+//AdvancedExpressions/src/drills/PrePostIncrement.java
+public class PrePostIncrement {
+
+	public static void main(String[] args) {
+		int count = 0;
+
+		while ((count = count + 1) < 10) {
+			System.out.println(count);
+		}
+
+//    while ( ( count += 1 ) < 10 ) {
+//        System.out.println(count);
+//      }
+
+//    while ( ( ++count ) < 10 ) {
+//    	System.out.println(count);
+//    }
+
+//    while ( ( count++ ) < 10 ) {
+//        System.out.println(count);
+//      }
+	}
+
+}
+```
+*
+   	5. The Ternary Conditional Operator
+```java
+booleanExpression ? valueIfTrue : valueIfFalse
+```
+```java
+char status; // 'a' for adult, 'm' for minor
+status = age >= 18 ? 'a' : 'm';
+
+int age = 21;
+char status; //'a' for adult 'm' for minor 's' for senior(65+)
+System.out.println((age >= 18) // boolean expression
+				? (age >= 65)
+					? 's' // nested value if true
+					: 'a' // nested value if flase
+				: 'm' // value if false
+);
+```
+* 
+  	6. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/MoreExpressions/labs.md)
+```java
+//Lab 1 - OddOrEven.java
+public class OddOrEven {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.print("Please enter a number: ");
+		int userNumber = scanner.nextInt();
+
+		if (userNumber % 2 == 0) {
+			System.out.println("This number is even.");
+		} else {
+			System.out.println("This number is odd.");
+		}
+		scanner.close();
+	}
+}
+```
+```java
+//Lab 2 - Multiply.java
+public class Multiply {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.print("Please enter a number: ");
+		int userNumber1 = scanner.nextInt();
+
+		System.out.print("Please enter a number: ");
+		int userNumber2 = scanner.nextInt();
+
+		System.out.print("Please enter a number: ");
+		int userNumber3 = scanner.nextInt();
+
+		System.out.print("Please enter a number: ");
+		int userNumber4 = scanner.nextInt();
+
+		System.out.print("Please enter a number: ");
+		int userNumber5 = scanner.nextInt();
+
+		System.out.println(userNumber1);
+		System.out.println(userNumber1 *= userNumber2);
+		System.out.println(userNumber1 *= userNumber3);
+		System.out.println(userNumber1 *= userNumber4);
+		System.out.println(userNumber1 *= userNumber5);
+
+		scanner.close();
+	}
+}
+```
+```java
+//Lab 3 - PosNegZero.java
+public class PosNegZero {
+
+	public static void main(String[] args) {
+
+		int userNumber = getNumber();
+
+		String result = userNumber > 0 ? "Positive" : userNumber < 0 ? "Negative" : "Zero";
+		System.out.println(result);
+	}
+
+	public static int getNumber() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a Number: ");
+		int input = scan.nextInt();
+		scan.close();
+		return input;
+	}
+}
+```
 2. Conditionals: switch
-  * switch Statements: Multi-Way Decisions
-  * break; and default: in switch Statements
-  * When to Use a switch Control Statement
-  * Labs
+  1. switch Statements: Multi-Way Decisions
+```java
+//Switch/src/drills/SwitchInvestigation.java
+public class SwitchInvestigation {
+
+	public static void main(String[] args) {
+		System.out.println("We are going to investigate what break; " + "and default: do in a switch statement");
+		investigate();
+	}
+
+	public static void investigate() {
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		System.out.print("Enter a grade: ");
+		String grade = sc.next();
+
+		// 1. Comment out the break; statements for case "A" and "B".
+		// Run the program. What output do you notice?
+		// 2. Move the entire default case before case "A":
+		// Run the program. What output do you notice?
+		switch (grade) {
+		case "A":
+			System.out.println("Keep it up");
+			break;
+		case "B":
+			System.out.println("Good job");
+			break;
+		case "C":
+			System.out.println("Doing alright");
+			break;
+		case "D":
+			System.out.println("Let's talk");
+			break;
+		case "F":
+			System.out.println("You should come to class");
+			break;
+		default:
+			System.out.println("That's not a grade");
+		}
+		sc.close();
+	}
+}
+```
+*  
+  2. break; and default: in switch Statements
+```java
+//Switch/src/drills/SwitchFallthrough.java
+public class SwitchFallthrough {
+
+	public static void main(String[] args) {
+		System.out.println("We can now handle uppercase and lowercase grades, thanks to fall through.");
+		investigate();
+
+	}
+
+	public static void investigate() {
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		System.out.print("Enter a grade: ");
+		String grade = sc.next();
+		
+		// "A" falls through to "a" so they both print the same message
+		switch (grade) {
+		case "A": 
+		case "a":
+			System.out.println("Keep it up");
+			break;
+		case "B":
+		case "b":
+			System.out.println("Good job");
+			break;
+		case "C": case "c":
+			System.out.println("Doing alright");
+			break;
+		case "D":
+		case "d":
+			System.out.println("Let's talk");
+			break;
+		case "F":
+		case "f":
+			System.out.println("You should come to class");
+			break;
+		default:
+			System.out.println("That's not a grade");
+		}
+		sc.close();
+	}
+}
+```
+*
+  3. When to Use a switch Control Statement
+  4. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Switch/labs.md)
+```java
+//Lab 1 - IfCelsFahrSwitch.java
+public class IfCelsFahrSwitch {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		double fahrenheit = 0.0;
+		double celsius = 0.0;
+		double inputNum = 0.0;
+		String scale = "";
+
+		System.out.print("Please Enter your Temperature: ");
+		inputNum = scanner.nextDouble();
+		scanner.nextLine();
+
+		System.out.print("Please Enter the Scale: ");
+		scale = scanner.nextLine();
+		scanner.close();
+
+		switch (scale) {
+		case "F":
+		case "f":
+		case "fahrenheit":
+		case "Fahrenheit":
+			fahrenheit = inputNum;
+			celsius = 5.0 / 9.0 * (fahrenheit - 32);
+			System.out.println(inputNum + " F");
+			System.out.println(celsius + " C");
+			break;
+		case "C": case "c": case "celsius": case "Celsius":
+			celsius = inputNum;
+			fahrenheit = (9.0 / 5.0 * celsius) + 32;
+			System.out.println(inputNum + " C");
+			System.out.println(fahrenheit + " F");
+			break;
+		default:
+			System.out.println("That's not a scale!");
+		}
+	}
+}
+```
+```java
+//Lab 2 - CalculatorSwitch.java
+public class CalculatorSwitch {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Welcome to the world's greatest calculator app!");
+		System.out.println("Please enter the first number you'd like to do some math with:");
+		double firstNum = sc.nextDouble();
+
+		System.out.println("Please enter the second number you'd like to do some math with:");
+		double secondNum = sc.nextDouble();
+		sc.nextLine(); // Needed to run next String.
+		System.out.println("What kind of math would you like to do? +, -, *, /, %");
+		String operator = sc.nextLine(); // Can also just use '.next' instead of nextLine. Comment out 'sc.nextline();'.
+		
+		switch (operator) {
+		case "+": System.out.println(firstNum + secondNum);
+			break;
+		case "-": System.out.println(firstNum - secondNum);
+			break;
+		case "*": System.out.println(firstNum * secondNum);
+			break;
+		case "/": System.out.println(firstNum / secondNum);
+			break;
+		case "%": System.out.println(firstNum % secondNum);
+			break;
+		default: System.out.println("Invalid operator.");
+		}
+	}
+}
+```    
 3. while Loops
-  * Looping
-  * while Loops
-  * while Loops - Details
-  * Steps in a while Loop
-  * Scope
-  * do-while Loops
-  * Infinite Loops
-  * break and continue Statements
-  * Labs
+	1. Looping	
+ 	2. while Loops
+```java
+//WhileLoops/src/drills/WhileLoop.java
+public class WhileLoop {
+
+	public static void main(String[] args) {
+		// printNumbers();
+		mathRandomWhile();
+	}
+
+	public static void printNumbers() {
+		// Write a while loop to print the numbers 1 to 10 to the screen.
+		int num = 1;
+		while (num <= 10) {
+			System.out.println(num);
+			num++;
+		}
+	}
+
+	public static void mathRandomWhile() {
+		// Use Math.random() to write a while loop that will execute as long as a random
+		// number is less than 0.7. Print the number inside the loop.
+		// Example: double d = Math.random();
+		// Make sure to reassign d with a new Math.random() value in the loop body.
+		// After the loop, add a statement to print the final value of d.
+		double d = Math.random();
+		while (d < 0.7) {
+			d = Math.random();
+			System.out.println(d);
+			d = Math.random();
+		}
+	}
+}
+```
+*	
+ 	3. while Loops - Details
+	4. Steps in a while Loop
+```java
+//WhileLoops/src/drills/WhileLoopSteps.java
+public class WhileLoopSteps {
+
+	public static void main(String[] args) {
+		// Write a `while` loop that will accept a number from the user, multiply it by
+		// 2, and print the value to the screen. The program should accept data from the
+		// user until the user enters zero.
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Please enter a number: ");
+		int num = sc.nextInt();
+
+		// while loop to multiply and get more input...
+		while (num != 0) {
+			System.out.println(num + " * 2 = " + (num * 2));
+			System.out.print("Enter a number: ");
+			num = sc.nextInt();
+		}
+		System.out.println("Finished.");
+	}
+}
+```
+*	
+ 	5. Scope
+	6. do-while Loops
+```java
+//WhileLoops/src/drills/DoWhileLoop.java
+public class DoWhileLoop {
+
+	public static void main(String[] args) {
+		// Write a do-while loop to print the numbers 1 to 10 to the screen.
+		int x = 1;
+		do {
+			System.out.println(x);
+			x++;
+		} while (x <= 10);
+
+		// Use Math.random() to write a do-while loop that will execute as long as a
+		// random number is less than 0.7. Print the number inside the loop.
+		// Declare a variable outside the loop, and assign a new Math.random() value in
+		// the loop body. Then print the number to the screen.
+		// Example: double d = Math.random();
+		double d;
+		do {
+			d = Math.random();
+			System.out.println(d);
+		} while (d < 0.7);
+	}
+}
+```
+*	
+ 	7. Infinite Loops
+	8. break and continue Statements
+```java
+//WhileLoops/src/drills/WhileLoopBreakContinue.java
+public class WhileLoopBreakContinue {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		// Try the loops in the content examples in code.
+		// Write a do-while loop that accepts an int from a user, and exits when the
+		// user types 0.
+//		int num;
+//		System.out.print("Enter int numbers. Enter 0 to quit: ");
+//
+//		// Loop here...
+//		do {
+//			num = scan.nextInt();
+//			System.out.println(num);
+//
+//		} while (num != 0);
+//		System.out.println("Finished");
+
+		// Write an infinite loop that accepts String values from the user.
+		// Exit when the user types 'quit'. If the user types a different word, output
+		// it to the screen.
+		// Hint: check if the user's input equals 'quit' by using the
+		// if("quit".equals(YOUR_INPUT_VARIABLE)).
+		String userInput;
+		System.out.println("Enter a word, 'quit' to exit.");
+
+		while (true) {
+			userInput = scan.nextLine();
+			if (userInput.equals("quit")) {
+				break;
+			}
+			System.out.println(userInput);
+		}
+		System.out.println("Infinite loop Finished");
+	}
+}
+```
+*	
+ 	9. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/WhileLoops/labs.md)
+```java
+//Lab 1 - LoopMenu.java
+public class LoopMenu {
+
+	public static void main(String[] args) {
+		printMenu();
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		String choice = "";
+
+		do {
+			choice = sc.next();
+			switch (choice) {
+			case "1":
+				printGreeting();
+				printMenu();
+				break;
+			case "2":
+				printAdvice();
+				printMenu();
+				break;
+			case "3":
+				printWisdom();
+				printMenu();
+				break;
+			case "4":
+				printHelp();
+				printMenu();
+				break;
+			case "5":
+				printQuit();
+			}
+		} while (!choice.equals("5"));
+	}
+
+	public static void printMenu() {
+		System.out.println("***************************");
+		System.out.println("*      Choose a Number:   *");
+		System.out.println("* \t1 - Greeting      *");
+		System.out.println("* \t2 - Advice        *");
+		System.out.println("* \t3 - Wisdom        *");
+		System.out.println("* \t4 - Help          *");
+		System.out.println("* \t5 - Quit          *");
+		System.out.println("***************************");
+	}
+
+	public static void printGreeting() {
+		System.out.println("Hello!");
+	}
+
+	public static void printAdvice() {
+		System.out.println("Here is some advice.");
+	}
+
+	public static void printWisdom() {
+		System.out.println("Here is some wisdom.");
+	}
+
+	public static void printHelp() {
+		System.out.println("Here is some help.");
+	}
+
+	public static void printQuit() {
+		System.out.println("Goodbye.");
+	}
+}
+```
+```java
+//Lab 2 - CalculatorLoop.java
+public class SimpleCalculator {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Welcome to Calculator!");
+		boolean keepGoing = true;
+		do {
+			System.out.print("Enter a number: ");
+			double num1 = input.nextDouble();
+			System.out.print("Enter another number: ");
+			double num2 = input.nextDouble();
+			System.out.print("What calculation do you want to do? ");
+			String op = input.next();
+
+			double result;
+			switch (op) {
+			case "+":
+			case "add":
+			case "plus":
+				result = num1 + num2;
+				System.out.println(num1 + " + " + num2 + " = " + result);
+				break;
+			case "-":
+			case "subtract":
+			case "minus":
+			case "less":
+				result = num1 - num2;
+				System.out.println(num1 + " - " + num2 + " = " + result);
+				break;
+			case "*":
+			case "multiply":
+			case "times":
+				result = num1 * num2;
+				System.out.println(num1 + " * " + num2 + " = " + result);
+				break;
+			case "/":
+			case "divide":
+			case "over":
+				result = num1 / num2;
+				System.out.println(num1 + " / " + num2 + " = " + result);
+				break;
+			case "%":
+			case "mod":
+			case "modulo":
+				result = num1 % num2;
+				System.out.println(num1 + " % " + num2 + " = " + result);
+				break;
+			case "QUIT":
+			case "EXIT":
+				System.out.println("Exiting.");
+				keepGoing = false;
+				break;
+			default:
+				System.out.println("Operation not valid.");
+			}
+		} while (keepGoing);
+
+		input.close();
+	}
+}
+```  
 4. Project: Hi/Lo
 5. Project: Remote Control Simulator
 
 Day 4
 1. Methods
-  * Method Review
-  * Methods Instead of Repeating Code
-  * Returning Values from Methods
-  * Using a Method's return value
-  * Sending Data to Methods
-  * Defining Parameters
-  * Local Variables (Additional Drill)
-  * Pass-by-value
-  * Method Overloading
-  * Labs
+	1. Method Review
+```java
+//Methods/src/drills/ClassWithMethodsLoop.java
+public class ClassWithMethodsLoop {
+	public static void main(String[] args) {
+
+		System.out.println("Calling method1()");
+
+		int counter = 0;
+		while (counter < 5) {
+			counter++;
+			method1();
+		}
+		System.out.println("main finishing");
+	}
+
+	public static void method1() {
+		System.out.println("     method1 executing");
+	}
+}
+```
+*	
+ 	2. Methods Instead of Repeating Code
+```java
+//Methods/src/drills/CalculateBalanceRefactor.java
+public class CalculateBalanceRefactor {
+	public static void main(String[] args) {
+		double cost = 307.32;
+		double balance = cost;
+
+		double payment1 = 42.40;
+		balance = balance - payment1;
+
+		printHeader();
+
+//		System.out.println("-----------------");
+//		System.out.println("---- BALANCE ----");
+//		System.out.println("-----------------");
+		System.out.println(balance);
+		System.out.println();
+
+		double payment2 = 39.31;
+		balance = balance - payment2;
+
+//		System.out.println("-----------------");
+//		System.out.println("---- BALANCE ----");
+//		System.out.println("-----------------");
+
+		printHeader();
+
+		System.out.println(balance);
+		System.out.println();
+	}
+
+	public static void printHeader() {
+		System.out.println("////////////////////");
+		System.out.println("/      BALANCE    /");
+		System.out.println("///////////////////");
+	}
+}
+```
+*	
+ 	3. Returning Values from Methods
+  	4. Using a Method's return value
+```java
+//Methods/src/drills/CalculateBalanceReturn.java
+public class CalculateBalanceReturn {
+	public static void main(String[] args) {
+		double cost = 307.32;
+		double balance = cost;
+
+		double payment1 = 42.40;
+		balance = balance - payment1;
+
+		printHeader();
+		System.out.println(balance);
+		System.out.println();
+
+		double payment2 = 39.31;
+		balance = balance - payment2;
+
+		printHeader();
+		System.out.println(balance);
+		System.out.println();
+	}
+
+	/*
+	 * Refactor printHeader(): Remove its System.out.println statements. Call
+	 * buildHeader() and assign its return value to a variable. Output that variable
+	 * to the screen.
+	 */
+	public static void printHeader() {
+		System.out.println(buildHeader());
+	}
+
+	// Create a method called buildHeader that returns a String
+	public static String buildHeader() {
+		String header = "/////////////////\n" + "//// BALANCE ////\n" + "/////////////////";
+		return header;
+	}
+}
+```
+*
+ 	5. Sending Data to Methods
+  	6. Defining Parameters
+```java
+//Methods/src/drills/CalculateTemp.java
+public class CalculateTemp {
+
+	public static void main(String[] args) {
+		// 2. Call the method to calculate temperature.
+		// Be sure to pass arguments in the correct order.
+		// Print the returned value to the screen.
+		double theFinalValue = calculateTemp(32.0, 'C');
+		System.out.println(theFinalValue);
+
+		theFinalValue = calculateTemp(15.0, 'F');
+		System.out.println(theFinalValue);
+
+		theFinalValue = calculateTemp(100.0, 'K');
+		System.out.println(theFinalValue);
+	}
+	// 1. Define a method with the following signature:
+	// name: calculateTemp
+	// return type: double
+	// parameter 1: floating point temperature
+	// parameter 2: a character denoting the temperature scale,
+	// where 'C' means Celsius and 'F' means Fahrenheit
+	//
+	// Be sure to put "public static" in front of the method return type and name
+	//
+	// The method will calculate the alternate temperature
+	// using the formulas
+	//
+	// celsius = (fahrenheit - 32) / 1.8
+	// fahrenheit = (celsius * 1.8) + 32
+	//
+	// If the scale is not 'C' or 'F', print a message to the screen and
+	// return the value -999.
+
+	public static double calculateTemp(double theTemp, char scale) {
+		double convertedTemp = 999;
+
+		if (scale == 'C') {
+			convertedTemp = (theTemp - 32) / 1.8;
+		} else if (scale == 'F') {
+			convertedTemp = (theTemp * 1.8) + 32;
+		} else {
+			System.out.println("RTFM!!!!!");
+		}
+		return convertedTemp;
+	}
+}
+```
+*  	
+	7. Local Variables (Additional Drill)
+```java
+//Methods/src/drills/StringManipulation.java
+public class StringManipulation {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.print("Enter a word or phrase: ");
+		String phrase = scanner.nextLine();
+
+		System.out.print("Enter a number: ");
+		int num = scanner.nextInt();
+
+		// 2. Call addCharacter, passing phrase and num, and assign its return
+		// value to a local variable.
+		String concatenated = addCharacter(phrase, num);
+		// 3. Output the value of the local variable.
+		System.out.println(concatenated);
+	}
+
+	public static String addCharacter(String input, int numExc) {
+		// 1. Declare a local variable "output". Initialize it to the parameter input..
+		String output = input;
+		// Using a loop, concatenate _numExc_ "!" characters to the local variable
+		// output.
+		int counter = 0;
+		while (counter < numExc) {
+			output = output + "!";
+			counter = counter + 1;
+		}
+
+		// return "output" instead of "input"
+		return output;
+	}
+}
+```
+*  	
+   	8. Pass-by-value
+```java
+//Methods/src/drills/PassByValue.java
+public class PassByValue {
+
+	public static void main(String[] args) {
+		int x = 42;
+		System.out.println("In main, x is " + x);
+
+		// Call the changeIt method, passing local variable x and another value.
+		changeIt(x, 13);
+
+		// Add a System.out.println statement to output this method's
+		// local variable x.
+		System.out.println("In main, x is " + x);
+	}
+
+	public static void changeIt(int x, int y) {
+		System.out.println("In changeIt, x is " + x); 
+		x = y; // reassigns x from 42 to 13
+		System.out.println("In changeIt, x is now " + x);
+	}
+}
+```
+*  	
+   	9. Method Overloading 	
+   	10. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Methods/labs.md)
+```java
+//Lab 1 - PowerMethod.java
+public class PowerMethod {
+
+	public static void main(String[] args) {
+		// prepare for reading input
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		// prompt the user for the base value
+		System.out.print("Enter the base: ");
+		double base = scanner.nextDouble();
+
+		// prompt the user for the exponent value
+		System.out.print("\nEnter the exponent: ");
+		int exp = scanner.nextInt();
+
+		// call the power method
+		double value = power(base, exp);
+
+		// display the result
+		System.out.println("The result of " + base + " raised to the " + exp + " power is " + value);
+		scanner.close();
+	}
+
+	public static double power(double base, int exp) {
+		double result = 1.0;
+		for (int i = 0; i < exp; i++) {
+			result = result * base;
+		}
+		return result;
+	}
+}
+```
+```java
+//Lab 2 - MPGCalculator.java
+public class MPGCalculator {
+	public static void main(String[] args) {
+		System.out.println(mpgMethod(16, 100, 150));
+		System.out.println(mpgMethod(18, 80383, 80723));
+	}
+
+	public static double mpgMethod(double addGal, double prevOdometer, double newOdometer) {
+		double mpg = (newOdometer - prevOdometer) / addGal; // miles driven divided by gallons of gas used
+		return mpg;
+	}
+}
+```
 2. for Loops
-  * for Loops
-  * A for Loop Diagram
-  * for Loop Parts
-  * for Loop Body
-  * break and continue Statements
-  * For Loop - When and Why
-  * Labs
+	1. for Loops
+```java
+//ForLoops/src/drills/ForLoop.java
+public class ForLoop {
+
+	public static void main(String[] args) {
+		// Write a for loop to print the numbers 1 to 10 to the screen.
+		int i = 0;
+		for (i = 1; i <= 10; i++) {
+			System.out.println(i);
+		}
+
+		// Write the same loop with the loop control variable starting at 0.
+		for (i = 0; i <= 10; i++) {
+			System.out.println(i);
+		}
+	}
+}
+```
+*	
+ 	2. A for Loop Diagram
+	3. for Loop Parts
+```java
+for (initialization; termination condition; increment){
+	loop body
+}
+```
+*
+ 	4. for Loop Body
+```java
+//ForLoops/src/drills/ForLoopBody.java
+public class ForLoopBody {
+
+	public static void main(String[] args) {
+		//Write a for loop to print the numbers 10 to 1 to the screen.
+		for (int i = 10 ; i >= 1; i--) {
+			System.out.println(i);
+		}
+		
+		//Write a for loop to find the sum of the values 1 to 10. Print the sum to the screen.
+		int sum = 0; 
+		for (int a = 1 ; a <= 10; a++) {
+			sum += a;
+		}
+		System.out.println(sum);
+		
+		//Write a for loop to print the values 1 to 5. Output should be comma-separated: 1, 2, 3, 4, 5.
+		//Hint: the loop will need to check which iteration it is on to prevent a comma showing after 5.
+		for (int i = 1 ; i <= 5; i++) {
+			System.out.print(i);
+			
+			if (i != 5) {
+				System.out.print(", ");
+			}
+		}
+	}
+}
+```
+```java
+//Forloops/src/drills/ForLoopBody2.java
+public class ForLoopBody2 {
+	public static void main(String[] args) {
+		/*
+		 * The for loops below have errors. Copy each loop and paste below the block
+		 * comment. Fix the code so that it can compile.
+		 */
+		// Loop 1
+		// int x = 0; // Can't declare x both here and in the for().
+		for (int y = 0, x = 10; x + y < 15; x++, y++) {
+			System.out.println(x + y);
+		}
+
+		// Loop 2
+		// Can't declare two different type in the initialization.
+		// for(int a = 0, short b = 4; a < 5; a++, b++) {
+		for (int a = 0, b = 4; a < 5; a++, b++) {
+			System.out.println("a is " + a + ", b is " + b);
+		}
+
+		// Loop 3
+		// If q is declared in the for(), it will be out of scope after the loop body.
+		// for (int q = 5; q < 10; q++) {
+		int q = 5;
+		for (q = 5; q < 10; q++) {
+			System.out.println(q);
+		}
+		System.out.println("q is now " + q);
+	}
+}
+```
+*	
+ 	5. break and continue Statements
+```java
+//ForLoops/src/drills/ForLoopBreakContinue.java
+public class ForLoopBreakContinue {
+
+	public static void main(String[] args) {
+		// Try the loops in the examples above in code.
+//		System.out.println("Loop 1...");
+//		// COPY-PASTE LOOP 1 HERE
+//		// Exit the loop the first time i % 2 == 0
+//		for (int i = 1; i <= 10; i += 1) {
+//			if (i % 2 == 0) {
+//				break;
+//			}
+//			System.out.println(i);
+//		}
+
+//		System.out.println("Loop 2...");
+//		// COPY-PASTE LOOP 2 HERE
+//		// Go to the next iteration every time i % 2 == 0
+//		for (int i = 0; i <= 10; i += 1) {
+//			if (i % 2 == 0) {
+//				continue;
+//			}
+//			System.out.println(i);
+//		}
+
+		System.out.println("Loop 3...");
+		// Write a loop that prints the numbers from 1 to 30, skipping
+		// multiples of 3.
+		for (int i = 1; i <= 30; i += 1) {
+			if (i % 3 == 0) {
+				continue;
+			}
+			System.out.println(i);
+		}
+	}
+}
+```
+*
+ 	6. For Loop - When and Why
+	7. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/ForLoops/labs.md)
+```java
+//Lab 1 - Mult2.java
+public class Mult2 {
+
+	public static void main(String[] args) {
+		for (int i = 1; i <= 16; i += 1) {
+			if (i % 2 != 0) {
+				continue;
+			}
+			System.out.println(i);
+		}
+	}
+}
+```
+```java
+//Lab 2 - Pow2.java
+public class Pow2 {
+
+	public static void main(String[] args) {
+		int i = 0;
+		for (i = 1; i <= 16; i += 1) {
+			if (i % 2 != 0) {
+				continue;
+			}
+			System.out.println(i + " * " + i + " = " + (i * i));
+		}
+	}
+}
+```
+```java
+//Lab 3 - Factorial.java
+public class Factorial {
+
+	public static void main(String[] args) {
+
+		int i = 0;
+		int factorial = 1;
+
+		// A integer overflows after 13!
+		// for(i = 1; i <= 20; i = i + 1)
+
+		for (i = 1; i <= 10; i = i + 1) {
+			factorial = factorial * i;
+			System.out.println(i + "! = " + factorial);
+		}
+	}
+}
+```
 3. Project: Fizz Buzz
-4. Project: Fibonacci Series
+4. Project: Fibonacci Series(4)
 
 Day 5
 1. Numeral Systems
-  * Counting and Tallying
-  * Positional Notation
-  * Numeral Systems for Programming
-  * Numeric Literals in Java
-  * The printf() Method 
-2. Data Types in Java
-  * Data Types You've Used
-  * Memory and Java
-  * Bits and Bytes
-  * Counting in Binary
-  * Most Significant Bit
-  * Primitive Data Types
-  * Primitives and Memory
-  * Variable Types Tell Java What to Do
-  * Declaring and Assigning Primitive Values
-  * Floating Point Literals
-  * long for Large Numbers
-  * switch and Data Types
-  * Labs
-3. Casting Data Types
-  * Implicit Type Conversions
-  * Promotion of Data Types in Arithmetic
-  * Promotion in Integer Arithmetic
-  * The Cast Operator
-  * Casting Hints
-  * Labs
-#### Homework Project: Make Change (Cash Register)
+	1. Counting and Tallying
+	2. Positional Notation
+```java
+11001 - (1 * 16) + (1 * 8) + (0 * 4) + (0 * 2) + (1 * 1)
+//25
 
+00011001 - (0*128) + (0*64) + (0*32) + (1*16) + (1*8) + (0*4) + (0*2) + (1*1)
+//still 25
+```
+*	
+ 	3. Numeral Systems for Programming
+	4. Numeric Literals in Java
+```java
+int i = 012 // Ocatal (1*8 + 2*1)
+
+int i = 0x12 // Hexadecimal (1*16 + 2*1)
+int i = 0xa // Hexadecimal (10)
+
+int i = 0b12 // Binary (No 2 in Binary)
+int i = 0b10 // Binary (1*2 + 0*1)
+```
+*
+ 	5. The printf() Method 
+```java
+double num1 = 23.785;
+double num2 = 34.64443;
+System.out.printf("%.2f  %n", num1+num2);
+
+%% - literal %
+n - new line
+d - as a decimal integer
+o - as an octal integer
+x - as a hexadecimal integer
+f - as a floating-point number
+a - as a floating-point number in hexadecimal
+s - as a string
+```
+2. Data Types in Java
+	1. Data Types You've Used
+  	2. Memory and Java
+   	3. Bits and Bytes
+   	4. Counting in Binary
+   	5. Most Significant Bit
+   	6. Primitive Data Types
+   	7. Primitives and Memory
+```java
+//DataTypes/com.skilldistillery.datatypes.drills.CharAsInteger
+public class CharAsInteger {
+
+	public static void main(String[] args) {
+		// Declare a char variable and assign it the value 65.
+		// Print it to the screen.
+		char start = 65;
+		System.out.println(start);
+
+		// Use the += operator to add 25 to your variable.
+		// Now print it to the screen.
+		start += 25;
+		System.out.println(start);
+	}
+}
+```
+*   	
+	8. Variable Types Tell Java What to Do
+```java
+//DataTypes/com.skilldistillery.datatypes.drills.CharPrinting
+public class CharPrinting {
+
+	public static void main(String[] args) {
+		char variable = 'A';
+		System.out.println(variable);
+		// Add the line System.out.println(variable + 1); to main().
+		// What is the output?
+		System.out.println(variable + 1);
+
+		// Based on its output, what does the `+` operator appear to do?
+		// Add
+	}
+}
+```
+*    	
+	9. Declaring and Assigning Primitive Values
+```java
+//DataTypes/com.skilldistillery.datatypes.drills.DeclaringPrimitives
+public class DeclaringPrimitives {
+
+	public static void main(String[] args) {
+		// Declare a byte variable and assign the value 128. What happens? Assign it a
+		// valid value.
+		byte hello = 127; // type mismatch convert to int
+
+		// Create a switch statement for your variable.
+		// Have a case for each of the values 127, -128, 0, 'A', 128, '\u0000'.
+		// Which values cause compiler errors?
+		switch (hello) {
+		case 127:
+		case -128:
+//    	case 0:
+		case 'A':
+		case '\u0000':
+		}
+
+		// Declare a int variable and assign it a value.
+		int value = 127;
+
+		// Again create a switch statement.
+		// Have a case for each of the values 127, -128, 'A', 128, '\u0000'.
+		switch (value) {
+		case 127:
+		case -128:
+//		case 0:
+		case 'A':
+		case 128:
+		case '\u0000':
+		}
+	}
+}
+```
+*    	
+	10. Floating Point Literals
+```java
+//DataTypes/com.skilldistillery.datatypes.drills.FloatValues
+public class FloatValues {
+
+	public static void main(String[] args) {
+		// Copy f1 to f8 in text here. Comment out values that do not work.
+		float f1 = 0.0f; //
+		float f2 = 1f; //
+		float f3 = 1; //
+		float f4 = 0b10101; // binary number - an int
+//	  float f5 = 0b10101f; // NO, don't use F with binary numbers
+		float f6 = 0xF16F; // F doesn't do anything here, it is a hex digit
+		float f7 = 0761; // octal number
+		float f8 = 0761F; // octal number with F
+	}
+}
+```
+*   	
+	11. long for Large Numbers
+   	12. switch and Data Types
+   	13. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/DataTypes/labs.md)
+```java
+//Lab 1 - Overflow.java
+public class Overflow {
+
+	public static void main(String[] args) {
+		int big = 2_147_483_647;
+		int bigger = big + 1;
+
+		System.out.println(big);
+		System.out.println(bigger);
+	}
+}
+```
+```java
+//Lab 2 - ValidInt.java
+public class ValidInt {
+
+	public static void main(String[] args) {
+		int validInt = 12;
+		long longInt = validInt;
+		System.out.println(longInt);
+	}
+}
+```
+3. Casting Data Types
+	1. Implicit Type Conversions
+```java
+// byte converted to short;
+byte b1 = 16;
+short s1 = b1;
+
+// short converted to float
+short s2 = 14;
+float f2 = s2;
+
+// int converted to float
+int i3 = 2105;
+float f3 = i3;
+
+// long converted to float
+long l4 = 10000L;
+float f4 = l4;
+
+// char converted to double
+char c5 = 'A';
+double d5 = c5;
+
+// converting byte to char does not work
+byte b6 = 5;
+char c6 = b6;  // DOES NOT COMPILE per JLS 5.1.4
+
+// short and char do not convert because short is signed while char is not
+short s7 = 55;
+char c7 = s7;  // DOES NOT COMPILE
+```
+*	
+	2. Promotion of Data Types in Arithmetic
+```java
+//CastingDataTypes/com.skilldistillery.casting.drills.Promotion
+public class Promotion {
+
+	public static void main(String[] args) {
+		// Try changing the types of the variables resultIF, resultID, and resultCI
+		// to the smaller or less-precise type, e.g. int resultIF.
+		// What compiler errors do you see?
+		int i = 0;
+		float f = 1.0f;
+
+		float resultIF = i * f; // int*float promoted to float*float
+		double resultID = i * 2.0; // int*double promoted to double*double
+
+		System.out.println(resultIF);
+		System.out.println(resultID);
+		char c = 'A';
+		int resultCI = c + 1; // char+int promoted to int+int
+	}
+}
+```
+*	
+ 	3. Promotion in Integer Arithmetic
+```java
+//CastingDataTypes/com.skilldistillery.casting.drills.Division
+public class Division {
+
+	public static void main(String[] args) {
+		// This drill is divided into methods so that you can run one at a time.
+
+		// For each method, add answers to the questions
+		// "Necessary variable type?" and "Expected value?"
+		// Then uncomment the arithmetic operation and change "xxx" to the type you
+		// expect.
+		// Was your type legal?
+		// Uncomment the print statements and run the program to see the actual value.
+		// Note: necessary data type means the smallest necessary type.
+		method1();
+//		method2();
+//		method3();
+	}
+
+	static void method1() {
+		short s1 = 5;
+		byte b1 = 3;
+		int result1 = s1 / b1;
+		System.out.println("result1 is " + result1);
+		// Necessary variable type? int
+		// Expected value? result1 is 1 (.6)
+		// Actual value: result1 is 1
+		// Promotion that occurred: byte>int
+	}
+
+	static void method2() {
+		char c2 = 3;
+		byte b2 = 6;
+		int result2 = c2 / b2;
+		System.out.println("result2 is " + result2);
+		// Necessary variable type? int
+		// Expected value? result2 is 0 (.5)
+		// Actual value: result2 is 0
+		// Promotion that occurred: byte>int
+	}
+
+	static void method3() {
+		// This operation does not require you to choose a result type.
+		int i3 = 4;
+		int i4 = 8;
+		double result3 = i3 / i4;
+		System.out.println("result3 is " + result3);
+		// Expected value? result3 is 0.0
+		// Actual value: result3 is 0.0
+		// Promotion that occurred: int>double
+	}
+}
+```
+*
+ 	4. The Cast Operator
+	5. Casting Hints
+	6. Labs
+```java
+//Lab 1 - Floor.java
+public class Floor {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.println("Please enter a floating point number: ");
+		double variable = scanner.nextDouble();
+
+		if (variable < 0 && variable % 1 != 0) {
+			variable -= 1; // use += for positive number round up
+		}
+		int result = (int) variable;
+		System.out.println(result);
+
+		scanner.close();
+	}
+}
+```
+```java
+//Lab 2 - Ceiling.java
+public class Ceiling {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.println("Please enter a floating point number: ");
+		double variable = scanner.nextDouble();
+
+		if (variable < 0 && variable % 1 != 0) {
+			variable -= 1; // use += for positive number round up
+		}
+		if (variable > 0) {
+			variable += 1; // use += for positive number round up
+		}
+		int result = (int) variable;
+		System.out.println(result);
+
+		scanner.close();
+	}
+}
+```
+```java
+//Lab 3 - Round.java
+public class Round {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		float variable = 0.0f;
+
+		System.out.println("Please give a float number: ");
+		variable = scanner.nextFloat();
+		int result = (int) variable;
+
+		System.out.println(result);
+		scanner.close();
+	}
+}
+```
 Day 6
 1. Arrays
-	* Variables - Single vs. Collections
-	* Arrays are one of the primary data collections in Java.
-	* An array allows us to have a single variable that points to multiple pieces of data.
-	* Arrays
-	* Declaring an Array
-  	* Creating an Array
-  	* Array Element Default Values
-  	* Reading and Storing Data
-  	* Array Initialization Shortcuts
-  	* Iterating Arrays
-  	* Passing Arrays to Methods
-  	* Three Ways of Creating Arrays
-  	* Labs
-* Introduction to Objects
-  * Classes
-  * Creating Objects
-  * Reference Variables 
-  * State and Behavior
-  * Field Initialization
-  * The static Keyword
-  * Some Objects You've Already Met
-  * Labs
-* Project: Deaf Grandma    
+	1. Variables - Single vs. Collections
+ 	2. Arrays are one of the primary data collections in Java.
+  	3. An array allows us to have a single variable that points to multiple pieces of data.
+  	4. Arrays
+  	5. Declaring an Array
+```java
+//Arrays/src/drills/ArrayDeclare.java
+```
+*
+	6. Creating an Array
+```java
+//Arrays/src/drills/ArrayCreate.java
+
+```
+*  	
+	7. Array Element Default Values
+  	8. Reading and Storing Data
+```java
+//Arrays/src/drills/ArrayAccess.java
+
+```
+* 
+   	9. Array Initialization Shortcuts
+```java
+//Arrays/src/drills/ArrayAccess2.java
+
+```
+* 
+	10. Iterating Arrays
+```java
+//Arrays/src/drills/Iterating.java
+
+
+```
+* 
+	11. Passing Arrays to Methods
+```java
+//Arrays/src/drills/ArrayReferences.java
+
+```
+*   	
+	12. Three Ways of Creating Arrays
+  	13. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Arrays/labs.md)
+```java
+//Labs 1 - DayOfWeekIterating1.java
+
+```
+```java
+//Labs 1 - DayOfWeekIterating2.java
+
+```
+```java
+//Labs 2 - AverageScores.java
+
+```
+```java
+//Labs 3 - RandomString.java
+
+```
+2. Introduction to Objects
+	1. Classes
+```java
+//
+```
+*  
+  2. Creating Objects
+  3. Reference Variables
+```java
+//
+```
+*   
+  4. State and Behavior
+```java
+//
+```
+*   
+  5. Field Initialization
+  6. The static Keyword
+```java
+//
+```
+*   
+  7. Some Objects You've Already Met
+```java
+//
+```
+*   
+  8. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/IntroToObjects/labs.md)
+```java
+//Lab 1 - Car.java
+
+```
+```java
+//Lab 2 - CarTester.java
+
+```
+```java
+//Lab 3 - DMVSimulator.java
+
+```
+3. Project: Deaf Grandma    
 
 Day 7
-* Advanced For Loops
-  * Nested for Loops
-  * Enhanced For Loops
-  * Break and Continue With Enhanced For Loops
-  * Labs
-* Advanced Arrays
-  * Array Syntax
-  * Returning Array References from Methods
-  * Arrays of Arrays
-  * Accessing Elements of Multidimensional Arrays
-  * Iterating Multidimensional Arrays
-  * ForEach Loops for Iterating Arrays
-  * Multidimensional Array Shortcuts
-  * Variable Arguments Arrays
-  * Labs
-* Project: Tic Tac Toe
+1. Advanced For Loops
+	1. Nested for Loops
+	2. Enhanced For Loops
+	3. Break and Continue With Enhanced For Loops
+	4. Labs
+```java
+123
+
+```
+2. Advanced Arrays
+  1. Array Syntax
+  2. Returning Array References from Methods
+  3. Arrays of Arrays
+  4. Accessing Elements of Multidimensional Arrays
+  5. Iterating Multidimensional Arrays
+  6. ForEach Loops for Iterating Arrays
+  7. Multidimensional Array Shortcuts
+  8. Variable Arguments Arrays
+  9. Labs
+```java
+123
+
+```
+3. Project: Tic Tac Toe(3)
 
 `Homework Project: Make Change (Cash Register`
 
@@ -1205,134 +2569,198 @@ Day 7
 `Object-Oriented Programming in Java`
 
 Day 1
-* Packages
-  * Namespaces
-  * Introduction to Java Packages
-  * Creating Packages
-  * Package Names
-  * Imports
-  * Static Imports
-  * Labs
-* String and StringBuilder
-  * The String Class
-  * The String Pool
-  * String Methods
-  * The StringBuilder Class
-  * StringBuilder Methods
-  * Writing toString() Methods
-  * Labs
-* Project: Mad Libs
+1. Packages
+  1. Namespaces
+  2. Introduction to Java Packages
+  3. Creating Packages
+  4. Package Names
+  5. Imports
+  6. Static Imports
+  7. Labs
+```java
+123
+
+```
+2. String and StringBuilder
+  1. The String Class
+  2. The String Pool
+  3. String Methods
+  4. The StringBuilder Class
+  5. StringBuilder Methods
+  6. Writing toString() Methods
+  7. Labs
+```java
+123
+
+```
+3. Project: Mad Libs(3)
 
 Day 2
-* ASCII and Unicode Data
-  * Standards
-  * ASCII
-  * Unicode
-  * Labs
-* Objects and Classes
-  * Classes and Objects
-  * Constructors
-  * The Default Constructor
-  * Objects in Memory
-  * Imagining the Heap
-  * Visibility
-* Drawing Objects and Their Relationships
-  * Representing Objects with Diagrams
-  * UML Class Diagram
-  * Classes and Their Associations
-  * Labs
-* Introduction to JUnit
-  * Testing Java Applications
-  * Building and Deploying Software
-  * JUnit
-  * Test Classes
-  * Writing @Test Methods
-  * assert Methods
-  * @Before and @After
-  * Test-Driven Development (TDD)
-  * Labs
-* Project: Caesar Cipher
+1. ASCII and Unicode Data
+  1. Standards
+  2. ASCII
+  3. Unicode
+  4. Labs
+```java
+123
+
+```
+2. Objects and Classes
+  1. Classes and Objects
+  2. Constructors
+  3. The Default Constructor
+  4. Objects in Memory
+  5. Imagining the Heap
+  6. Visibility
+3. Drawing Objects and Their Relationships
+  1. Representing Objects with Diagrams
+  2. UML Class Diagram
+  3. Classes and Their Associations
+  4. Labs
+```java
+123
+
+```
+4. Introduction to JUnit
+  1. Testing Java Applications
+  2. Building and Deploying Software
+  3. JUnit
+  4. Test Classes
+  5. Writing @Test Methods
+  6. assert Methods
+  7. @Before and @After
+  8. Test-Driven Development (TDD)
+  9. Labs
+```java
+123
+
+```
+5. Project: Caesar Cipher(5)
 
 Day 3
-* Encapsulation
-  * Changing Instance Fields
-  * Visibility and Access Modifiers
-  * Encapsulation
-  * Getters and Setters
-  * The this Keyword
-  * Labs
-* Object Initialization
-  * this vs. this()
-  * Initializing Static Fields
-  * Initializing Instance Fields
-  * Order of Initialization
-  * Constant Fields and Variables
-  * private Methods
-  * Labs
-* Inheritance in Java
-  * Inheritance
-  * The extends Keyword
-  * final Classes 
-  * UML and extends
-  * Inheriting Fields 
-  * Inheriting Methods 
-  * Lab - Creating a Class Hierarchy
-* Visibility
-  * Field and Method Visibility
-  * Getters and Setters
-  * Lab - Improving Encapsulation
-* Project: Food Trucks
+1. Encapsulation
+  1. Changing Instance Fields
+  2. Visibility and Access Modifiers
+  3. Encapsulation
+  4. Getters and Setters
+  5. The this Keyword
+  6. Labs
+```java
+123
+
+```
+2. Object Initialization
+  1. this vs. this()
+  2. Initializing Static Fields
+  3. Initializing Instance Fields
+  4. Order of Initialization
+  5. Constant Fields and Variables
+  6. private Methods
+  7. Labs
+```java
+123
+
+```
+3. Inheritance in Java
+  1. Inheritance
+  2. The extends Keyword
+  3. final Classes
+  4. UML and extends
+  5. Inheriting Fields
+  6. Inheriting Methods
+  7. Lab - Creating a Class Hierarchy
+```java
+123
+
+```
+4. Visibility
+  1. Field and Method Visibility
+  2. Getters and Setters
+  3. Lab - Improving Encapsulation
+```java
+123
+
+```
+5. Project: Food Trucks(5)
 
 Day 4
-* Superclasses
-  * Using a Superclass's Methods and Fields
-  * Constructors and Inheritance
-  * Rules for super()
-  * The Object Class
-  * Labs
-* Polymorphism and Overriding
-  * Polymorphism in Java
-  * Overriding Superclass Behavior
-  * @Override
-  * Rules for Overriding
-  * Lab - Using Polymorphism
-* Abstract Classes
-  * Abstract Classes
-  * Abstract Methods
-  * Using Abstract Classes
-  * Labs
-* Polymorphism and Casting
-  * Casting
-  * Downcasting
-  * Casting and Precedence
-  * Hiding Instance Fields
-  * Labs
-* Project: Animal Sanctuary
+1. Superclasses
+  1. Using a Superclass's Methods and Fields
+  2. Constructors and Inheritance
+  3. Rules for super()
+  4. The Object Class
+  5. Labs
+```java
+123
+
+```
+2. Polymorphism and Overriding
+  1. Polymorphism in Java
+  2. Overriding Superclass Behavior
+  3. @Override
+  4. Rules for Overriding
+  5. Lab - Using Polymorphism
+```java
+123
+
+```
+3. Abstract Classes
+  1. Abstract Classes
+  2. Abstract Methods
+  3. Using Abstract Classes
+  4. Labs
+```java
+123
+
+```
+4. Polymorphism and Casting
+  1. Casting
+  2. Downcasting
+  3. Casting and Precedence
+  4. Hiding Instance Fields
+  5. Labs
+```java
+123
+
+```
+5. Project: Animal Sanctuary(5)
 
 Day 5
-* Equals and Hashcode
-  * Comparing References
-  * Object.equals()
-  * Defining an equals() Method
-  * Determining Equality
-  * hashCode()
-  * Labs
-* The Primitive-Type Wrapper Classes
-  * Wrapper Classes
-  * Important Wrapper Class Methods
-  * Comparing Wrapper Objects
-  * Autoboxing
-  * Float and Double
-  * Integer-type Wrappers
-  * Character
-  * Boolean
-  * Labs
-* Interfaces
-  * Interfaces
-  * Declaring an Interface
-  * Using Interfaces
-  * Labs - Declaring and Using Interfaces
-* Project: Lord of the Objects
+1. Equals and Hashcode
+  1. Comparing References
+  2. Object.equals()
+  3. Defining an equals() Method
+  4. Determining Equality
+  5. hashCode()
+  6. Labs
+```java
+123
+
+```
+2. The Primitive-Type Wrapper Classes
+  1. Wrapper Classes
+  2. Important Wrapper Class Methods
+  3. Comparing Wrapper Objects
+  4. Autoboxing
+  5. Float and Double
+  6. Integer-type Wrappers
+  7. Character
+  8. Boolean
+  9. Labs
+```java
+123
+
+```
+3. Interfaces
+  1. Interfaces
+  2. Declaring an Interface
+  3. Using Interfaces
+  4. Labs - Declaring and Using Interfaces
+```java
+123
+
+```
+4. Project: Lord of the Objects(4)
 
 `Homework Project: Lord of the Objects`
 
@@ -1445,6 +2873,8 @@ Day 5
 [Java Language Keywords](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html)
 
 [Operator Precedence in Java](https://introcs.cs.princeton.edu/java/11precedence/)
+
+[Binary Numbers Game](https://games.penjee.com/binary-numbers-game/)
 
 -----
 ### Project List
