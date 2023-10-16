@@ -3724,20 +3724,20 @@ Day 5
 -----
 ### Project List
 1. [Simple Calculator - Oct 2023](https://github.com/Deonnaa/SimpleCalculatorProject) 
-2. [Mad Libs - Oct 2023]()
-3. [Make Change - Oct 2023]() 
-4. [Hi Lo - Oct 2023]()
-5. [Remote Control Sumulator - Oct 2023]()
-6. [Fizz Buzz - Oct 2023]()
-7. [Fibonacci Series - Oct 2023]()
-8. [Make Change Cash Register - Oct 2023]() 
-9. [Deaf Grandma - Oct 2023]()
-10. [Tic Tac Toe - Oct 2023]()
-11. [Food Truck - Oct 2023]()
-12. [Caesar Cipher - Oct 2023]()
-13. [Animal Sanctuary - Oct 2023]()
-14. [Lord of the Objects - Oct 2023]()
-15. [Jets - Oct 2023]()
+2. Mad Libs - Oct 2023
+3. [Make Change - Oct 2023](https://github.com/Deonnaa/MakeChangeProject) 
+4. Hi Lo - Oct 2023
+5. Remote Control Sumulator - Oct 2023
+6. Fizz Buzz - Oct 2023
+7. Fibonacci Series - Oct 2023
+8. Make Change Cash Register - Oct 2023 
+9. Deaf Grandma - Oct 2023
+10. Tic Tac Toe - Oct 2023
+11. [Food Truck - Oct 2023](https://github.com/Deonnaa/FoodTruckProject/tree/main)
+12. Caesar Cipher - Oct 2023
+13. Animal Sanctuary - Oct 2023
+14. Lord of the Objects - Oct 2023
+15. Jets - Oct 2023
 16. []()
 17. []()
 18. []()
