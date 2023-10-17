@@ -2,7 +2,7 @@ Week 1 Notes.md
 
 ## [Week 1](https://github.com/SkillDistillery/SD41/blob/main/jfop/README.md)
 
-## Day 1
+## Week 1 - Day 1
 
 #### Day One System Setup
 
@@ -425,7 +425,7 @@ public class ThreeVariables {
 
 #### Eclipse
 
-### Day 2
+### Week 1 - Day 2
 
 #### Eclipse
 
@@ -747,29 +747,29 @@ public class DailyRainfall {
 	public static void main(String[] args) {
 		java.util.Scanner scanner = new java.util.Scanner(System.in);
 
-		System.out.println("Enter the rainfall level for Sunday: ");
-		double sunday = scanner.nextDouble();
+		System.out.println("Enter the rainfall level for SunWeek 1 - Day: ");
+		double sunWeek 1 - Day = scanner.nextDouble();
 
-		System.out.println("Enter the rainfall level for Monday: ");
-		double monday = scanner.nextDouble();
+		System.out.println("Enter the rainfall level for MonWeek 1 - Day: ");
+		double monWeek 1 - Day = scanner.nextDouble();
 
-		System.out.println("Enter the rainfall level for Tuesday: ");
-		double tuesday = scanner.nextDouble();
+		System.out.println("Enter the rainfall level for TuesWeek 1 - Day: ");
+		double tuesWeek 1 - Day = scanner.nextDouble();
 
-		System.out.println("Enter the rainfall level for Wednesday: ");
-		double wednesday = scanner.nextDouble();
+		System.out.println("Enter the rainfall level for WednesWeek 1 - Day: ");
+		double wednesWeek 1 - Day = scanner.nextDouble();
 
-		System.out.println("Enter the rainfall level for Thursday: ");
-		double thursday = scanner.nextDouble();
+		System.out.println("Enter the rainfall level for ThursWeek 1 - Day: ");
+		double thursWeek 1 - Day = scanner.nextDouble();
 
-		System.out.println("Enter the rainfall level for Friday: ");
-		double friday = scanner.nextDouble();
+		System.out.println("Enter the rainfall level for FriWeek 1 - Day: ");
+		double friWeek 1 - Day = scanner.nextDouble();
 
-		System.out.println("Enter the rainfall level for Saturday: ");
-		double saturday = scanner.nextDouble();
+		System.out.println("Enter the rainfall level for SaturWeek 1 - Day: ");
+		double saturWeek 1 - Day = scanner.nextDouble();
 
 		// Calculate the total rainfall and the average rainfall for the week
-		double total = sunday + monday + tuesday + wednesday + thursday + friday + saturday;
+		double total = sunWeek 1 - Day + monWeek 1 - Day + tuesWeek 1 - Day + wednesWeek 1 - Day + thursWeek 1 - Day + friWeek 1 - Day + saturWeek 1 - Day;
 		double average = total / 7;
 
 		// Print the results of the processing
@@ -1082,7 +1082,7 @@ public class IfCelsFahr {
 
 #### Project: Mad Libs
 
-### Day 3
+### Week 1 - Day 3
 
 #### More Expressions
 1. Using Boolean Variables
@@ -1633,7 +1633,7 @@ public class SimpleCalculator {
 
 #### Project: Remote Control Simulator
 
-### Day 4
+### Week 1 - Day 4
 
 #### Methods
 1. Method Review
@@ -2091,7 +2091,7 @@ public class Factorial {
 
 #### Project: Fibonacci Series
 
-### Day 5
+### Week 1 - Day 5
 
 #### Numeral Systems
 1. Counting and Tallying
@@ -2444,7 +2444,7 @@ public class Round {
 
 #### Homework Project: Make Change (Cash Register)
 
-### Day 6
+### Week 1 - Day 6
 
 #### Arrays
 1. Variables - Single vs. Collections
@@ -2465,9 +2465,9 @@ public class ArrayDeclare {
 
 	public static void main(String[] args) {
 		// Declare a variable for an array of String objects to hold the name of each
-		// weekday.
-		String[] weekdays;
-		weekdays = new String[7];
+		// weekWeek 1 - Day.
+		String[] weekWeek 1 - Days;
+		weekWeek 1 - Days = new String[7];
 
 		// Declare a variable to hold letter grades for each of a student's six classes.
 		char[] grades = new char[6];
@@ -2484,10 +2484,10 @@ public class ArrayCreate {
 
 	public static void main(String[] args) {
 		// Declare a variable for an array of String objects to hold the name of each
-		// weekday.
+		// weekWeek 1 - Day.
 		// Initialize the variable to hold 7 Strings.
-		String[] weekdays;
-		weekdays = new String[7];
+		String[] weekWeek 1 - Days;
+		weekWeek 1 - Days = new String[7];
 
 		// Declare a variable to hold letter grades for each of a student's six classes.
 		// Initialize the variable to hold 6 chars.
@@ -2509,15 +2509,15 @@ public class ArrayCreate {
 public class ArrayAccess {
 
 	public static void main(String[] args) {
-		// Store the name of each weekday at the correct index.
-		String[] weekdays = new String[7];
-		weekdays[0] = "Sunday";
-		weekdays[1] = "Monday";
-		weekdays[2] = "Tuesday";
-		weekdays[3] = "Wednesday";
-		weekdays[4] = "Thursday";
-		weekdays[5] = "Friday";
-		weekdays[6] = "Saturday";
+		// Store the name of each weekWeek 1 - Day at the correct index.
+		String[] weekWeek 1 - Days = new String[7];
+		weekWeek 1 - Days[0] = "SunWeek 1 - Day";
+		weekWeek 1 - Days[1] = "MonWeek 1 - Day";
+		weekWeek 1 - Days[2] = "TuesWeek 1 - Day";
+		weekWeek 1 - Days[3] = "WednesWeek 1 - Day";
+		weekWeek 1 - Days[4] = "ThursWeek 1 - Day";
+		weekWeek 1 - Days[5] = "FriWeek 1 - Day";
+		weekWeek 1 - Days[6] = "SaturWeek 1 - Day";
 
 		// Store the grade A in the FIRST index of the array,
 		// and C in the LAST index of the array.
@@ -2526,9 +2526,9 @@ public class ArrayAccess {
 		grades[5] = 'C';
 
 		// Run the program and check the output to see if you were correct.
-		System.out.println("Weekdays:");
+		System.out.println("WeekWeek 1 - Days:");
 		for (int i = 0; i < 7; i++) {
-			System.out.println(i + ":" + weekdays[i]);
+			System.out.println(i + ":" + weekWeek 1 - Days[i]);
 		}
 		System.out.println("Grades:");
 		for (int i = 0; i < 6; i++) {
@@ -2594,20 +2594,20 @@ public class Iterating {
 			}
 		}
 
-		// Iterate through the daysOfWeek array, but do not print
-		// Sunday or Saturday.
-		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
-		for (int i = 0; i < daysOfWeek.length; i++) {
-			if (daysOfWeek[i].equals("Sunday") || daysOfWeek[i].equals("Saturday")) {
+		// Iterate through the Week 1 - DaysOfWeek array, but do not print
+		// SunWeek 1 - Day or SaturWeek 1 - Day.
+		String[] Week 1 - DaysOfWeek = { "SunWeek 1 - Day", "MonWeek 1 - Day", "TuesWeek 1 - Day", "WednesWeek 1 - Day", "ThursWeek 1 - Day", "FriWeek 1 - Day", "SaturWeek 1 - Day" };
+		for (int i = 0; i < Week 1 - DaysOfWeek.length; i++) {
+			if (Week 1 - DaysOfWeek[i].equals("SunWeek 1 - Day") || Week 1 - DaysOfWeek[i].equals("SaturWeek 1 - Day")) {
 				continue;
 			}
-			System.out.println(daysOfWeek[i]);
+			System.out.println(Week 1 - DaysOfWeek[i]);
 		}
 
-		// After iterating, print the daysOfWeek array itself:
-		// System.out.println(daysOfWeek).
+		// After iterating, print the Week 1 - DaysOfWeek array itself:
+		// System.out.println(Week 1 - DaysOfWeek).
 		// Note the format, and what doesn't get printed.
-		System.out.println(daysOfWeek);
+		System.out.println(Week 1 - DaysOfWeek);
 	}
 }
 ```
@@ -2617,46 +2617,46 @@ public class Iterating {
 public class ArrayReferences {
 
 	public static void main(String[] args) {
-		String[] daysOfWeek = new String[7];
-		daysOfWeek[0] = "Sunday";
-		daysOfWeek[1] = "Monday";
-		daysOfWeek[2] = "Tuesday";
-		daysOfWeek[3] = "Wednesday";
-		daysOfWeek[4] = "Thursday";
-		daysOfWeek[5] = "Friday";
-		daysOfWeek[6] = "Saturday";
+		String[] Week 1 - DaysOfWeek = new String[7];
+		Week 1 - DaysOfWeek[0] = "SunWeek 1 - Day";
+		Week 1 - DaysOfWeek[1] = "MonWeek 1 - Day";
+		Week 1 - DaysOfWeek[2] = "TuesWeek 1 - Day";
+		Week 1 - DaysOfWeek[3] = "WednesWeek 1 - Day";
+		Week 1 - DaysOfWeek[4] = "ThursWeek 1 - Day";
+		Week 1 - DaysOfWeek[5] = "FriWeek 1 - Day";
+		Week 1 - DaysOfWeek[6] = "SaturWeek 1 - Day";
 
 		// Print the array
-		for (int i = 0; i < daysOfWeek.length; i++) {
-			System.out.print(daysOfWeek[i]);
-			if (i != daysOfWeek.length - 1) { // don't do this for the last index
+		for (int i = 0; i < Week 1 - DaysOfWeek.length; i++) {
+			System.out.print(Week 1 - DaysOfWeek[i]);
+			if (i != Week 1 - DaysOfWeek.length - 1) { // don't do this for the last index
 				System.out.print(", ");
 			}
 		}
 		System.out.println();
 
-		// * Call the changeArray method and pass the daysOfWeek array reference.
+		// * Call the changeArray method and pass the Week 1 - DaysOfWeek array reference.
 		ArrayReferences test = new ArrayReferences();
-		test.changeArray(daysOfWeek);
+		test.changeArray(Week 1 - DaysOfWeek);
 
 		// Print the array again to see that its elements have changed,
 		// but it is the same array.
-		for (int i = 0; i < daysOfWeek.length; i++) {
-			System.out.print(daysOfWeek[i]);
-			if (i != daysOfWeek.length - 1) { // don't do this for the last index
+		for (int i = 0; i < Week 1 - DaysOfWeek.length; i++) {
+			System.out.print(Week 1 - DaysOfWeek[i]);
+			if (i != Week 1 - DaysOfWeek.length - 1) { // don't do this for the last index
 				System.out.print(", ");
 			}
 		}
 
-		// * Refactor the printing of the array into a method and pass it the daysOfWeek
+		// * Refactor the printing of the array into a method and pass it the Week 1 - DaysOfWeek
 		// array reference.
-//		test.printArray(daysOfWeek);
+//		test.printArray(Week 1 - DaysOfWeek);
 	}
 
 	public void changeArray(String[] inputArr) {
-		// * Change Wednesday to "HUMPDAY" and Friday to "Viernes".
+		// * Change WednesWeek 1 - Day to "HUMPWeek 1 - Day" and FriWeek 1 - Day to "Viernes".
 		// * (There is no need to iterate, just change the right index.)
-		inputArr[3] = "HUMPDAY";
+		inputArr[3] = "HUMPWeek 1 - Day";
 		inputArr[5] = "Viernes";
 
 		// * Reassign inputArr to a new array containing the values
@@ -2675,32 +2675,32 @@ public class ArrayReferences {
 }
 ```
 
-`Labs 1 - DayOfWeekIterating1.java`
+`Labs 1 - Week 1 - DayOfWeekIterating1.java`
 ```java
-public class DayOfWeekIterating1 {
+public class Week 1 - DayOfWeekIterating1 {
 	public static void main(String[] args) {
-		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+		String[] Week 1 - DaysOfWeek = { "SunWeek 1 - Day", "MonWeek 1 - Day", "TuesWeek 1 - Day", "WednesWeek 1 - Day", "ThursWeek 1 - Day", "FriWeek 1 - Day", "SaturWeek 1 - Day" };
 
-		for (int i = 0; i < daysOfWeek.length; i++) {
-			if (i != 0 && i != daysOfWeek.length - 1) {
-				System.out.println(daysOfWeek[i]);
+		for (int i = 0; i < Week 1 - DaysOfWeek.length; i++) {
+			if (i != 0 && i != Week 1 - DaysOfWeek.length - 1) {
+				System.out.println(Week 1 - DaysOfWeek[i]);
 			}
 		}
 	}
 }
 ```
 
-`Labs 1 - DayOfWeekIterating2.java`
+`Labs 1 - Week 1 - DayOfWeekIterating2.java`
 ```java
-public class DayOfWeekIterating2 {
+public class Week 1 - DayOfWeekIterating2 {
 	public static void main(String[] args) {
-		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+		String[] Week 1 - DaysOfWeek = { "SunWeek 1 - Day", "MonWeek 1 - Day", "TuesWeek 1 - Day", "WednesWeek 1 - Day", "ThursWeek 1 - Day", "FriWeek 1 - Day", "SaturWeek 1 - Day" };
 
-		for (int i = 0; i < daysOfWeek.length; i++) {
-			if (daysOfWeek[i].equals("Sunday") || daysOfWeek[i].equals("Saturday")) {
+		for (int i = 0; i < Week 1 - DaysOfWeek.length; i++) {
+			if (Week 1 - DaysOfWeek[i].equals("SunWeek 1 - Day") || Week 1 - DaysOfWeek[i].equals("SaturWeek 1 - Day")) {
 				continue;
 			}
-			System.out.println(daysOfWeek[i]);
+			System.out.println(Week 1 - DaysOfWeek[i]);
 		}
 	}
 }
@@ -2989,7 +2989,7 @@ public class DMVSimulator {
 
 #### Project: Deaf Grandma
 
-### Day 7
+### Week 1 - Day 7
 
 #### Advanced For Loops
 1. Nested for Loops
@@ -3430,7 +3430,7 @@ public class ReturningArrays {
 
 ## [Week 2](https://github.com/SkillDistillery/SD41/blob/main/java1/README.md)
 
-### Day 1
+### Week 1 - Day 1
 
 #### Packages
 1. Namespaces
@@ -3452,7 +3452,7 @@ public class ReturningArrays {
 
 #### Project: Mad Libs
 
-### Day 2
+### Week 1 - Day 2
 
 #### ASCII and Unicode Data
 1. Standards
@@ -3487,7 +3487,7 @@ public class ReturningArrays {
 
 #### Project: Caesar Cipher
 
-### Day 3
+### Week 1 - Day 3
 
 #### Encapsulation
 1. Changing Instance Fields
@@ -3522,7 +3522,7 @@ public class ReturningArrays {
 
 #### Project: Food Trucks
 
-### Day 4
+### Week 1 - Day 4
 
 #### Superclasses
 1. Using a Superclass's Methods and Fields
@@ -3553,7 +3553,7 @@ public class ReturningArrays {
 
 #### Project: Animal Sanctuary
 
-### Day 5
+### Week 1 - Day 5
 
 #### Equals and Hashcode
 1. Comparing References
