@@ -6,7 +6,7 @@ Week 1 Notes.md
 
 #### Day One System Setup
 
-##### Simple Programs
+#### Simple Programs
 1. Programming
 2. The Programming Process
 3. Programming Languages
@@ -14,7 +14,7 @@ Week 1 Notes.md
 5. Input - Process - Output
 6. Labs
 
-##### Variables and Constants
+#### Variables and Constants
 1. Data Types
 2. Variables
 3. Variable Naming Rules
@@ -23,27 +23,27 @@ Week 1 Notes.md
 6. Printing Variables
 7. Labs
 
-##### Introduction to Methods
+#### Introduction to Methods
 1. Methods
 2. Calling Methods
 3. The main Method
 4. Why Use Methods?
 5. Labs
 
-##### Screen Output and Keyboard Input
+#### Screen Output and Keyboard Input
 1. Screen Output
 2. Formatting Output
 3. String Output
 4. Reading from the Keyboard
 5. Labs
 
-##### Eclipse
+#### Eclipse
 
 ### Day 2
 
-##### Eclipse
+#### Eclipse
 
-##### Expressions
+#### Expressions
 1. Expressions: Where the Work Gets Done
 2. Expression Evaluation: The Result
 3. Assignment Expressions
@@ -56,7 +56,7 @@ Week 1 Notes.md
 10. Precedence Order
 11. Labs
 
-##### Conditionals: if and else
+#### Conditionals: if and else
 1. Sequential Execution
 2. if Statement
 3. if Syntax
@@ -67,15 +67,15 @@ Week 1 Notes.md
 8. Comparing Strings in Java
 9. Labs
 
-##### Pair Programming
+#### Pair Programming
 
-##### Project: Simple Calculator
+#### Project: Simple Calculator
 
-##### Project: Mad Libs
+#### Project: Mad Libs
 
 ### Day 3
 
-##### More Expressions
+#### More Expressions
 1. Using Boolean Variables
 2. Boolean Expressions
 3. Assignment Operators
@@ -83,13 +83,13 @@ Week 1 Notes.md
 5. The Ternary Conditional Operator
 6. Labs
 
-##### Conditionals: switch
+#### Conditionals: switch
 1. switch Statements: Multi-Way Decisions
 2. break; and default: in switch Statements
 3. When to Use a switch Control Statement
 4. Labs
 
-##### while Loops
+#### while Loops
 1. Looping
 2. while Loops
 3. while Loops - Details
@@ -100,13 +100,13 @@ Week 1 Notes.md
 8. break and continue Statements
 9. Labs
 
-##### Project: Hi/Lo
+#### Project: Hi/Lo
 
-##### Project: Remote Control Simulator
+#### Project: Remote Control Simulator
 
 ### Day 4
 
-##### Methods
+#### Methods
 1. Method Review
 2. Methods Instead of Repeating Code
 3. Returning Values from Methods
@@ -118,7 +118,7 @@ Week 1 Notes.md
 9. Method Overloading *
 10. Labs
 
-##### for Loops
+#### for Loops
 1. for Loops
 2. A for Loop Diagram
 3. for Loop Parts
@@ -127,20 +127,20 @@ Week 1 Notes.md
 6. For Loop - When and Why
 7. Labs
 
-##### Project: Fizz Buzz
+#### Project: Fizz Buzz
 
-##### Project: Fibonacci Series
+#### Project: Fibonacci Series
 
 ### Day 5
 
-##### Numeral Systems
+#### Numeral Systems
 1. Counting and Tallying
 2. Positional Notation
 3. Numeral Systems for Programming
 4. Numeric Literals in Java
 5. The printf() Method
 
-##### Data Types in Java
+#### Data Types in Java
 1. Data Types You've Used
 2. Memory and Java
 3. Bits and Bytes
@@ -155,7 +155,7 @@ Week 1 Notes.md
 12. switch and Data Types
 13. Labs
 
-##### Casting Data Types
+#### Casting Data Types
 1. Implicit Type Conversions
 2. Promotion of Data Types in Arithmetic
 3. Promotion in Integer Arithmetic
@@ -163,11 +163,11 @@ Week 1 Notes.md
 5. Casting Hints
 6. Labs
 
-##### Homework Project: Make Change (Cash Register)
+#### Homework Project: Make Change (Cash Register)
 
 ### Day 6
 
-##### Arrays
+#### Arrays
 1. Variables - Single vs. Collections
 2. Arrays
 3. Declaring an Array
@@ -180,7 +180,7 @@ Week 1 Notes.md
 10. Three Ways of Creating Arrays
 11. Labs
 
-##### Introduction to Objects
+#### Introduction to Objects
 1. Classes
 2. Creating Objects
 3. Reference Variables
@@ -190,17 +190,17 @@ Week 1 Notes.md
 7. Some Objects You've Already Met
 8. Labs
 
-##### Project: Deaf Grandma
+#### Project: Deaf Grandma
 
 ### Day 7
 
-##### Advanced For Loops
+#### Advanced For Loops
 1. Nested for Loops
 2. Enhanced For Loops
 3. Break and Continue With Enhanced For Loops
 4. Labs
 
-##### Advanced Arrays
+#### Advanced Arrays
 1. Array Syntax
 2. Returning Array References from Methods
 3. Arrays of Arrays
@@ -211,4 +211,4 @@ Week 1 Notes.md
 8. Variable Arguments Arrays *
 9. Labs
 
-##### Project: Tic Tac Toe
+#### Project: Tic Tac Toe
