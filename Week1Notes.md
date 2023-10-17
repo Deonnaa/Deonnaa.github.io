@@ -1374,6 +1374,261 @@ public class CalculatorSwitch {
 8. break and continue Statements
 9. Labs
 
+`WhileLoops/src/drills/WhileLoop.java`
+```java
+public class WhileLoop {
+
+	public static void main(String[] args) {
+		// printNumbers();
+		mathRandomWhile();
+	}
+
+	public static void printNumbers() {
+		// Write a while loop to print the numbers 1 to 10 to the screen.
+		int num = 1;
+		while (num <= 10) {
+			System.out.println(num);
+			num++;
+		}
+	}
+
+	public static void mathRandomWhile() {
+		// Use Math.random() to write a while loop that will execute as long as a random
+		// number is less than 0.7. Print the number inside the loop.
+		// Example: double d = Math.random();
+		// Make sure to reassign d with a new Math.random() value in the loop body.
+		// After the loop, add a statement to print the final value of d.
+		double d = Math.random();
+		while (d < 0.7) {
+			d = Math.random();
+			System.out.println(d);
+			d = Math.random();
+		}
+	}
+}
+```
+
+`WhileLoops/src/drills/WhileLoopSteps.java`
+```java
+public class WhileLoopSteps {
+
+	public static void main(String[] args) {
+		// Write a `while` loop that will accept a number from the user, multiply it by
+		// 2, and print the value to the screen. The program should accept data from the
+		// user until the user enters zero.
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Please enter a number: ");
+		int num = sc.nextInt();
+
+		// while loop to multiply and get more input...
+		while (num != 0) {
+			System.out.println(num + " * 2 = " + (num * 2));
+			System.out.print("Enter a number: ");
+			num = sc.nextInt();
+		}
+		System.out.println("Finished.");
+	}
+}
+```
+
+`WhileLoops/src/drills/DoWhileLoop.java`
+```java
+public class DoWhileLoop {
+
+	public static void main(String[] args) {
+		// Write a do-while loop to print the numbers 1 to 10 to the screen.
+		int x = 1;
+		do {
+			System.out.println(x);
+			x++;
+		} while (x <= 10);
+
+		// Use Math.random() to write a do-while loop that will execute as long as a
+		// random number is less than 0.7. Print the number inside the loop.
+		// Declare a variable outside the loop, and assign a new Math.random() value in
+		// the loop body. Then print the number to the screen.
+		// Example: double d = Math.random();
+		double d;
+		do {
+			d = Math.random();
+			System.out.println(d);
+		} while (d < 0.7);
+	}
+}
+```
+
+`WhileLoops/src/drills/WhileLoopBreakContinue.java`
+```java
+public class WhileLoopBreakContinue {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		// Try the loops in the content examples in code.
+		// Write a do-while loop that accepts an int from a user, and exits when the
+		// user types 0.
+//		int num;
+//		System.out.print("Enter int numbers. Enter 0 to quit: ");
+//
+//		// Loop here...
+//		do {
+//			num = scan.nextInt();
+//			System.out.println(num);
+//
+//		} while (num != 0);
+//		System.out.println("Finished");
+
+		// Write an infinite loop that accepts String values from the user.
+		// Exit when the user types 'quit'. If the user types a different word, output
+		// it to the screen.
+		// Hint: check if the user's input equals 'quit' by using the
+		// if("quit".equals(YOUR_INPUT_VARIABLE)).
+		String userInput;
+		System.out.println("Enter a word, 'quit' to exit.");
+
+		while (true) {
+			userInput = scan.nextLine();
+			if (userInput.equals("quit")) {
+				break;
+			}
+			System.out.println(userInput);
+		}
+		System.out.println("Infinite loop Finished");
+	}
+}
+```
+
+`Lab 1 - LoopMenu.java`
+```java
+public class LoopMenu {
+
+	public static void main(String[] args) {
+		printMenu();
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		String choice = "";
+
+		do {
+			choice = sc.next();
+			switch (choice) {
+			case "1":
+				printGreeting();
+				printMenu();
+				break;
+			case "2":
+				printAdvice();
+				printMenu();
+				break;
+			case "3":
+				printWisdom();
+				printMenu();
+				break;
+			case "4":
+				printHelp();
+				printMenu();
+				break;
+			case "5":
+				printQuit();
+			}
+		} while (!choice.equals("5"));
+	}
+
+	public static void printMenu() {
+		System.out.println("***************************");
+		System.out.println("*      Choose a Number:   *");
+		System.out.println("* \t1 - Greeting      *");
+		System.out.println("* \t2 - Advice        *");
+		System.out.println("* \t3 - Wisdom        *");
+		System.out.println("* \t4 - Help          *");
+		System.out.println("* \t5 - Quit          *");
+		System.out.println("***************************");
+	}
+
+	public static void printGreeting() {
+		System.out.println("Hello!");
+	}
+
+	public static void printAdvice() {
+		System.out.println("Here is some advice.");
+	}
+
+	public static void printWisdom() {
+		System.out.println("Here is some wisdom.");
+	}
+
+	public static void printHelp() {
+		System.out.println("Here is some help.");
+	}
+
+	public static void printQuit() {
+		System.out.println("Goodbye.");
+	}
+}
+```
+
+`Lab 2 - CalculatorLoop.java`
+```java
+public class SimpleCalculator {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Welcome to Calculator!");
+		boolean keepGoing = true;
+		do {
+			System.out.print("Enter a number: ");
+			double num1 = input.nextDouble();
+			System.out.print("Enter another number: ");
+			double num2 = input.nextDouble();
+			System.out.print("What calculation do you want to do? ");
+			String op = input.next();
+
+			double result;
+			switch (op) {
+			case "+":
+			case "add":
+			case "plus":
+				result = num1 + num2;
+				System.out.println(num1 + " + " + num2 + " = " + result);
+				break;
+			case "-":
+			case "subtract":
+			case "minus":
+			case "less":
+				result = num1 - num2;
+				System.out.println(num1 + " - " + num2 + " = " + result);
+				break;
+			case "*":
+			case "multiply":
+			case "times":
+				result = num1 * num2;
+				System.out.println(num1 + " * " + num2 + " = " + result);
+				break;
+			case "/":
+			case "divide":
+			case "over":
+				result = num1 / num2;
+				System.out.println(num1 + " / " + num2 + " = " + result);
+				break;
+			case "%":
+			case "mod":
+			case "modulo":
+				result = num1 % num2;
+				System.out.println(num1 + " % " + num2 + " = " + result);
+				break;
+			case "QUIT":
+			case "EXIT":
+				System.out.println("Exiting.");
+				keepGoing = false;
+				break;
+			default:
+				System.out.println("Operation not valid.");
+			}
+		} while (keepGoing);
+
+		input.close();
+	}
+}
+```
+
 #### Project: Hi/Lo
 
 #### Project: Remote Control Simulator
@@ -1392,6 +1647,265 @@ public class CalculatorSwitch {
 9. Method Overloading *
 10. Labs
 
+`Methods/src/drills/ClassWithMethodsLoop.java`
+```java
+public class ClassWithMethodsLoop {
+	public static void main(String[] args) {
+
+		System.out.println("Calling method1()");
+
+		int counter = 0;
+		while (counter < 5) {
+			counter++;
+			method1();
+		}
+		System.out.println("main finishing");
+	}
+
+	public static void method1() {
+		System.out.println("     method1 executing");
+	}
+}
+```
+
+`Methods/src/drills/CalculateBalanceRefactor.java`
+```java
+public class CalculateBalanceRefactor {
+	public static void main(String[] args) {
+		double cost = 307.32;
+		double balance = cost;
+
+		double payment1 = 42.40;
+		balance = balance - payment1;
+
+		printHeader();
+
+//		System.out.println("-----------------");
+//		System.out.println("---- BALANCE ----");
+//		System.out.println("-----------------");
+		System.out.println(balance);
+		System.out.println();
+
+		double payment2 = 39.31;
+		balance = balance - payment2;
+
+//		System.out.println("-----------------");
+//		System.out.println("---- BALANCE ----");
+//		System.out.println("-----------------");
+
+		printHeader();
+
+		System.out.println(balance);
+		System.out.println();
+	}
+
+	public static void printHeader() {
+		System.out.println("////////////////////");
+		System.out.println("/      BALANCE    /");
+		System.out.println("///////////////////");
+	}
+}
+```
+
+`Methods/src/drills/CalculateBalanceReturn.java`
+```java
+public class CalculateBalanceReturn {
+	public static void main(String[] args) {
+		double cost = 307.32;
+		double balance = cost;
+
+		double payment1 = 42.40;
+		balance = balance - payment1;
+
+		printHeader();
+		System.out.println(balance);
+		System.out.println();
+
+		double payment2 = 39.31;
+		balance = balance - payment2;
+
+		printHeader();
+		System.out.println(balance);
+		System.out.println();
+	}
+
+	/*
+	 * Refactor printHeader(): Remove its System.out.println statements. Call
+	 * buildHeader() and assign its return value to a variable. Output that variable
+	 * to the screen.
+	 */
+	public static void printHeader() {
+		System.out.println(buildHeader());
+	}
+
+	// Create a method called buildHeader that returns a String
+	public static String buildHeader() {
+		String header = "/////////////////\n" + "//// BALANCE ////\n" + "/////////////////";
+		return header;
+	}
+}
+```
+
+`Methods/src/drills/CalculateTemp.java`
+```java
+public class CalculateTemp {
+
+	public static void main(String[] args) {
+		// 2. Call the method to calculate temperature.
+		// Be sure to pass arguments in the correct order.
+		// Print the returned value to the screen.
+		double theFinalValue = calculateTemp(32.0, 'C');
+		System.out.println(theFinalValue);
+
+		theFinalValue = calculateTemp(15.0, 'F');
+		System.out.println(theFinalValue);
+
+		theFinalValue = calculateTemp(100.0, 'K');
+		System.out.println(theFinalValue);
+	}
+	// 1. Define a method with the following signature:
+	// name: calculateTemp
+	// return type: double
+	// parameter 1: floating point temperature
+	// parameter 2: a character denoting the temperature scale,
+	// where 'C' means Celsius and 'F' means Fahrenheit
+	//
+	// Be sure to put "public static" in front of the method return type and name
+	//
+	// The method will calculate the alternate temperature
+	// using the formulas
+	//
+	// celsius = (fahrenheit - 32) / 1.8
+	// fahrenheit = (celsius * 1.8) + 32
+	//
+	// If the scale is not 'C' or 'F', print a message to the screen and
+	// return the value -999.
+
+	public static double calculateTemp(double theTemp, char scale) {
+		double convertedTemp = 999;
+
+		if (scale == 'C') {
+			convertedTemp = (theTemp - 32) / 1.8;
+		} else if (scale == 'F') {
+			convertedTemp = (theTemp * 1.8) + 32;
+		} else {
+			System.out.println("RTFM!!!!!");
+		}
+		return convertedTemp;
+	}
+}
+```
+
+`Methods/src/drills/StringManipulation.java`
+```java
+public class StringManipulation {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.print("Enter a word or phrase: ");
+		String phrase = scanner.nextLine();
+
+		System.out.print("Enter a number: ");
+		int num = scanner.nextInt();
+
+		// 2. Call addCharacter, passing phrase and num, and assign its return
+		// value to a local variable.
+		String concatenated = addCharacter(phrase, num);
+		// 3. Output the value of the local variable.
+		System.out.println(concatenated);
+	}
+
+	public static String addCharacter(String input, int numExc) {
+		// 1. Declare a local variable "output". Initialize it to the parameter input..
+		String output = input;
+		// Using a loop, concatenate _numExc_ "!" characters to the local variable
+		// output.
+		int counter = 0;
+		while (counter < numExc) {
+			output = output + "!";
+			counter = counter + 1;
+		}
+
+		// return "output" instead of "input"
+		return output;
+	}
+}
+```
+
+`Methods/src/drills/PassByValue.java`
+```java
+public class PassByValue {
+
+	public static void main(String[] args) {
+		int x = 42;
+		System.out.println("In main, x is " + x);
+
+		// Call the changeIt method, passing local variable x and another value.
+		changeIt(x, 13);
+
+		// Add a System.out.println statement to output this method's
+		// local variable x.
+		System.out.println("In main, x is " + x);
+	}
+
+	public static void changeIt(int x, int y) {
+		System.out.println("In changeIt, x is " + x); 
+		x = y; // reassigns x from 42 to 13
+		System.out.println("In changeIt, x is now " + x);
+	}
+}
+```
+
+`Lab 1 - PowerMethod.java`
+```java
+public class PowerMethod {
+
+	public static void main(String[] args) {
+		// prepare for reading input
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		// prompt the user for the base value
+		System.out.print("Enter the base: ");
+		double base = scanner.nextDouble();
+
+		// prompt the user for the exponent value
+		System.out.print("\nEnter the exponent: ");
+		int exp = scanner.nextInt();
+
+		// call the power method
+		double value = power(base, exp);
+
+		// display the result
+		System.out.println("The result of " + base + " raised to the " + exp + " power is " + value);
+		scanner.close();
+	}
+
+	public static double power(double base, int exp) {
+		double result = 1.0;
+		for (int i = 0; i < exp; i++) {
+			result = result * base;
+		}
+		return result;
+	}
+}
+```
+
+`Lab 2 - MPGCalculator.java`
+```java
+public class MPGCalculator {
+	public static void main(String[] args) {
+		System.out.println(mpgMethod(16, 100, 150));
+		System.out.println(mpgMethod(18, 80383, 80723));
+	}
+
+	public static double mpgMethod(double addGal, double prevOdometer, double newOdometer) {
+		double mpg = (newOdometer - prevOdometer) / addGal; // miles driven divided by gallons of gas used
+		return mpg;
+	}
+}
+```
+
 #### for Loops
 1. for Loops
 2. A for Loop Diagram
@@ -1400,6 +1914,178 @@ public class CalculatorSwitch {
 5. break and continue Statements
 6. For Loop - When and Why
 7. Labs
+
+`ForLoops/src/drills/ForLoop.java`
+```java
+public class ForLoop {
+
+	public static void main(String[] args) {
+		// Write a for loop to print the numbers 1 to 10 to the screen.
+		int i = 0;
+		for (i = 1; i <= 10; i++) {
+			System.out.println(i);
+		}
+
+		// Write the same loop with the loop control variable starting at 0.
+		for (i = 0; i <= 10; i++) {
+			System.out.println(i);
+		}
+	}
+}
+```
+
+`ForLoops/src/drills/ForLoopBody.java`
+```java
+public class ForLoopBody {
+
+	public static void main(String[] args) {
+		//Write a for loop to print the numbers 10 to 1 to the screen.
+		for (int i = 10 ; i >= 1; i--) {
+			System.out.println(i);
+		}
+		
+		//Write a for loop to find the sum of the values 1 to 10. Print the sum to the screen.
+		int sum = 0; 
+		for (int a = 1 ; a <= 10; a++) {
+			sum += a;
+		}
+		System.out.println(sum);
+		
+		//Write a for loop to print the values 1 to 5. Output should be comma-separated: 1, 2, 3, 4, 5.
+		//Hint: the loop will need to check which iteration it is on to prevent a comma showing after 5.
+		for (int i = 1 ; i <= 5; i++) {
+			System.out.print(i);
+			
+			if (i != 5) {
+				System.out.print(", ");
+			}
+		}
+	}
+}
+```
+
+`Forloops/src/drills/ForLoopBody2.java`
+```java
+public class ForLoopBody2 {
+	public static void main(String[] args) {
+		/*
+		 * The for loops below have errors. Copy each loop and paste below the block
+		 * comment. Fix the code so that it can compile.
+		 */
+		// Loop 1
+		// int x = 0; // Can't declare x both here and in the for().
+		for (int y = 0, x = 10; x + y < 15; x++, y++) {
+			System.out.println(x + y);
+		}
+
+		// Loop 2
+		// Can't declare two different type in the initialization.
+		// for(int a = 0, short b = 4; a < 5; a++, b++) {
+		for (int a = 0, b = 4; a < 5; a++, b++) {
+			System.out.println("a is " + a + ", b is " + b);
+		}
+
+		// Loop 3
+		// If q is declared in the for(), it will be out of scope after the loop body.
+		// for (int q = 5; q < 10; q++) {
+		int q = 5;
+		for (q = 5; q < 10; q++) {
+			System.out.println(q);
+		}
+		System.out.println("q is now " + q);
+	}
+}
+```
+
+`ForLoops/src/drills/ForLoopBreakContinue.java`
+```java
+public class ForLoopBreakContinue {
+
+	public static void main(String[] args) {
+		// Try the loops in the examples above in code.
+//		System.out.println("Loop 1...");
+//		// COPY-PASTE LOOP 1 HERE
+//		// Exit the loop the first time i % 2 == 0
+//		for (int i = 1; i <= 10; i += 1) {
+//			if (i % 2 == 0) {
+//				break;
+//			}
+//			System.out.println(i);
+//		}
+
+//		System.out.println("Loop 2...");
+//		// COPY-PASTE LOOP 2 HERE
+//		// Go to the next iteration every time i % 2 == 0
+//		for (int i = 0; i <= 10; i += 1) {
+//			if (i % 2 == 0) {
+//				continue;
+//			}
+//			System.out.println(i);
+//		}
+
+		System.out.println("Loop 3...");
+		// Write a loop that prints the numbers from 1 to 30, skipping
+		// multiples of 3.
+		for (int i = 1; i <= 30; i += 1) {
+			if (i % 3 == 0) {
+				continue;
+			}
+			System.out.println(i);
+		}
+	}
+}
+```
+
+`Lab 1 - Mult2.java`
+```java
+public class Mult2 {
+
+	public static void main(String[] args) {
+		for (int i = 1; i <= 16; i += 1) {
+			if (i % 2 != 0) {
+				continue;
+			}
+			System.out.println(i);
+		}
+	}
+}
+```
+
+`Lab 2 - Pow2.java`
+```java
+public class Pow2 {
+
+	public static void main(String[] args) {
+		int i = 0;
+		for (i = 1; i <= 16; i += 1) {
+			if (i % 2 != 0) {
+				continue;
+			}
+			System.out.println(i + " * " + i + " = " + (i * i));
+		}
+	}
+}
+```
+
+`Lab 3 - Factorial.java`
+```java
+public class Factorial {
+
+	public static void main(String[] args) {
+
+		int i = 0;
+		int factorial = 1;
+
+		// A integer overflows after 13!
+		// for(i = 1; i <= 20; i = i + 1)
+
+		for (i = 1; i <= 10; i = i + 1) {
+			factorial = factorial * i;
+			System.out.println(i + "! = " + factorial);
+		}
+	}
+}
+```
 
 #### Project: Fizz Buzz
 
@@ -1413,6 +2099,39 @@ public class CalculatorSwitch {
 3. Numeral Systems for Programming
 4. Numeric Literals in Java
 5. The printf() Method
+
+```java
+11001 - (1 * 16) + (1 * 8) + (0 * 4) + (0 * 2) + (1 * 1)
+//25
+
+00011001 - (0*128) + (0*64) + (0*32) + (1*16) + (1*8) + (0*4) + (0*2) + (1*1)
+//still 25
+```
+
+```java
+int i = 012 // Ocatal (1*8 + 2*1)
+
+int i = 0x12 // Hexadecimal (1*16 + 2*1)
+int i = 0xa // Hexadecimal (10)
+
+int i = 0b12 // Binary (No 2 in Binary)
+int i = 0b10 // Binary (1*2 + 0*1)
+```
+
+```java
+double num1 = 23.785;
+double num2 = 34.64443;
+System.out.printf("%.2f  %n", num1+num2);
+
+%% - literal %
+n - new line
+d - as a decimal integer
+o - as an octal integer
+x - as a hexadecimal integer
+f - as a floating-point number
+a - as a floating-point number in hexadecimal
+s - as a string
+```
 
 #### Data Types in Java
 1. Data Types You've Used
@@ -1429,6 +2148,122 @@ public class CalculatorSwitch {
 12. switch and Data Types
 13. Labs
 
+`DataTypes/com.skilldistillery.datatypes.drills.CharAsInteger`
+```java
+public class CharAsInteger {
+
+	public static void main(String[] args) {
+		// Declare a char variable and assign it the value 65.
+		// Print it to the screen.
+		char start = 65;
+		System.out.println(start);
+
+		// Use the += operator to add 25 to your variable.
+		// Now print it to the screen.
+		start += 25;
+		System.out.println(start);
+	}
+}
+```
+
+`DataTypes/com.skilldistillery.datatypes.drills.CharPrinting`
+```java
+public class CharPrinting {
+
+	public static void main(String[] args) {
+		char variable = 'A';
+		System.out.println(variable);
+		// Add the line System.out.println(variable + 1); to main().
+		// What is the output?
+		System.out.println(variable + 1);
+
+		// Based on its output, what does the `+` operator appear to do?
+		// Add
+	}
+}
+```
+
+`DataTypes/com.skilldistillery.datatypes.drills.DeclaringPrimitives`
+```java
+public class DeclaringPrimitives {
+
+	public static void main(String[] args) {
+		// Declare a byte variable and assign the value 128. What happens? Assign it a
+		// valid value.
+		byte hello = 127; // type mismatch convert to int
+
+		// Create a switch statement for your variable.
+		// Have a case for each of the values 127, -128, 0, 'A', 128, '\u0000'.
+		// Which values cause compiler errors?
+		switch (hello) {
+		case 127:
+		case -128:
+//    	case 0:
+		case 'A':
+		case '\u0000':
+		}
+
+		// Declare a int variable and assign it a value.
+		int value = 127;
+
+		// Again create a switch statement.
+		// Have a case for each of the values 127, -128, 'A', 128, '\u0000'.
+		switch (value) {
+		case 127:
+		case -128:
+//		case 0:
+		case 'A':
+		case 128:
+		case '\u0000':
+		}
+	}
+}
+```
+
+`DataTypes/com.skilldistillery.datatypes.drills.FloatValues`
+```java
+public class FloatValues {
+
+	public static void main(String[] args) {
+		// Copy f1 to f8 in text here. Comment out values that do not work.
+		float f1 = 0.0f; //
+		float f2 = 1f; //
+		float f3 = 1; //
+		float f4 = 0b10101; // binary number - an int
+//	  float f5 = 0b10101f; // NO, don't use F with binary numbers
+		float f6 = 0xF16F; // F doesn't do anything here, it is a hex digit
+		float f7 = 0761; // octal number
+		float f8 = 0761F; // octal number with F
+	}
+}
+```
+
+`Lab 1 - Overflow.java`
+```java
+public class Overflow {
+
+	public static void main(String[] args) {
+		int big = 2_147_483_647;
+		int bigger = big + 1;
+
+		System.out.println(big);
+		System.out.println(bigger);
+	}
+}
+```
+
+`Lab 2 - ValidInt.java`
+```java
+public class ValidInt {
+
+	public static void main(String[] args) {
+		int validInt = 12;
+		long longInt = validInt;
+		System.out.println(longInt);
+	}
+}
+```
+
 #### Casting Data Types
 1. Implicit Type Conversions
 2. Promotion of Data Types in Arithmetic
@@ -1436,6 +2271,176 @@ public class CalculatorSwitch {
 4. The Cast Operator
 5. Casting Hints
 6. Labs
+
+```java
+// byte converted to short;
+byte b1 = 16;
+short s1 = b1;
+
+// short converted to float
+short s2 = 14;
+float f2 = s2;
+
+// int converted to float
+int i3 = 2105;
+float f3 = i3;
+
+// long converted to float
+long l4 = 10000L;
+float f4 = l4;
+
+// char converted to double
+char c5 = 'A';
+double d5 = c5;
+
+// converting byte to char does not work
+byte b6 = 5;
+char c6 = b6;  // DOES NOT COMPILE per JLS 5.1.4
+
+// short and char do not convert because short is signed while char is not
+short s7 = 55;
+char c7 = s7;  // DOES NOT COMPILE
+```
+
+`CastingDataTypes/com.skilldistillery.casting.drills.Promotion`
+```java
+public class Promotion {
+
+	public static void main(String[] args) {
+		// Try changing the types of the variables resultIF, resultID, and resultCI
+		// to the smaller or less-precise type, e.g. int resultIF.
+		// What compiler errors do you see?
+		int i = 0;
+		float f = 1.0f;
+
+		float resultIF = i * f; // int*float promoted to float*float
+		double resultID = i * 2.0; // int*double promoted to double*double
+
+		System.out.println(resultIF);
+		System.out.println(resultID);
+		char c = 'A';
+		int resultCI = c + 1; // char+int promoted to int+int
+	}
+}
+```
+
+`CastingDataTypes/com.skilldistillery.casting.drills.Division`
+```java
+public class Division {
+
+	public static void main(String[] args) {
+		// This drill is divided into methods so that you can run one at a time.
+
+		// For each method, add answers to the questions
+		// "Necessary variable type?" and "Expected value?"
+		// Then uncomment the arithmetic operation and change "xxx" to the type you
+		// expect.
+		// Was your type legal?
+		// Uncomment the print statements and run the program to see the actual value.
+		// Note: necessary data type means the smallest necessary type.
+		method1();
+//		method2();
+//		method3();
+	}
+
+	static void method1() {
+		short s1 = 5;
+		byte b1 = 3;
+		int result1 = s1 / b1;
+		System.out.println("result1 is " + result1);
+		// Necessary variable type? int
+		// Expected value? result1 is 1 (.6)
+		// Actual value: result1 is 1
+		// Promotion that occurred: byte>int
+	}
+
+	static void method2() {
+		char c2 = 3;
+		byte b2 = 6;
+		int result2 = c2 / b2;
+		System.out.println("result2 is " + result2);
+		// Necessary variable type? int
+		// Expected value? result2 is 0 (.5)
+		// Actual value: result2 is 0
+		// Promotion that occurred: byte>int
+	}
+
+	static void method3() {
+		// This operation does not require you to choose a result type.
+		int i3 = 4;
+		int i4 = 8;
+		double result3 = i3 / i4;
+		System.out.println("result3 is " + result3);
+		// Expected value? result3 is 0.0
+		// Actual value: result3 is 0.0
+		// Promotion that occurred: int>double
+	}
+}
+```
+
+`Lab 1 - Floor.java`
+```java
+public class Floor {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.println("Please enter a floating point number: ");
+		double variable = scanner.nextDouble();
+
+		if (variable < 0 && variable % 1 != 0) {
+			variable -= 1; // use += for positive number round up
+		}
+		int result = (int) variable;
+		System.out.println(result);
+
+		scanner.close();
+	}
+}
+```
+
+`Lab 2 - Ceiling.java`
+```java
+public class Ceiling {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.println("Please enter a floating point number: ");
+		double variable = scanner.nextDouble();
+
+		if (variable < 0 && variable % 1 != 0) {
+			variable -= 1; // use += for positive number round up
+		}
+		if (variable > 0) {
+			variable += 1; // use += for positive number round up
+		}
+		int result = (int) variable;
+		System.out.println(result);
+
+		scanner.close();
+	}
+}
+```
+
+`Lab 3 - Round.java`
+```java
+public class Round {
+
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		float variable = 0.0f;
+
+		System.out.println("Please give a float number: ");
+		variable = scanner.nextFloat();
+		int result = (int) variable;
+
+		System.out.println(result);
+		scanner.close();
+	}
+}
+```
 
 #### Homework Project: Make Change (Cash Register)
 
@@ -1454,6 +2459,335 @@ public class CalculatorSwitch {
 10. Three Ways of Creating Arrays
 11. Labs
 
+`Arrays/src/drills/ArrayDeclare.java`
+```java
+public class ArrayDeclare {
+
+	public static void main(String[] args) {
+		// Declare a variable for an array of String objects to hold the name of each
+		// weekday.
+		String[] weekdays;
+		weekdays = new String[7];
+
+		// Declare a variable to hold letter grades for each of a student's six classes.
+		char[] grades = new char[6];
+
+		// Declare a variable to hold the average monthly precipitation for a year.
+		double[] monthlyPrecipitation = new double[12];
+	}
+}
+```
+
+`Arrays/src/drills/ArrayCreate.java`
+```java
+public class ArrayCreate {
+
+	public static void main(String[] args) {
+		// Declare a variable for an array of String objects to hold the name of each
+		// weekday.
+		// Initialize the variable to hold 7 Strings.
+		String[] weekdays;
+		weekdays = new String[7];
+
+		// Declare a variable to hold letter grades for each of a student's six classes.
+		// Initialize the variable to hold 6 chars.
+		char grades[];
+		grades = new char[6];
+
+		// Declare a variable to hold the average monthly precipitation for a year.
+		// Initialize the variable to have the correct number of double slots.
+		double[] avgMonthlyPrecip;
+		avgMonthlyPrecip = new double[12];
+
+		// NOTE: as you can see above, whitespace does not matter.
+	}
+}
+```
+
+`Arrays/src/drills/ArrayAccess.java`
+```java
+public class ArrayAccess {
+
+	public static void main(String[] args) {
+		// Store the name of each weekday at the correct index.
+		String[] weekdays = new String[7];
+		weekdays[0] = "Sunday";
+		weekdays[1] = "Monday";
+		weekdays[2] = "Tuesday";
+		weekdays[3] = "Wednesday";
+		weekdays[4] = "Thursday";
+		weekdays[5] = "Friday";
+		weekdays[6] = "Saturday";
+
+		// Store the grade A in the FIRST index of the array,
+		// and C in the LAST index of the array.
+		char grades[] = new char[6];
+		grades[0] = 'A';
+		grades[5] = 'C';
+
+		// Run the program and check the output to see if you were correct.
+		System.out.println("Weekdays:");
+		for (int i = 0; i < 7; i++) {
+			System.out.println(i + ":" + weekdays[i]);
+		}
+		System.out.println("Grades:");
+		for (int i = 0; i < 6; i++) {
+			System.out.println(i + ":" + grades[i]);
+		}
+	}
+}
+```
+
+`Arrays/src/drills/ArrayAccess2.java`
+```java
+public class ArrayAccess2 {
+
+	public static void main(String[] args) {
+		// Access all the B grades in the grades array and output them to the screen.
+		char[] grades = { 'C', 'F', 'B', 'A', 'C', 'B' };
+		System.out.println(grades[2]); // B
+		System.out.println(grades[5]); // B
+
+		// Use values from the firstNames and lastNames arrays to create the names
+		// Sarah Dobbs and Davey Jones.
+		// Output the names to the screen.
+		String firstNames[] = { "Matthew", "Mark", "Davey", "Sarah", "Linda" };
+		String lastNames[] = { null, "Dobbs", "Cool", "Symbol", "Longshanks", "Jones" };
+		System.out.println(firstNames[3] + " " + lastNames[1]); // Sarah Dobbs
+		System.out.println(firstNames[2] + " " + lastNames[5]); // Davey Jones
+
+		// Declare and initialize an array containing your
+		// pet's name and the street you grew up on.
+		// (If you do not have a pet, use the value null.)
+		String petNames[] = { "Spot", "Max" };
+		String street[] = { "Main St.", "1st St." };
+		System.out.println(petNames[0] + " " + street[1]); // Spot 1st St.
+
+		// Reassign the same array and initialize it with your middle
+		// name and a U.S. President's last name.
+		// (Use the array shortcut. If you do not have a middle name, use the value
+		// null.)
+		petNames = new String[] { "Spot", "Julie" };
+		System.out.println(petNames[1] + " " + street[0]); // Julie Main St.
+	}
+}
+```
+
+`Arrays/src/drills/Iterating.java`
+```java
+public class Iterating {
+
+	public static void main(String[] args) {
+		// Iterate through the names array to print the index of the name,
+		// and the name, e.g. 0 : Mike.
+		String[] names = { "Mike", "Davey", "Peter", "Mickey" };
+		for (int idx = 0; idx < names.length; idx++) {
+			System.out.println(names[idx]);
+		}
+
+		// Iterate through the precip array, but only print
+		// values greater than 2.5.
+		double[] precip = new double[] { 3.2, 0.5, 1.7, 2.8, 2.0, 3.1, 0.0, 0.2, 9.0 };
+		for (int i = 0; i < precip.length; i++) {
+			if (precip[i] >= 2.5) {
+				System.out.println(precip[i]);
+			}
+		}
+
+		// Iterate through the daysOfWeek array, but do not print
+		// Sunday or Saturday.
+		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			if (daysOfWeek[i].equals("Sunday") || daysOfWeek[i].equals("Saturday")) {
+				continue;
+			}
+			System.out.println(daysOfWeek[i]);
+		}
+
+		// After iterating, print the daysOfWeek array itself:
+		// System.out.println(daysOfWeek).
+		// Note the format, and what doesn't get printed.
+		System.out.println(daysOfWeek);
+	}
+}
+```
+
+`Arrays/src/drills/ArrayReferences.java`
+```java
+public class ArrayReferences {
+
+	public static void main(String[] args) {
+		String[] daysOfWeek = new String[7];
+		daysOfWeek[0] = "Sunday";
+		daysOfWeek[1] = "Monday";
+		daysOfWeek[2] = "Tuesday";
+		daysOfWeek[3] = "Wednesday";
+		daysOfWeek[4] = "Thursday";
+		daysOfWeek[5] = "Friday";
+		daysOfWeek[6] = "Saturday";
+
+		// Print the array
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			System.out.print(daysOfWeek[i]);
+			if (i != daysOfWeek.length - 1) { // don't do this for the last index
+				System.out.print(", ");
+			}
+		}
+		System.out.println();
+
+		// * Call the changeArray method and pass the daysOfWeek array reference.
+		ArrayReferences test = new ArrayReferences();
+		test.changeArray(daysOfWeek);
+
+		// Print the array again to see that its elements have changed,
+		// but it is the same array.
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			System.out.print(daysOfWeek[i]);
+			if (i != daysOfWeek.length - 1) { // don't do this for the last index
+				System.out.print(", ");
+			}
+		}
+
+		// * Refactor the printing of the array into a method and pass it the daysOfWeek
+		// array reference.
+//		test.printArray(daysOfWeek);
+	}
+
+	public void changeArray(String[] inputArr) {
+		// * Change Wednesday to "HUMPDAY" and Friday to "Viernes".
+		// * (There is no need to iterate, just change the right index.)
+		inputArr[3] = "HUMPDAY";
+		inputArr[5] = "Viernes";
+
+		// * Reassign inputArr to a new array containing the values
+		// * "Su", "M", "T", "W", "Th", "F", "Sa"
+		inputArr = new String[] { "Su", "M", "T", "W", "Th", "F", "Sa" };
+	}
+
+	public void printArray(String[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]);
+			if (i != arr.length - 1) { // don't do this for the last index
+				System.out.print(", ");
+			}
+		}
+	}
+}
+```
+
+`Labs 1 - DayOfWeekIterating1.java`
+```java
+public class DayOfWeekIterating1 {
+	public static void main(String[] args) {
+		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			if (i != 0 && i != daysOfWeek.length - 1) {
+				System.out.println(daysOfWeek[i]);
+			}
+		}
+	}
+}
+```
+
+`Labs 1 - DayOfWeekIterating2.java`
+```java
+public class DayOfWeekIterating2 {
+	public static void main(String[] args) {
+		String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+
+		for (int i = 0; i < daysOfWeek.length; i++) {
+			if (daysOfWeek[i].equals("Sunday") || daysOfWeek[i].equals("Saturday")) {
+				continue;
+			}
+			System.out.println(daysOfWeek[i]);
+		}
+	}
+}
+```
+
+`Labs 2 - AverageScores.java`
+```java
+public class AverageScores {
+
+	public static void main(String[] args) {
+		int[] scores = new int[5];
+
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.println("Enter scores:");
+		for (int i = 0; i < scores.length; i++) {
+			int scoreNum = i + 1;
+			System.out.print("Score " + scoreNum + ": ");
+			scores[i] = scanner.nextInt();
+		}
+
+		// Call the test method
+		AverageScores test = new AverageScores();
+		test.testCalculateAverage();
+
+		// Test calculateAverage(); Non-Static Instance
+		AverageScores aveScore = new AverageScores();
+		double average = aveScore.calculateAverage(scores);
+
+//		double average = new AverageScores().calculateAverage(scores); //DO NOT CODE LIKE THIS
+
+		System.out.println("The average score is: " + average);
+		scanner.close();
+
+	}
+
+	public double calculateAverage(int[] scores) {
+		double theAverage = 0.0;
+
+		// variable to hold the sum of all scores
+		double sum = 0.0;
+		for (int i = 0; i < scores.length; i++) {
+			sum += scores[i];
+		}
+
+		theAverage = sum / scores.length; // divide by the length because
+											// we don't know how long the passed-in
+											// array is (even though we're the ones passing it)
+		return theAverage;
+	}
+
+	public void displayAverage(double average) {
+		System.out.println(average);
+	}
+
+	public void testCalculateAverage() {
+		int[] ints = { 70, 65, 80, 97 };
+
+		double expected = 78.0;
+
+		// Calculate the average to see what the method produces
+		double result = calculateAverage(ints); // Non-Static to Non-Static
+
+		// Now test the result
+		if (expected == result) {
+			System.out.println("Passed");
+		} else {
+			System.out.println("Failed, expected " + expected + " but got " + result);
+		}
+	}
+}
+```
+
+`Labs 3 - RandomString.java`
+```java
+public class RandomString {
+	public static void main(String[] args) {
+		String[] animals = { "Bear", "Fox", "Bobcat" };
+
+		for (int i = 0; i < 10; i++) {
+			int index = (int) (Math.random() * animals.length);
+			System.out.println(animals[index]);
+		}
+	}
+}
+```
+
 #### Introduction to Objects
 1. Classes
 2. Creating Objects
@@ -1463,6 +2797,195 @@ public class CalculatorSwitch {
 6. The static Keyword *
 7. Some Objects You've Already Met
 8. Labs
+
+`IntroToObjects/src/drills/SphereCreation.java`
+```java
+public class SphereCreation {
+
+	public static void main(String[] args) {
+		// Create three Sphere "objects."
+		// 1. A baseball, radius 3.7
+		Sphere baseball = new Sphere();
+		baseball.radius = 3.7;
+
+		// 2. A basketball, radius 12.0
+		Sphere basketball = new Sphere();
+		basketball.radius = 12.0;
+
+		// 3. Mercury, radius 244 million centimeters
+		// Try writing this as 244_000_000.0 or 244e5
+		Sphere mercury = new Sphere();
+		mercury.radius = 244_000_000.0;
+
+		// Print each object's volume to the screen using System.out.println.
+		System.out.println(baseball.radius);
+		System.out.println(basketball.radius);
+		System.out.println(mercury.radius);
+	}
+}
+```
+
+`IntroToObjects/src/drills/SphereReferences.java`
+```java
+public class SphereReferences {
+
+	public static void main(String[] args) {
+		// Create another reference called otherSphereRef and assign sphRef to it,
+		// so that both references refer to the same Sphere object.
+
+		Sphere sphRef = new Sphere();
+		sphRef.radius = 10.0;
+		System.out.println("Original sphRef radius: " + sphRef.radius);
+
+		// Change otherSphereRef's radius.
+		Sphere otherSphereRef = sphRef;
+		otherSphereRef.radius = 20.0;
+
+		// Output otherSphereRef's radius to the screen.
+		System.out.println("Second sphRef radius: " + otherSphereRef.radius);
+
+		// Output sphRef's radius to the screen. It should have changed.
+		System.out.println("Changed original sphRef: " + sphRef.radius);
+	}
+}
+```
+
+`IntroToObjects/src/drills/SphereWithColor.java`
+```java
+Example
+```
+
+`IntroToObjects/src/drills/SphereWithColorTest.java`
+```java
+Example
+```
+
+```java
+//Static CarManufacturer.java
+public class CarManufacturer {
+	public static void main() {
+		Car.test2Understanding();
+	}
+}
+
+//Static Car.java
+public class Car {
+	public static void test2Understanding() {
+		System.out.println("Test");
+	}
+
+}
+
+//Non-Static CarManufacturer.java
+public class CarManufacturer {
+	public static void main () {
+		Car anotherCar = new Car();
+		anotherCar.test1Understanding(); 
+	}
+}
+
+//Non-Static Car.java
+public class Car {
+	public void test1Understanding() {
+		System.out.println("Test");
+	}
+
+}
+```
+
+```java
+//java.util.Scanner
+java.util.Scanner scanner = new java.util.Scanner(System.in);
+System.out.print("Enter the radius of the sphere: ");
+double radius = scanner.nextDouble();
+scanner.close();
+
+//String: We often do not see new, this is because Strings are so important there are shortcuts to create instances.
+
+//System.out.println()
+//The System class has a static field out, which has a method println
+```
+
+`Lab 1 - Car.java`
+```java
+public class Car {
+	public String make;
+	public String model;
+	public String color;
+	public int numberOfWheels;
+	public int purchasePrice;
+
+	public String getCarData() {
+		return "Make: " + make + "\n Model: " + model + "\n Color: " + color + "\n Number of Wheels: " + numberOfWheels
+				+ "\n Purchase Price: " + purchasePrice;
+	}
+
+	public void displayCar() {
+		System.out.println(getCarData());
+	}
+}
+```
+
+`Lab 2 - CarTester.java`
+```java
+public class CarTester {
+
+	public static void main(String[] args) {
+		Car newCar = new Car();
+		newCar.make = "Jeep";
+		newCar.model = "Rubicon";
+		newCar.color = "White";
+		newCar.numberOfWheels = 4;
+		newCar.purchasePrice = 80000;
+
+		newCar.displayCar();
+
+		Car car2 = new Car();
+		car2.make = "Tesla";
+		car2.model = "Model Y";
+		car2.color = "White";
+		car2.numberOfWheels = 4;
+		car2.purchasePrice = 53000;
+		System.out.println(car2.getCarData());
+	}
+}
+```
+
+`Lab 3 - DMVSimulator.java`
+```java
+public class DMVSimulator {
+	public static void main(String[] args) {
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+		System.out.print("Enter Make: ");
+		String make = scanner.next();
+
+		System.out.print("Enter Model: ");
+		String model = scanner.next();
+
+		System.out.print("Enter Color: ");
+		String color = scanner.next();
+
+		System.out.print("Enter Number of Wheels: ");
+		int wheels = scanner.nextInt();
+
+		System.out.print("Enter Purchase Price: $");
+		int price = scanner.nextInt();
+
+		System.out.println(make + " " + model + " " + color + " " + wheels + " " + price);
+
+		System.out.print("Calculate tax 'C' or Exit 'E': ");
+		String calculateTax = scanner.next();
+
+		if (calculateTax.equals("C") || calculateTax.equals("c")) {
+			System.out.println("Price: $" + price + " Tax: $" + (price * 0.01 * wheels));
+		} else if (calculateTax.equals("E") || calculateTax.equals("e")) {
+			System.out.println("Goodbye!");
+			scanner.close();
+		}
+	}
+}
+```
 
 #### Project: Deaf Grandma
 
@@ -1474,6 +2997,258 @@ public class CalculatorSwitch {
 3. Break and Continue With Enhanced For Loops
 4. Labs
 
+`AdvancedForLoops/src/drills/NestedFor1.java`
+```java
+public class NestedFor1 {
+
+	public static void main(String[] args) {
+		for (int outer = 1; outer <= 2; outer++) {
+			for (int inner = 1; inner <= 10; inner++) {
+				int product = outer * inner;
+				System.out.print(product + "\t");
+			}
+			System.out.println();
+		}
+		// Run the above code.
+		// How many times does the the second output statement execute? 2*10
+	}
+}
+```
+
+`AdvancedForLoops/src/drills/NestedFor2.java`
+```java
+public class NestedFor2 {
+
+	public static void main(String[] args) {
+		for (int outer = 0; outer < 5; outer++) {
+			for (int inner = 0; inner < 10; inner++) {
+				System.out.print(inner + " "); // prints our space in nest loop
+			}
+			System.out.println(); // inside for loop will make a new line
+		}
+
+		// Write a nested for loop to print the numbers 0 to 9 five times.
+		// Output:
+		// 0 1 2 3 4 5 6 7 8 9
+		// 0 1 2 3 4 5 6 7 8 9
+		// 0 1 2 3 4 5 6 7 8 9
+		// 0 1 2 3 4 5 6 7 8 9
+		// 0 1 2 3 4 5 6 7 8 9
+	}
+}
+```
+
+`AdvancedForLoops/src/drills/ForEach.java`
+```java
+public class ForEach {
+
+	// Use the code in each "forLoop" method to write a foreach loop
+	// in the corresponding "forEachLoop" method. Verify that the loop outputs
+	// are the same.
+	public static void main(String[] args) {
+		forLoop1();
+		forEachLoop1();
+		forLoop2();
+		forEachLoop2();
+		forLoop3();
+		forEachLoop3();
+	}
+
+	static void forLoop1() {
+		int[] intArr = { 10, 20, 30, 40 };
+		for (int i = 0; i < intArr.length; i++) {
+			int num = intArr[i];
+			System.out.print(num + " ");
+		}
+		System.out.println("--end forLoop1");
+	}
+
+	static void forEachLoop1() {
+		int[] intArr = { 10, 20, 30, 40 };
+		for (int num : intArr) {
+			System.out.print(num + " ");
+		}
+		System.out.println("--end forEachLoop1");
+	}
+
+	static void forLoop2() {
+		String[] strings = new String[4];
+		strings[0] = "First";
+		strings[1] = "Second";
+		strings[2] = "Third";
+		strings[3] = "Fourth";
+		for (int i = 0; i < strings.length; i++) {
+			String s = strings[i];
+			System.out.print(s + " ");
+		}
+		System.out.println("--end forLoop2");
+	}
+
+	static void forEachLoop2() {
+		String[] strings = new String[4];
+		strings[0] = "First";
+		strings[1] = "Second";
+		strings[2] = "Third";
+		strings[3] = "Fourth";
+		for (String s : strings) {
+			System.out.print(s + " ");
+		}
+		System.out.println("--end forEachLoop2");
+	}
+
+	static void forLoop3() {
+		double doubleArr[] = { 1.1, 2.2, 3.3, 4.4 };
+		for (int i = 0; i < doubleArr.length; i++) {
+			System.out.print(doubleArr[i] + " ");
+		}
+		System.out.println("--end forLoop3");
+	}
+
+	static void forEachLoop3() {
+		double doubleArr[] = { 1.1, 2.2, 3.3, 4.4 };
+		// foreach loop here
+		for (double d : doubleArr) {
+			System.out.print(d + " ");
+		}
+		System.out.println("--end forEachLoop3");
+	}
+}
+```
+
+`AdvancedForLoops/src/drills/ForEachBreakContinue.java`
+```java
+public class ForEachBreakContinue {
+
+	public static void main(String[] args) {
+		// Write a foreach loop to display only odd numbers.
+		// Output: 55 105 99 71 39 43
+		int[] odds = new int[] { 55, 105, 99, 71, -100, 39, 43 };
+		for (int num : odds) {
+			if (num % 2 == 0) {
+				continue;
+			}
+			System.out.print(num + " ");
+		}
+
+		System.out.println();
+
+		// Change the loop to break if -100 is found.
+		// Output: 32 154 34 54
+		int[] wow = new int[] { 32, 154, 34, 54, -100, 39, 43 };
+		for (int num : wow) {
+			if (num == -100) {
+				break;
+			}
+			System.out.print(num + " ");
+		}
+	}
+}
+```
+
+`Lab 1 - MinMaxFor.java`
+```java
+public class MinMaxFor {
+	public static void main(String[] args) {
+		// Write a program that declares an array of five integers, int[] numbers = {28,
+		// 33, 55, 21, 35};.
+		int numbers[] = { 28, 33, 55, 21, 35 }; 
+		int min = numbers[0];
+		int max = numbers[0];
+
+		// Use a for loop to determine the smallest and largest number in the array, and
+		// print them.
+		for (int i = 1; i < numbers.length; i++) {
+			if (min > numbers[i]) {
+				min = numbers[i];
+			}
+			if (max < numbers[i]) {
+				max = numbers[i];
+			}
+		}
+		System.out.println("Min: " + min);
+		System.out.println("Max: " + max);
+	}
+}
+```
+
+`Lab 2 - MinMaxForEach.java`
+```java
+public class MinMaxForEach {
+	public static void main(String[] args) {
+		int numbers[] = { 28, 33, 55, 21, 35 };
+		int min = numbers[0];
+		int max = numbers[0];
+
+		for (int num : numbers) {
+			if (min > num) {
+				min = num;
+			}
+			if (max < num) {
+				max = num;
+			}
+		}
+		System.out.println("Min: " + min);
+		System.out.println("Max: " + max);
+	}
+}
+```
+
+`Lab 3 - MinMaxWhile.java`
+```java
+public class MinMaxWhile {
+	public static void main(String[] args) {
+		int numbers[] = { 28, 33, 55, 21, 35 };
+		int min = numbers[0];
+		int max = numbers[0];
+
+		int i = 0;
+		while (i < numbers.length) {
+			if (min > numbers[i]) {
+				min = numbers[i];
+			}
+			if (max < numbers[i]) {
+				max = numbers[i];
+			}
+			i++;
+		}
+		System.out.println("Min: " + min);
+		System.out.println("Max: " + max);
+	}
+}
+```
+
+`Lab 4 - MinMaxPrompt.java`
+```java
+public class MinMaxPrompt {
+  public static void main(String[] args) {
+    java.util.Scanner keyboard = new java.util.Scanner(System.in);
+
+    int numValues = 5;
+    int[] numbers = new int[numValues];
+
+    for (int i = 0; i < numbers.length; i++) {
+      System.out.print("Enter an integer: ");
+      numbers[i] = keyboard.nextInt();
+    }
+    keyboard.close();
+
+    int min = numbers[0];
+    int max = numbers[0];
+
+    for (int num : numbers) {
+      if (min > num) {
+        min = num;
+      }
+      if (max < num) {
+        max = num;
+      }
+    }
+    System.out.println("Min: " + min);
+    System.out.println("Max: " + max);
+  }
+}
+```
+
 #### Advanced Arrays
 1. Array Syntax
 2. Returning Array References from Methods
@@ -1484,5 +3259,171 @@ public class CalculatorSwitch {
 7. Multidimensional Array Shortcuts
 8. Variable Arguments Arrays *
 9. Labs
+
+`AdvancedArrays/com.skilldistillery.advancedarrays.drills.ArrayOfObjects`
+```java
+//PopStar.java
+public class PopStar {
+	public String name;
+
+	public void sing() {
+		// Have the PopStar print their name to the screen, as part of some kind of
+		// lyric.
+		// Be creative.
+		System.out.print("My name is " + name);
+		int numVowels = name.length();
+		System.out.print(", h");
+		for (int i = 0; i < numVowels; i++) {
+			System.out.print("o");
+		}
+		System.out.println("!!");
+	}
+}
+
+//ArrayOfObjects.java
+public class ArrayOfObjects {
+
+	public static void main(String[] args) {
+		// Instantiate an Array to hold PopStar objects
+		PopStar[] theBeatles = new PopStar[4];
+
+		// Create PopStar instances and add them to the array
+		PopStar songWriter1 = new PopStar();
+		songWriter1.name = "Paul";
+		theBeatles[0] = songWriter1;
+
+		PopStar songWriter2 = new PopStar();
+		songWriter2.name = "John";
+		theBeatles[1] = songWriter2;
+
+		PopStar anotherBeatle = new PopStar();
+		anotherBeatle.name = "George";
+		theBeatles[2] = anotherBeatle;
+
+		theBeatles[3] = new PopStar();
+		theBeatles[3].name = "Ringo";
+
+		// Call the method allSing
+		ArrayOfObjects objects = new ArrayOfObjects();
+		objects.allSing(theBeatles);
+	}
+
+	public void allSing(PopStar[] stars) {
+		// Loop through the array and call each PopStar's sing() method.
+		for (PopStar currentSingingPopstar : stars) {
+			currentSingingPopstar.sing();
+		}
+		for (int i = 0; i < stars.length; i++) {
+			stars[i].sing();
+		}
+	}
+}
+```
+
+`AdvancedArrays/com.skilldistillery.advancedarrays.drills.ReturningArrays`
+```java
+public class PopStar {
+	public String name;
+
+	public void sing() {
+		// Have the PopStar print their name to the screen, as part of some kind of
+		// lyric.
+		// Be creative.
+		System.out.print("My name is " + name);
+		int numVowels = name.length();
+		System.out.print(", h");
+		for (int i = 0; i < numVowels; i++) {
+			System.out.print("o");
+		}
+		System.out.println("!!");
+	}
+}
+```
+
+`ReturningArrays.java`
+```java
+public class ReturningArrays {
+	public static void main(String[] args) {
+//		Non-Static Method Call
+//		createBand();
+
+		ReturningArrays ra = new ReturningArrays();
+		ra.createBand();
+		PopStar[] output = ra.createBand();
+		
+		//Print out each name
+		for (int i = 0; i < output.length; i++) {
+			System.out.println(output[i].name); // Justin Lance...
+		}
+
+		// for each loop
+//		for (PopStar popStar : output) {
+//		    System.out.println(popStar.name);
+//		}
+		
+		ra.allSing(output); //My name is Justin, hoooooo!! My name is Lance, hooooo!!...		
+
+	}
+
+	public PopStar[] createBand() {
+		// Move the code that creates and fills a PopStar array into this method.
+		// Be sure to return the array from the method
+		// (since it's return type is PopStar[]).
+
+		// Instantiate an Array to hold PopStar objects
+		PopStar[] sync = new PopStar[5];
+
+		// Create PopStar instances and add them to the array
+		PopStar jt = new PopStar();
+		sync[0] = jt;
+		jt.name = "Justin";
+
+		PopStar l = new PopStar();
+		l.name = "Lance";
+		sync[1] = l;
+
+		PopStar jc = new PopStar();
+		sync[2] = jc;
+		jc.name = "JC";
+
+		PopStar jf = new PopStar();
+		jf.name = "Joey";
+		sync[3] = jf;
+
+		PopStar c = new PopStar();
+		c.name = "Chris";
+		sync[4] = c;
+		return sync;
+	}
+
+	public void allSing(PopStar[] sync) {
+		// Loop through the array and call each PopStar's sing() method
+		for (int i = 0; i < sync.length; i++) {
+			PopStar popStar = sync[i];
+			popStar.sing();
+		}
+	}
+}
+```
+
+`AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare
+```java
+```
+
+`AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare`
+```java
+```
+
+`AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare`
+```java
+```
+
+`AdvancedArrays/com.skilldistillery.advancedarrays.drills.VarArgsBand`
+```java
+```
+
+`Lab 1 - SBScores.java`
+```java
+```
 
 #### Project: Tic Tac Toe
