@@ -3473,15 +3473,15 @@ public class ReturningArrays {
 4. Labs
 
 #### Introduction to JUnit
-1.Testing Java Applications
-2.Building and Deploying Software
-3.JUnit
-4.Test Classes
-5.Writing @Test Methods
+1. Testing Java Applications
+2. Building and Deploying Software
+3. JUnit
+4. Test Classes
+5. Writing @Test Methods
 6. assert Methods
-7.@Before and @After
-8.Test-Driven Development (TDD)
-9.Labs
+7. @Before and @After
+8. Test-Driven Development (TDD)
+9. Labs
 
 #### Project: Caesar Cipher
 
@@ -3627,15 +3627,15 @@ public class ReturningArrays {
 4. Labs
 
 #### Introduction to JUnit
-1.Testing Java Applications
-2.Building and Deploying Software
-3.JUnit
-4.Test Classes
-5.Writing @Test Methods
+1. Testing Java Applications
+2. Building and Deploying Software
+3. JUnit
+4. Test Classes
+5. Writing @Test Methods
 6. assert Methods
-7.@Before and @After
-8.Test-Driven Development (TDD)
-9.Labs
+7. @Before and @After
+8. Test-Driven Development (TDD)
+9. Labs
 
 #### Project: Caesar Cipher
 
