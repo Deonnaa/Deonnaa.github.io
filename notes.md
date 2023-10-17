@@ -1,6 +1,5 @@
 ### [Week 1](https://github.com/SkillDistillery/SD41/blob/main/jfop/README.md)
-#### Java Fundamentals of Programming
-##### Day 1
+#### Day 1
 1. Day One System Setup
 2. Simple Programs
 	1. Programming
@@ -427,7 +426,7 @@ public class ThreeVariables {
 ```java
 //To see a list of all of the shortcut keys, use Cmd-Shift-L.
 ```
-Day 2
+#### Day 2
 1. Eclipse
 2. Expressions
 	1. Expressions: Where the Work Gets Done
@@ -1072,7 +1071,7 @@ public class IfCelsFahr {
 5. Project: Simple Calculator
 6. Project: Mad Libs
 
-Day 3
+#### Day 3
 1. More Expressions
 	1. Using Boolean Variables
  	2. Boolean Expressions
