@@ -1,6 +1,6 @@
 ### [Week 1](https://github.com/SkillDistillery/SD41/blob/main/jfop/README.md)
 #### Java Fundamentals of Programming
-Day 1
+##### Day 1
 1. Day One System Setup
 2. Simple Programs
 	1. Programming
@@ -2434,10 +2434,8 @@ public class Round {
 Day 6
 1. Arrays
 	1. Variables - Single vs. Collections
- 	2. Arrays are one of the primary data collections in Java.
-  	3. An array allows us to have a single variable that points to multiple pieces of data.
-  	4. Arrays
-  	5. Declaring an Array
+ 	2. Arrays
+  	3. Declaring an Array
 ```java
 //Arrays/src/drills/ArrayDeclare.java
 public class ArrayDeclare {
@@ -2457,7 +2455,7 @@ public class ArrayDeclare {
 }
 ```
 *
-	6. Creating an Array
+	4. Creating an Array
 ```java
 //Arrays/src/drills/ArrayCreate.java
 public class ArrayCreate {
@@ -2484,8 +2482,8 @@ public class ArrayCreate {
 }
 ```
 *  	
-	7. Array Element Default Values
-  	8. Reading and Storing Data
+	5. Array Element Default Values
+  	6. Reading and Storing Data
 ```java
 //Arrays/src/drills/ArrayAccess.java
 public class ArrayAccess {
@@ -2520,7 +2518,7 @@ public class ArrayAccess {
 }
 ```
 * 
-   	9. Array Initialization Shortcuts
+   	7. Array Initialization Shortcuts
 ```java
 //Arrays/src/drills/ArrayAccess2.java
 public class ArrayAccess2 {
@@ -2556,7 +2554,7 @@ public class ArrayAccess2 {
 }
 ```
 * 
-	10. Iterating Arrays
+	8. Iterating Arrays
 ```java
 //Arrays/src/drills/Iterating.java
 public class Iterating {
@@ -2596,7 +2594,7 @@ public class Iterating {
 }
 ```
 * 
-	11. Passing Arrays to Methods
+	9. Passing Arrays to Methods
 ```java
 //Arrays/src/drills/ArrayReferences.java
 public class ArrayReferences {
@@ -2660,8 +2658,8 @@ public class ArrayReferences {
 }
 ```
 *   	
-	12. Three Ways of Creating Arrays
-  	13. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Arrays/labs.md)
+	10. Three Ways of Creating Arrays
+  	11. [Labs](https://github.com/SkillDistillery/SD41/blob/main/jfop/Arrays/labs.md)
 ```java
 //Labs 1 - DayOfWeekIterating1.java
 public class DayOfWeekIterating1 {
@@ -3423,7 +3421,7 @@ Day 1
 	6. Static Imports
 	7. Labs
 ```java
-123
+//Lab 1 - 
 
 ```
 2. String and StringBuilder
@@ -3435,7 +3433,7 @@ Day 1
 	6. Writing toString() Methods
 	7. Labs
 ```java
-123
+//Lab 1 -
 
 ```
 3. Project: Mad Libs(3)
@@ -3447,7 +3445,7 @@ Day 2
 	3. Unicode
 	4. Labs
 ```java
-123
+//Lab 1 -
 
 ```
 2. Objects and Classes
@@ -3457,96 +3455,96 @@ Day 2
 	4. Objects in Memory
 	5. Imagining the Heap
 	6. Visibility
-3. Drawing Objects and Their Relationships
-  1. Representing Objects with Diagrams
-  2. UML Class Diagram
-  3. Classes and Their Associations
-  4. Labs
+3. Drawing Objects and Their Relationships(3)
+	1. Representing Objects with Diagrams
+	2. UML Class Diagram
+	3. Classes and Their Associations
+	4. Labs
 ```java
-123
+//Lab 1 -
 
 ```
 4. Introduction to JUnit
-  1. Testing Java Applications
-  2. Building and Deploying Software
-  3. JUnit
-  4. Test Classes
-  5. Writing @Test Methods
-  6. assert Methods
-  7. @Before and @After
-  8. Test-Driven Development (TDD)
-  9. Labs
+	1. Testing Java Applications
+  	2. Building and Deploying Software
+	3. JUnit
+	4. Test Classes
+	5. Writing @Test Methods
+	6. assert Methods
+	7. @Before and @After
+	8. Test-Driven Development (TDD)
+	9. Labs
 ```java
-123
+//Lab 1 -
 
 ```
 5. Project: Caesar Cipher(5)
 
 Day 3
 1. Encapsulation
-  1. Changing Instance Fields
-  2. Visibility and Access Modifiers
-  3. Encapsulation
-  4. Getters and Setters
-  5. The this Keyword
-  6. Labs
+	1. Changing Instance Fields
+	2. Visibility and Access Modifiers
+	3. Encapsulation
+	4. Getters and Setters
+	5. The this Keyword
+	6. Labs
 ```java
-123
+//Lab 1 -
 
 ```
 2. Object Initialization
-  1. this vs. this()
-  2. Initializing Static Fields
-  3. Initializing Instance Fields
-  4. Order of Initialization
-  5. Constant Fields and Variables
-  6. private Methods
-  7. Labs
+	1. this vs. this()
+	2. Initializing Static Fields
+	3. Initializing Instance Fields
+	4. Order of Initialization
+	5. Constant Fields and Variables
+	6. private Methods
+	7. Labs
 ```java
-123
+//Lab 1 - 
 
 ```
 3. Inheritance in Java
-  1. Inheritance
-  2. The extends Keyword
-  3. final Classes
-  4. UML and extends
-  5. Inheriting Fields
-  6. Inheriting Methods
-  7. Lab - Creating a Class Hierarchy
+	1. Inheritance
+	2. The extends Keyword
+	3. final Classes
+	4. UML and extends
+	5. Inheriting Fields
+	6. Inheriting Methods
+	7. Lab - Creating a Class Hierarchy
 ```java
-123
+//Lab 1 - 
 
 ```
 4. Visibility
-  1. Field and Method Visibility
-  2. Getters and Setters
-  3. Lab - Improving Encapsulation
+	1. Field and Method Visibility
+	2. Getters and Setters
+	3. Lab - Improving Encapsulation
 ```java
-123
+//Lab 1 - 
 
 ```
 5. Project: Food Trucks(5)
 
 Day 4
 1. Superclasses
-  1. Using a Superclass's Methods and Fields
-  2. Constructors and Inheritance
-  3. Rules for super()
-  4. The Object Class
-  5. Labs
+	1. Using a Superclass's Methods and Fields
+	2. Constructors and Inheritance
+	3. Rules for super()
+	4. The Object Class
+	5. Labs
 ```java
-123
+//Lab 1 - 
 
 ```
 2. Polymorphism and Overriding
-  1. Polymorphism in Java
-  2. Overriding Superclass Behavior
-  3. @Override
-  4. Rules for Overriding
-  5. Lab - Using Polymorphism
+	1. Polymorphism in Java
+	2. Overriding Superclass Behavior
+  	3. @Override
+  	4. Rules for Overriding
+  	5. Lab - Using Polymorphism
 ```java
-123
+//Lab 1 - 
 
 ```
 3. Abstract Classes
@@ -3616,37 +3614,37 @@ Day 4
 
 Day 5
 1. Equals and Hashcode
-  1. Comparing References
-  2. Object.equals()
-  3. Defining an equals() Method
-  4. Determining Equality
-  5. hashCode()
-  6. Labs
+	1. Comparing References
+	2. Object.equals()
+  	3. Defining an equals() Method
+  	4. Determining Equality
+  	5. hashCode()
+  	6. Labs
 ```java
-123
+////Lab 1 -
 
 ```
 2. The Primitive-Type Wrapper Classes
-  1. Wrapper Classes
-  2. Important Wrapper Class Methods
-  3. Comparing Wrapper Objects
-  4. Autoboxing
-  5. Float and Double
-  6. Integer-type Wrappers
-  7. Character
-  8. Boolean
-  9. Labs
+	1. Wrapper Classes
+  	2. Important Wrapper Class Methods
+  	3. Comparing Wrapper Objects
+  	4. Autoboxing
+  	5. Float and Double
+  	6. Integer-type Wrappers
+  	7. Character
+  	8. Boolean
+  	9. Labs
 ```java
-123
+//Lab 1 -
 
 ```
 3. Interfaces
-  1. Interfaces
-  2. Declaring an Interface
-  3. Using Interfaces
-  4. Labs - Declaring and Using Interfaces
+	1. Interfaces
+  	2. Declaring an Interface
+  	3. Using Interfaces
+  	4. Labs - Declaring and Using Interfaces
 ```java
-123
+//Lab 1 -
 
 ```
 4. Project: Lord of the Objects(4)
@@ -3657,6 +3655,38 @@ Day 5
 ### Week 3
 
 `Object-Oriented Programming in Java`
+
+Day 1
+1. Packages
+2. String and StringBuilder
+3. Project: Mad Libs(3)
+
+Day 2
+1. ASCII and Unicode Data
+2. Objects and Classes
+3. Drawing Objects and Their Relationships
+4. Introduction to JUnit
+5. Project: Caesar Cipher(5)
+
+Day 3
+1. Encapsulation
+2. Object Initialization
+3. Inheritance in Java
+4. Visibility
+5. Project: Food Trucks(5)
+
+Day 4
+1. Superclasses
+2. Polymorphism and Overriding
+3. Abstract Classes
+4. Polymorphism and Casting
+5. Project: Animal Sanctuary(5)
+
+Day 5
+1. Equals and Hashcode
+2. The Primitive-Type Wrapper Classes
+3. Interfaces
+4. Project: Lord of the Objects(4)
 
 `Java Libraries`
 
