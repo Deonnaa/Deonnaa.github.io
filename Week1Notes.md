@@ -3406,7 +3406,7 @@ public class ReturningArrays {
 }
 ```
 
-`AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare
+`AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare`
 ```java
 ```
 
