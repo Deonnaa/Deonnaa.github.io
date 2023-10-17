@@ -3427,3 +3427,160 @@ public class ReturningArrays {
 ```
 
 #### Project: Tic Tac Toe
+
+## [Week 2](https://github.com/SkillDistillery/SD41/blob/main/java1/README.md)
+
+### Day 1
+
+#### Packages
+1. Namespaces
+2. Introduction to Java Packages
+3. Creating Packages
+4. Package Names
+5. Imports
+6. Static Imports
+7. Labs
+
+#### String and StringBuilder
+1. The String Class
+2. The String Pool
+3. String Methods
+4. The StringBuilder Class
+5. StringBuilder Methods
+6. Writing toString() Methods
+7. Labs
+
+#### Project: Mad Libs
+
+### Day 2
+
+#### ASCII and Unicode Data
+1. Standards
+2. ASCII
+3. Unicode
+4. Labs
+
+#### Objects and Classes
+1. Classes and Objects
+2. Constructors
+3. The Default Constructor
+4. Objects in Memory
+5. Imagining the Heap
+6. Visibility
+
+#### Drawing Objects and Their Relationships
+1. Representing Objects with Diagrams
+2. UML Class Diagram
+3. Classes and Their Associations
+4. Labs
+
+#### Introduction to JUnit
+1.Testing Java Applications
+2.Building and Deploying Software
+3.JUnit
+4.Test Classes
+5.Writing @Test Methods
+6. assert Methods
+7.@Before and @After
+8.Test-Driven Development (TDD)
+9.Labs
+
+#### Project: Caesar Cipher
+
+### Day 3
+
+#### Encapsulation
+1. Changing Instance Fields
+2. Visibility and Access Modifiers
+3. Encapsulation
+4. Getters and Setters
+5. The this Keyword
+6. Labs
+
+#### Object Initialization
+1. this vs. this()
+2. Initializing Static Fields
+3. Initializing Instance Fields
+4. Order of Initialization
+5. Constant Fields and Variables
+6. private Methods
+7. Labs
+
+#### Inheritance in Java
+1. Inheritance
+2. The extends Keyword
+3. final Classes *
+4. UML and extends
+5. Inheriting Fields *
+6. Inheriting Methods *
+7. Lab - Creating a Class Hierarchy
+
+#### Visibility
+1. Field and Method Visibility
+2. Getters and Setters
+3. Lab - Improving Encapsulation
+
+#### Project: Food Trucks
+
+### Day 4
+
+#### Superclasses
+1. Using a Superclass's Methods and Fields
+2. Constructors and Inheritance
+3. Rules for super()
+4. The Object Class
+5. Labs
+
+#### Polymorphism and Overriding
+1. Polymorphism in Java
+2. Overriding Superclass Behavior
+3. @Override
+4. Rules for Overriding
+5. Lab - Using Polymorphism
+
+#### Abstract Classes
+1. Abstract Classes
+2. Abstract Methods
+3. Using Abstract Classes
+4. Labs
+
+#### Polymorphism and Casting
+1. Casting
+2. Downcasting
+3. Casting and Precedence
+4. Hiding Instance Fields
+5. Labs
+
+#### Project: Animal Sanctuary
+
+### Day 5
+
+#### Equals and Hashcode
+1. Comparing References
+2. Object.equals()
+3. Defining an equals() Method
+4. Determining Equality
+5. hashCode()
+6. Labs
+
+#### The Primitive-Type Wrapper Classes
+1. Wrapper Classes
+2. Important Wrapper Class Methods
+3. Comparing Wrapper Objects
+4. Autoboxing
+5. Float and Double
+6. Integer-type Wrappers
+7. Character
+8. Boolean
+9. Labs
+
+#### Interfaces
+1. Interfaces
+2. Declaring an Interface
+3. Using Interfaces
+4. Labs - Declaring and Using Interfaces
+
+#### Project: Lord of the Objects
+
+
+
