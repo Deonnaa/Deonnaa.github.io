@@ -73,7 +73,7 @@ Week 1 Notes.md
 
 ##### Project: Mad Libs
 
-#### Day 3
+### Day 3
 
 ##### More Expressions
 1. Using Boolean Variables
