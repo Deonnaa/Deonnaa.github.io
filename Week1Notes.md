@@ -1,5 +1,3 @@
-Week 1 Notes.md
-
 ## [Week 1](https://github.com/SkillDistillery/SD41/blob/main/jfop/README.md)
 
 ## Week 1 - Day 1
@@ -3430,7 +3428,7 @@ public class ReturningArrays {
 
 ## [Week 2](https://github.com/SkillDistillery/SD41/blob/main/java1/README.md)
 
-### Week 1 - Day 1
+### Week 2 - Day 1
 
 #### Packages
 1. Namespaces
@@ -3452,7 +3450,7 @@ public class ReturningArrays {
 
 #### Project: Mad Libs
 
-### Week 1 - Day 2
+### Week 2 - Day 2
 
 #### ASCII and Unicode Data
 1. Standards
@@ -3487,7 +3485,7 @@ public class ReturningArrays {
 
 #### Project: Caesar Cipher
 
-### Week 1 - Day 3
+### Week 2 - Day 3
 
 #### Encapsulation
 1. Changing Instance Fields
@@ -3522,7 +3520,7 @@ public class ReturningArrays {
 
 #### Project: Food Trucks
 
-### Week 1 - Day 4
+### Week 2 - Day 4
 
 #### Superclasses
 1. Using a Superclass's Methods and Fields
@@ -3553,7 +3551,7 @@ public class ReturningArrays {
 
 #### Project: Animal Sanctuary
 
-### Week 1 - Day 5
+### Week 2 - Day 5
 
 #### Equals and Hashcode
 1. Comparing References
