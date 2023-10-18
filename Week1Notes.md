@@ -3555,6 +3555,43 @@ public class SBScores {
 6. Static Imports
 7. Labs
 
+```java
+package com.skilldistillery.directorypath; //To minimize the chance of package name collisions.
+```
+
+```java
+import com.skilldistillery.utilities.parsing.Parser; //To be able to use Parser.
+import com.skilldistillery.utilities.parsing.*; //To be able to use all objects, does not use memory.
+
+//main method
+Parser parser = new Parser();
+parser.parse();
+```
+
+`Lab 1 - ProductMain`
+```java
+package com.skilldistillery.packages.labs;
+
+public class ProductMainStatics {
+
+  Product product;
+
+  public static void main(String[] args) {
+    ProductMainStatics app = new ProductMainStatics();
+    app.go();
+  }
+
+  public ProductMainStatics() {
+    product = new Product();
+  }
+
+  public void go() {
+    utilMethod();
+    helperMethod();
+  }
+}
+```
+
 #### String and StringBuilder
 1. The String Class
 2. The String Pool
@@ -3563,6 +3600,249 @@ public class SBScores {
 5. StringBuilder Methods
 6. Writing toString() Methods
 7. Labs
+
+`StringAndStringBuilder/com.skilldistillery.stringstringbuilder.drills.StringPoolTesting`
+```java
+class OtherClass {
+	public static String coding = "AlwaysCoding";
+}
+
+public class StringPoolTesting {
+	private String coding = "Always" + "Coding";
+
+	public static void main(String[] args) {
+		StringPoolTesting tester = new StringPoolTesting();
+		tester.test();
+	}
+
+	private void test() {
+		String coding = "AlwaysCoding";
+		String coding2 = new String("AlwaysCoding");
+		String always = "Always";
+
+//     true or false: false
+		System.out.println(coding == coding2);
+//     true or false: true
+		System.out.println(coding == this.coding);
+//     true or false: true
+		System.out.println(coding == OtherClass.coding);
+//     true or false: true
+		System.out.println(coding == "AlwaysCoding");
+//     true or false: true
+		System.out.println(coding == "Always" + "Coding");
+//     true or false: flase
+		System.out.println(coding == always + "Coding");
+//     true or false: true
+		System.out.println(coding == "Al" + "waysCoding");
+//     true or false:true
+		System.out.println(coding == (always + "Coding").intern());
+	}
+}
+```
+
+`StringAndStringBuilder/src/com.skilldistillery.stringstringbuilder.drills.SSNMasker`
+```java
+public class SSNMasker {
+
+	/**
+	 * Returns an SSN (Social Security Number) string with the first five digits
+	 * replaced with 'X'.
+	 * 
+	 * @param ssn An SSN sting in the format 123-45-6789
+	 * @return A masked SSN string in the format XXX-XX-6789
+	 */
+	public String maskSSN(String ssn) {
+		String maskedSSN = null;
+
+		// CODE HERE
+		// use substring and concatenation to return a masked SSN.
+		String lastFour = ssn.substring(7, 11);
+		maskedSSN = "XXX-XX-" + lastFour;
+		return maskedSSN;
+	}
+}
+```
+
+`StringAndStringBuilder/test/com.skilldistillery.stringstringbuilder.drills.SSNMaskerTests`
+```java
+public class SSNMaskerTests {
+  SSNMasker masker;
+
+	@Before
+	public void setUp() throws Exception {
+		masker = new SSNMasker();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		masker = null;
+	}
+
+	@Test
+	public void test_maskSSN_returns_ssn_with_first_five_digits_masked_with_X() {
+		String ssn = "123-45-6789";
+		String masked = masker.maskSSN(ssn);
+		String expected = "XXX-XX-6789";
+		assertEquals(expected, masked);
+		ssn = "666-55-4321";
+		masked = masker.maskSSN(ssn);
+		expected = "XXX-XX-4321";
+	}
+
+}
+```
+
+`StringAndStringBuilder/com.skilldistillery.stringstringbuilder.drills.UserCommentDriver`
+```java
+public class UserCommentDriver {
+
+	public static void main(String[] args) {
+		UserCommentDriver driver = new UserCommentDriver();
+		driver.go();
+	}
+
+	private void go() {
+		UserComment comment1 = new UserComment(42, null, "2018-01-04", "14:59:23", "bdobbs", "I love coding in Java!");
+
+		UserComment comment2 = new UserComment(47, comment1, "2018-01-04", "15:03:12", "jsmith", "Me too!");
+
+		System.out.println(comment1);
+		System.out.println(comment2);
+
+	}
+}
+```
+```java
+//UserComment.java
+
+@Override
+	public String toString() {
+		return "UserComment [commentId=" + commentId + ", inReplyToComment=" + inReplyToComment + ", date=" + date
+				+ ", time=" + time + ", userName=" + userName + ", commentText=" + commentText + "]";
+	}
+```
+
+`Lab 1 - StringLab.java`
+```java
+public class StringLab {
+
+	public static void main(String[] args) {
+		StringLab lab = new StringLab();
+		lab.go();
+	}
+
+	private void go() {
+		// Using String methods, determine and print whether 'testString':
+		// 1. Starts with 'abc'
+		// 2. Ends with 'ld!'
+		// 3. Contains 'wor'
+		String testString = "Hello world!";
+
+		System.out.println(testString.startsWith("abc"));
+		System.out.println(testString.endsWith("ld!"));
+		System.out.println(testString.contains("wor"));
+
+		// Using String methods, print the following information
+		// about 'testString2':
+		// 1. The character at index 3
+		// 2. The number of characters in the String
+		// 3. The contents of the String in all uppercase
+		// 4. The contents of the String without white space on either side
+
+		String testString2 = "   Hello Java Coding World!   ";
+
+		System.out.println(testString2.charAt(3));
+		System.out.println(testString2.length());
+		System.out.println(testString2.toUpperCase());
+		System.out.println(testString2.trim());
+	}
+}
+```
+
+`Lab 2 - StringBuilderLab.java`
+```java
+public class StringBuilderLab {
+
+	public static void main(String[] args) {
+		StringBuilderLab lab = new StringBuilderLab();
+		lab.go();
+	}
+
+	private void go() {
+		String original = "Java world.";
+
+		StringBuilder sb = new StringBuilder(original);
+		System.out.println(sb);
+
+		// Use only StringBuilder methods on sb to change the text to:
+		// Hello, Java coding world! Always Be Coding!
+		// Print out sb after each step.
+
+		sb.setCharAt(sb.length() - 1, '!');
+		System.out.println(sb);
+
+		sb.insert(5, "coding ");
+		System.out.println(sb);
+
+		sb.insert(0, "Hello, ");
+		System.out.println(sb);
+
+		sb.append(" Always Be Coding!");
+		System.out.println(sb);
+
+		String result = sb.toString();
+		System.out.println(result);
+	}
+}
+```
+
+`Lab 3 - UserComment.java`
+```java
+@Override
+  public String toString() {
+    String result = "On " + date + " at " + time + ", " + userName + " posted this comment: ["
+                    + commentText + "]";
+    return result;
+  }
+```
+
+`Lab 4 - UserComment2.java`
+```java
+@Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder("On ");
+    sb.append(date)
+      .append(" at ")
+      .append(time)
+      .append(", ")
+      .append(userName)
+      .append(" posted this comment: [")
+      .append(commentText)
+      .append("]");
+    return sb.toString();
+  }
+```
+
+`Lab 5 - UserComment3.java`
+```java
+@Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    builder.append("UserComment3 [commentId=").append(commentId).append(", ");
+    if (inReplyToComment != null)
+      builder.append("inReplyToComment=").append(inReplyToComment).append(", ");
+    if (date != null)
+      builder.append("date=").append(date).append(", ");
+    if (time != null)
+      builder.append("time=").append(time).append(", ");
+    if (userName != null)
+      builder.append("userName=").append(userName).append(", ");
+    if (commentText != null)
+      builder.append("commentText=").append(commentText);
+    builder.append("]");
+    return builder.toString();
+  }
+```
 
 #### Project: Mad Libs
 
@@ -3581,6 +3861,74 @@ public class SBScores {
 4. Objects in Memory
 5. Imagining the Heap
 6. Visibility
+
+`Objects/com.skilldistillery.objs.drills.Dog`
+```java
+public class Dog {
+	public String breed;
+	public String name;
+	public int weight;
+
+	// Add a constructor with parameters to initialize breed and weight.
+	public Dog(String breedDog, int weightDog) {
+		breed = breedDog;
+		weight = weightDog;
+	}
+
+	// Add a constructor with parameters to initialize name, breed, and weight.
+	public Dog(String name, String someBreed, int howManyLbs) {
+		this.name = name;
+		breed = someBreed;
+		weight = howManyLbs;
+	}
+
+	public void displayDogInfo() {
+		System.out.println("Dog [breed=" + breed + ", name=" + name + ", weight=" + weight + "]");
+	}
+
+	public static void main(String[] args) {
+		// Create three dog instances and call the displayDogInfo method on each Dog
+		// object.
+		Dog newDog = new Dog("Poodle", 30);
+		newDog.displayDogInfo();
+
+		Dog myDog = new Dog("Pit Mix", 60);
+		myDog.displayDogInfo();
+
+		Dog yourDog = new Dog("Lab", 100);
+		yourDog.displayDogInfo();
+
+		Dog fredsDog = new Dog("Spot", "mutt", 10);
+		fredsDog.displayDogInfo();
+	}
+}
+```
+
+`Objects/com.skilldistillery.objs.drills.BankApp`
+```java
+public class BankApp {
+
+	public static void main(String[] args) {
+		BankApp b = new BankApp();
+		b.run();
+	}
+
+	void run() {
+		Account acc1 = new Account("ACC-10001", 305.32);
+		Account acc2 = new Account("ACC-10002", 9053.23);
+
+		printAccountData(acc1);
+		printAccountData(acc2);
+//    	acc1.setBalance(305.32 + 100);
+	}
+
+	void printAccountData(Account account) {
+		System.out.println(account.getAccountId() + " balance: " + account.getBalance());
+	}
+}
+//cmd + opt + s
+//generate getters and setters
+```
 
 #### Drawing Objects and Their Relationships
 1. Representing Objects with Diagrams
@@ -3688,11 +4036,288 @@ public class SBScores {
 8. Boolean
 9. Labs
 
+`WrapperClasses/com.skilldistillery.wrapperclasses.drills.ParseDrill`
+```java
+public class ParseDrill {
+
+	public static void main(String[] args) {
+		ParseDrill drill = new ParseDrill();
+		drill.go();
+	}
+
+	private void go() {
+		// Write statements to determine which strings can be parsed,
+		// and if so print the result, when parsed to:
+
+		// Example:
+		System.out.println(Integer.parseInt("42")); // No problem, 42
+
+		// int:
+		// "1000000000"
+		System.out.println(Integer.parseInt("1000000000")); // No problem, 1000000000
+		// "-1000000000"
+		System.out.println(Integer.parseInt("-1000000000")); // No problem, -1000000000
+		// "+1000000000"
+		System.out.println(Integer.parseInt("+1000000000")); // No problem, 1000000000
+		// " 1000000000 "
+//    System.out.println(Integer.parseInt("  1000000000   ")); // NumberFormatException
+		// "0x123abc"
+//    System.out.println(Integer.parseInt("0x123abc")); // NumberFormatException
+		// Note that a hexadecimal (or other base integer) can be parsed by passing
+		// a radix to the overloaded Integer.parseInt; omit the "0x" prefix.
+		System.out.println(Integer.parseInt("123abc", 16)); // NumberFormatException
+		// "1.0"
+//    System.out.println(Integer.parseInt("1.0")); // NumberFormatException
+		// "1,000,000,000"
+//  System.out.println(Integer.parseInt("1,000,000,000")); // NumberFormatException
+		// "1_000_000_000"
+//  System.out.println(Integer.parseInt("1_000_000_000")); // NumberFormatException
+		// "10000000000"
+//  System.out.println(Integer.parseInt("10000000000")); // NumberFormatException
+		// ""
+//  System.out.println(Integer.parseInt("")); // NumberFormatException
+		// null
+//  System.out.println(Integer.parseInt(null)); // NumberFormatException
+
+		// long:
+		// "1000000000"
+		System.out.println(Long.parseLong("1000000000")); // No problem, 1000000000
+		// "10000000000"
+		System.out.println(Long.parseLong("10000000000")); // No problem, 10000000000
+		// "10000000000L"
+		// 'l' or 'L' as a type indicator are not permitted here, unlike a literal
+//    System.out.println(Long.parseLong("10000000000L")); // NumberFormatException
+
+		// float:
+		// "10000000000"
+		System.out.println(Float.parseFloat("10000000000")); // No problem, 1.0E10
+		// "10000000000F"
+		System.out.println(Float.parseFloat("10000000000F")); // No problem, 1.0E10
+		// "314e-2"
+		System.out.println(Float.parseFloat("314e-2")); // No problem, 3.14
+		// "3.14D"
+		System.out.println(Float.parseFloat("3.14D")); // No problem, 3.14
+		// " 3.14 \n"
+		System.out.println(Float.parseFloat("  3.14   \n")); // No problem, 3.14
+		// null
+//    System.out.println(Float.parseFloat(null)); // NullPointerException
+
+		// boolean:
+		// "true"
+		System.out.println(Boolean.parseBoolean("true")); // No problem, true
+		// "TrUe"
+		System.out.println(Boolean.parseBoolean("TrUe")); // No problem, true
+		// "false"
+		System.out.println(Boolean.parseBoolean("false")); // No problem, false
+		// "no"
+		System.out.println(Boolean.parseBoolean("no")); // No problem, false
+		// "giraffe"
+		System.out.println(Boolean.parseBoolean("giraffe")); // No problem, false
+		// null
+		System.out.println(Boolean.parseBoolean(null)); // No problem, false
+
+	}
+}
+```
+
+`Lab 1 - NaNTest.java`
+```java
+public class NaNTest {
+
+	public static void main(String[] args) {
+		double f = 0.0 / 0.0;
+		System.out.println(f);
+		Double fObj = 0.0 / 0.0;
+		System.out.println(fObj);
+	}
+}
+```
+
+`Lab 2a - AutoboxOverloada.java`
+```java
+public class AutoboxOverloada {
+  public static void method(Object o) { System.out.println("In Object method"); }
+  // a.: The method call compiles even though no method takes int.
+  //     The int value is autoboxed to Integer, which is a subclass of Number.
+  public static void method(Number n) { System.out.println("In Number method"); }
+  //     Java will NOT both widen the int to long, then autobox to Long.
+  public static void method(Long l)   { System.out.println("In Long method"); }
+
+  public static void main(String[] args) {
+    int var = 17;
+    method(var);
+  }
+}
+```
+
+`Lab 2b - AutoboxOverload.java`
+```java
+public class AutoboxOverloadb {
+  public static void method(Object o) { System.out.println("In Object method"); }
+  public static void method(Number n) { System.out.println("In Number method"); }
+  public static void method(Long l)   { System.out.println("In Long method"); }
+  // b.: Java chooses the method taking long, preferring to widen the int to long
+  //     rather than autoboxing to an Integer object.
+  public static void method(long l)   { System.out.println("In long method"); }
+
+  public static void main(String[] args) {
+    int var = 17;
+    method(var);
+  }
+}
+```
+
+`Lab 2c - AutoboxOverload.java`
+```java
+public class AutoboxOverloadc {
+  public static void method(Object o) { System.out.println("In Object method"); }
+  public static void method(Number n) { System.out.println("In Number method"); }
+  public static void method(Long l)   { System.out.println("In Long method"); }
+  public static void method(long l)   { System.out.println("In long method"); }
+  // c.: Even with a method that takes Integer available, Java still chooses
+  //     to widen int to long instead of autoboxing.
+  public static void method(Integer i){ System.out.println("In Integer method"); }
+
+  public static void main(String[] args) {
+    int var = 17;
+    method(var);
+  }
+}
+```
+
+`Lab 2d - AutoboxOverload.java`
+```java
+public class AutoboxOverloadd {
+  public static void method(Object o) { System.out.println("In Object method"); }
+  public static void method(Number n) { System.out.println("In Number method"); }
+  public static void method(Long l)   { System.out.println("In Long method"); }
+  public static void method(long l)   { System.out.println("In long method"); }
+  public static void method(Integer i){ System.out.println("In Integer method"); }
+  // d.: Of course now Java will choose the method taking int.
+  public static void method(int i)    { System.out.println("In int method"); }
+
+  public static void main(String[] args) {
+    int var = 17;
+    method(var);
+  }
+}
+```
+
+`Lab 3 - CountUpOrDown.java`
+```java
+public class CountUpOrDown {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.print("Please enter a whole number: ");
+		int count = input.nextInt();
+		System.out.print("Please enter true or false: ");
+		boolean b = input.nextBoolean();
+
+		if (b) {
+			for (int i = 0; i <= count; i++) {
+				System.out.println(i);
+			}
+		} else {
+			for (int i = count; i >= 0; i--) {
+				System.out.println(i);
+			}
+		}
+
+		input.close();
+	}
+}
+```
+
+`Lab 4 - IntegerReferences.java`
+```java
+public class IntegerReferences {
+	public static void main(String[] args) {
+		Integer i = Integer.valueOf(1000);
+		increment(i);
+		// This prints 1000. The local variable i in main still refers
+		// to the immutable Integer object created on line 5.
+		System.out.println(i);
+
+		// If we assign the Integer reference returned by increment()
+		// to our local variable, it will print 1001.
+		i = increment(i);
+		System.out.println(i);
+
+	}
+
+	private static Integer increment(Integer i) {
+		// This statement does not modify the contents of the passed Integer,
+		// which is immutable. Instead, it unboxes the value to an in, increments,
+		// then autoboxes the result as a new Integer.
+		i++;
+		return i;
+	}
+}
+```
+
+`Lab 5 - TestLetters.java`
+```java
+public class TestLetters {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter some text: ");
+		String text = input.nextLine();
+		input.close();
+		TestLetters tester = new TestLetters();
+		tester.test(text);
+	}
+
+	private void test(String text) {
+		char[] chars = text.toCharArray();
+		for (char c : chars) {
+			System.out.print(c);
+			if (Character.isUpperCase(c)) {
+				System.out.print(" is uppercase.");
+			} else if (Character.isLowerCase(c)) {
+				System.out.print(" is lowercase.");
+			} else if (Character.isDigit(c)) {
+				System.out.print(" is a digit.");
+			}
+			System.out.println();
+		}
+	}
+}
+```
+
 #### Interfaces
 1. Interfaces
 2. Declaring an Interface
 3. Using Interfaces
 4. Labs - Declaring and Using Interfaces
+
+`Lab 1 - Drawable.java`
+```java
+
+```
+
+`Lab 2 - Circle.java`
+```java
+
+```
+
+`Lab 3 - Rectangle.java`
+```java
+
+```
+
+`Lab 4 - DrawableTester.java `
+```java
+
+```
+
+`Lab 5 - Text.java`
+```java
+
+```
 
 #### Project: Lord of the Objects
 
