@@ -4323,154 +4323,339 @@ public class TestLetters {
 
 ## [Week 3](https://github.com/SkillDistillery/SD41/blob/main/java1/README.md)
 
-### Week 3 - Day 1
+### Java Libraries
 
-#### Packages
-1. Namespaces
-2. Introduction to Java Packages
-3. Creating Packages
-4. Package Names
-5. Imports
-6. Static Imports
-7. Labs
+### Day 1
 
-#### String and StringBuilder
-1. The String Class
-2. The String Pool
-3. String Methods
-4. The StringBuilder Class
-5. StringBuilder Methods
-6. Writing toString() Methods
-7. Labs
+#### Generics and ArrayList
+1. Arrays Revisited
+2. The ArrayList Class
+3. Generic <Types>
+4. ArrayList - Adding and Getting
+5. Replacing, Inserting, and Removing
+6. Array vs. ArrayList
+7. ArrayList - Size vs. Capacity *
+8. Labs
 
-#### Project: Mad Libs
+``
+```java
 
-### Week 3 - Day 2
+```
 
-#### ASCII and Unicode Data
-1. Standards
-2. ASCII
-3. Unicode
-4. Labs
-
-#### Objects and Classes
-1. Classes and Objects
-2. Constructors
-3. The Default Constructor
-4. Objects in Memory
-5. Imagining the Heap
-6. Visibility
-
-#### Drawing Objects and Their Relationships
-1. Representing Objects with Diagrams
-2. UML Class Diagram
-3. Classes and Their Associations
-4. Labs
-
-#### Introduction to JUnit
-1. Testing Java Applications
-2. Building and Deploying Software
-3. JUnit
-4. Test Classes
-5. Writing @Test Methods
-6. assert Methods
-7. @Before and @After
-8. Test-Driven Development (TDD)
-9. Labs
-
-#### Project: Caesar Cipher
-
-### Week 3 - Day 3
-
-#### Encapsulation
-1. Changing Instance Fields
-2. Visibility and Access Modifiers
-3. Encapsulation
-4. Getters and Setters
-5. The this Keyword
+#### The List Interface
+1. The List Interface
+2. List Methods
+3. LinkedList
+4. Vector
+5. Using List - Best Practices
 6. Labs
 
-#### Object Initialization
-1. this vs. this()
-2. Initializing Static Fields
-3. Initializing Instance Fields
-4. Order of Initialization
-5. Constant Fields and Variables
-6. private Methods
-7. Labs
+``
+```java
 
-#### Inheritance in Java
-1. Inheritance
-2. The extends Keyword
-3. final Classes *
-4. UML and extends
-5. Inheriting Fields *
-6. Inheriting Methods *
-7. Lab - Creating a Class Hierarchy
+```
 
-#### Visibility
-1. Field and Method Visibility
-2. Getters and Setters
-3. Lab - Improving Encapsulation
+#### Exceptions
+1. Introduction to Exceptions
+2. The Exception Class
+3. Checked Exceptions
+4. Labs - Handling Exceptions
+5. The Throwable Hierarchy *
+6. Throwing Your Own Exceptions *
+7. Exceptions and Inheritance *
+8. finally
+9. Labs *
 
-#### Project: Food Trucks
+``
+```java
 
-### Week 3 - Day 4
+```
 
-#### Superclasses
-1. Using a Superclass's Methods and Fields
-2. Constructors and Inheritance
-3. Rules for super()
-4. The Object Class
-5. Labs
+#### Project: Data Entry with Exceptions
 
-#### Polymorphism and Overriding
-1. Polymorphism in Java
-2. Overriding Superclass Behavior
-3. @Override
-4. Rules for Overriding
-5. Lab - Using Polymorphism
+### Day 2
 
-#### Abstract Classes
-1. Abstract Classes
-2. Abstract Methods
-3. Using Abstract Classes
-4. Labs
+#### Testing Exceptions with JUnit
+1. JUnit and Exceptions
+2. Testing Exceptions with try and catch
+3. Labs
 
-#### Polymorphism and Casting
-1. Casting
-2. Downcasting
-3. Casting and Precedence
-4. Hiding Instance Fields
-5. Labs
+``
+```java
 
-#### Project: Animal Sanctuary
+```
 
-### Week 3 - Day 5
-
-#### Equals and Hashcode
-1. Comparing References
-2. Object.equals()
-3. Defining an equals() Method
-4. Determining Equality
-5. hashCode()
+#### Input/Output Streams
+1. Overview of Streams
+2. File Object
+3. BufferedReader
+4. PrintStream and PrintWriter
+5. Closing Streams
 6. Labs
 
-#### The Primitive-Type Wrapper Classes
-1. Wrapper Classes
-2. Important Wrapper Class Methods
-3. Comparing Wrapper Objects
-4. Autoboxing
-5. Float and Double
-6. Integer-type Wrappers
-7. Character
-8. Boolean
-9. Labs
+``
+```java
 
-#### Interfaces
-1. Interfaces
-2. Declaring an Interface
-3. Using Interfaces
-4. Labs - Declaring and Using Interfaces
+```
 
-#### Project: Lord of the Objects
+#### The Set Interface
+1. The Set Interface
+2. Set Implementation Classes - HashSet and LinkedHashSet
+3. Iterator Explained *
+4. SortedSet Interface and TreeSet Class
+5. Collection Superinterface
+6. Labs
+
+``
+```java
+
+```
+
+#### Project: Name Separator App
+
+### Day 3
+
+#### Garbage Collection
+1. Objects on the Heap
+2. Garbage Collection
+3. Memory Management Strategies
+4. The finalize method
+5. Understanding Garbage Collection
+6. Labs
+
+``
+```java
+
+```
+
+#### Debugging Programs
+1. What is Debugging?
+2. Commenting Out Code
+3. Manual Output in Code
+4. Making Debugging Print Statements Conditional
+5. Tools to Debug Programs
+6. Debugging in Eclipse
+7. The Debug Perspective
+8. Breakpoints
+9. Examining Variables
+10. Controlling Program Execution
+11. Labs
+
+``
+```java
+
+```
+
+#### Homework Project: Jets
+
+### Day 4
+
+#### Regular Expressions
+1. Introducing Regular Expressions
+2. Options
+3. Literals and Wild Cards
+4. Assertions
+5. Quantifiers
+6. Labs 1
+7. Grouping and Alternatives
+8. Labs 2
+
+``
+```java
+
+```
+
+#### Regular Expressions in Java
+1. Regular Expressions in Java
+2. The Pattern Class
+3. The Matcher Class
+4. Capturing Groups
+5. String Methods That Use Regular Expressions
+6. Labs
+
+``
+```java
+
+```
+
+#### The Map Interface
+1. The Map Collection
+2. Map Implementation Class - HashMap
+3. Map Implementation Classes - Hashtable, LinkedHashMap, and TreeMap
+4. When to Use a Map *
+5. Labs
+
+``
+```java
+
+```
+
+#### Project: Project: Pig Latin
+
+#### Project: Project: Declaration of Independence
+
+### Day 5
+
+#### Collection Sorting and Tuning
+1. Sorting with Comparable
+2. Sorting with Comparator
+3. Sorting Lists
+4. Sorting Maps
+5. Sorting Arrays
+6. Collections Utility Methods
+7. Labs
+
+``
+```java
+
+```
+
+#### Project: Lottery: NBA Draft
+
+#### Project: Lottery: Powerball
+
+### Day 6
+
+#### HashMap Internals
+1. Keys and hashCode
+2. Hash Buckets
+3. Map Entries
+4. Tuning HashMap
+5. Labs
+
+``
+```java
+
+```
+
+#### Project: Project: Mad Libs
+
+### Day 7
+
+#### The Java Virtual Machine
+1. The Java Virtual Machine
+2. The Java Runtime Environment
+3. The Java Development Kit
+4. The Java Language Specification
+5. Labs
+
+``
+```java
+
+```
+
+#### The args Array
+1. The main Method
+2. The args Array
+3. Handling Command-Line Arguments
+4. Testing args In Eclipse
+5. Labs
+
+``
+```java
+
+```
+
+#### Intermediate Interfaces
+1. Smart Home - Part 2
+2. Interface Fields
+3. Interface Inheritance
+4. Static Interface Methods
+5. Interface Default Methods
+6. Multiple Inheritance
+7. Labs
+
+``
+```java
+
+```
+
+#### Project: Roman Numerals
+
+#### Project: Project: White Rabbit
+
+### Day 8
+
+#### Enumerated Types
+1. enum Types
+2. enum Details
+3. Using enum
+4. enum Methods
+5. enum Members
+6. Labs
+
+``
+```java
+
+```
+
+#### Homework Project: Blackjack
+
+### Day 9
+
+#### Dates and Times
+1. Temporal Data
+2. LocalDate
+3. LocalTime
+4. Date-Times and Instant
+5. Duration and Period
+6. DateTimeFormatter
+7. Labs
+
+``
+```java
+
+```
+
+#### Project: History
+
+#### Project: Working with Dates and Times
+
+#### Inner Classes
+1. Inner Classes
+2. Member Classes
+3. Local Classes
+4. Anonymous Classes
+5. Anonymous Classes and Interfaces
+6. Instance Initializers
+7. Compiling Inner Classes
+8. Labs
+
+``
+```java
+
+```
+
+#### Project: Sorting and Filtering with Inner Classes
+
+### Day 10
+
+#### Introduction to Lambda Expressions
+1. Inner Classes Review
+2. Lambda Expressions
+3. Translating Inner Classes to Lambdas
+4. Lambda Rules and Syntax
+5. Lambdas and Interfaces
+6. Predicate<T> Functional Interface *
+7. Standard Functional Interfaces *
+8. Labs *
+
+#### Project: Sorting and Filtering with Lambdas
+
+#### Lambda Examples
+
+### Day 11
+
+#### JUnit 5
+1. Introduction
+2. Test Cases
+3. Test Case Setup
+4. Test Method Names
+5. Assertions
+6. Testing Exceptions
+7. Labs
+
+``
+```java
+
+```
