@@ -3406,22 +3406,138 @@ public class ReturningArrays {
 
 `AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare`
 ```java
+public class MultiDeclare {
+	public static void main(String[] args) {
+		// Declare a two-dimensional array of char values to represent a
+		// tic-tac-toe board.
+		char[][] board = new char[3][3];
+
+		board[0][0] = 'X';
+		board[0][1] = 'O';
+		board[0][2] = 'X';
+		board[1][0] = 'O';
+		board[1][1] = 'X';
+		board[1][2] = 'O';
+		board[2][0] = 'X';
+		board[2][1] = 'O';
+		board[2][2] = 'X';
+
+		for (int row = 0; row < 3; row++) {
+			for (int col = 0; col < 3; col++) {
+				System.out.print(board[row][col] + " ");
+			}
+			System.out.println();
+		}
+	}
+}
 ```
 
 `AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare`
 ```java
+public class MultiDeclare {
+	public static void main(String[] args) {
+		// Declare a two-dimensional array of char values to represent a
+		// tic-tac-toe board.
+		char[][] board = new char[3][3];
+
+		board[0][0] = 'X';
+		board[0][1] = 'O';
+		board[0][2] = 'O';
+		board[1][0] = 'O';
+		board[1][1] = 'X';
+		board[1][2] = 'O';
+		board[2][0] = 'O';
+		board[2][1] = 'O';
+		board[2][2] = 'X';
+
+		for (int row = 0; row < 3; row++) {
+			for (int col = 0; col < 3; col++) {
+				System.out.print(board[row][col] + " ");
+			}
+			System.out.println();
+		}
+	}
+}
 ```
 
 `AdvancedArrays/com.skilldistillery.advancedarrays.drills.MultiDeclare`
 ```java
+public class MultiDeclare {
+	public static void main(String[] args) {
+		// Declare a two-dimensional array of char values to represent a
+		// tic-tac-toe board.
+		char[][] board = new char[3][3];
+
+		board[0][0] = 'X';
+		board[0][1] = 'X';
+		board[0][2] = 'X';
+		board[1][0] = 'X';
+		board[1][1] = 'X';
+		board[1][2] = 'O';
+		board[2][0] = 'X';
+		board[2][1] = 'O';
+		board[2][2] = 'O';
+
+		for (int row = 0; row < 3; row++) {
+			for (int col = 0; col < 3; col++) {
+				System.out.print(board[row][col] + " ");
+			}
+			System.out.println();
+		}
+	}
+}
 ```
 
 `AdvancedArrays/com.skilldistillery.advancedarrays.drills.VarArgsBand`
 ```java
+public class VarArgsBand {
+
+  public static void main(String[] args) {
+    
+    // Run the program, passing a band name and list of members. 
+    // Is the output what you expected?
+    bandMembers("The Copyrightles", "George", "Paul", "Ringo", "John");
+    
+    // Can you call the method with zero parameters? Why or why not?
+    // No. The first parameter is a String, so there must always be at least
+    // one String. There can be zero or more members.
+    int numMembers = bandMembers("Nobody"); // Passing zero members after the bandName
+    System.out.println("The number of members in Nobody is " + numMembers);
+  }
+  
+  public static int bandMembers(String bandName, String... members) {
+    int numMembers = members.length;
+    System.out.println("Members of " + bandName);
+    for (String m : members) {
+      System.out.println("\t" + m);
+    }
+    return numMembers;
+  }
+
+}
 ```
 
 `Lab 1 - SBScores.java`
 ```java
+public class SBScores {
+	public static void main(String[] args) {
+		int[][] superBowlScores = { { 35, 10 }, { 33, 14 }, { 16, 7 }, { 23, 7 }, { 16, 13 }, { 24, 3 }, { 14, 7 },
+				{ 24, 7 }, { 16, 6 }, { 21, 17 } };
+		String[][] superBowlTeams = { { "Green Bay", "Kansas City" }, { "Green Bay", "Oakland" },
+				{ "NY Jets", "Baltimore" }, { "Kansas City", "Minnesota" }, { "Baltimore", "Dallas" },
+				{ "Dallas", "Miami" }, { "Miami", "Washington" }, { "Miami", "Minnesota" },
+				{ "Pittsburgh", "Minnesota" }, { "Pittsburgh", "Dallas" } };
+		for (int i = 0; i < superBowlScores.length; i++) {
+			int[] scores = superBowlScores[i];
+			String[] teams = superBowlTeams[i];
+			printScore(teams, scores);
+		}
+	}
+
+	public static void printScore(String[] teams, int[] scores) {
+		System.out.println(teams[0] + " " + scores[0] + " - " + teams[1] + " " + scores[1]);
+	}
+}
 ```
 
 #### Project: Tic Tac Toe
