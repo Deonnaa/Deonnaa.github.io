@@ -4325,7 +4325,7 @@ public class TestLetters {
 
 ### Java Libraries
 
-### Day 1
+### Week 3 - Day 1
 
 #### Generics and ArrayList
 1. Arrays Revisited
@@ -4373,7 +4373,7 @@ public class TestLetters {
 
 #### Project: Data Entry with Exceptions
 
-### Day 2
+### Week 3 - Day 2
 
 #### Testing Exceptions with JUnit
 1. JUnit and Exceptions
@@ -4413,7 +4413,7 @@ public class TestLetters {
 
 #### Project: Name Separator App
 
-### Day 3
+### Week 3 - Day 3
 
 #### Garbage Collection
 1. Objects on the Heap
@@ -4448,7 +4448,7 @@ public class TestLetters {
 
 #### Homework Project: Jets
 
-### Day 4
+### Week 3 - Day 4
 
 #### Regular Expressions
 1. Introducing Regular Expressions
@@ -4494,7 +4494,7 @@ public class TestLetters {
 
 #### Project: Project: Declaration of Independence
 
-### Day 5
+### Week 3 - Day 5
 
 #### Collection Sorting and Tuning
 1. Sorting with Comparable
@@ -4514,7 +4514,7 @@ public class TestLetters {
 
 #### Project: Lottery: Powerball
 
-### Day 6
+### Week 3 - Day 6
 
 #### HashMap Internals
 1. Keys and hashCode
@@ -4530,7 +4530,7 @@ public class TestLetters {
 
 #### Project: Project: Mad Libs
 
-### Day 7
+### Week 3 - Day 7
 
 #### The Java Virtual Machine
 1. The Java Virtual Machine
@@ -4574,7 +4574,7 @@ public class TestLetters {
 
 #### Project: Project: White Rabbit
 
-### Day 8
+### Week 3 - Day 8
 
 #### Enumerated Types
 1. enum Types
@@ -4591,7 +4591,7 @@ public class TestLetters {
 
 #### Homework Project: Blackjack
 
-### Day 9
+### Week 3 - Day 9
 
 #### Dates and Times
 1. Temporal Data
@@ -4628,7 +4628,7 @@ public class TestLetters {
 
 #### Project: Sorting and Filtering with Inner Classes
 
-### Day 10
+### Week 3 - Day 10
 
 #### Introduction to Lambda Expressions
 1. Inner Classes Review
@@ -4644,7 +4644,7 @@ public class TestLetters {
 
 #### Lambda Examples
 
-### Day 11
+### Week 3 - Day 11
 
 #### JUnit 5
 1. Introduction
