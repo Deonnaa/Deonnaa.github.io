@@ -6489,19 +6489,6 @@ public class ShapeTester {
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### The Set Interface
 1. The Set Interface
 2. Set Implementation Classes - HashSet and LinkedHashSet
@@ -6510,9 +6497,214 @@ public class ShapeTester {
 5. Collection Superinterface
 6. Labs
 
-``
+`SetInterface/com.skilldistillery.setinterface.drills.SetTest`
 ```java
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
+public class SetTest {
+
+  public static void main(String[] args) {
+    SetTest st = new SetTest();
+    st.launch();
+  }
+  
+  public void launch() {
+    Album al1 = new Album(1, "The Beatles", "The Beatles 1");
+    Album al2 = new Album(2, "Prince", "The Very Best of Prince");
+    Album al3 = new Album(3, "AC/DC", "Let There Be Rock");
+    Album al4 = new Album(3, "AC/DC", "Let There Be Rock");
+    
+    Set<Album> albumCollection = new HashSet<>();
+    
+    // Place each call to add in a System.out.println() and run
+    // the application. 
+    System.out.println(albumCollection.add(al1));
+    System.out.println(albumCollection.add(al2));
+    System.out.println(albumCollection.add(al3));
+    System.out.println(albumCollection.add(al4));
+    
+//    albumCollection.add(al1);
+//    albumCollection.add(al2);
+//    albumCollection.add(al3);
+//    albumCollection.add(al4); //Doesn't get added because duplicate only store unique elements.
+    
+    printAlbums(albumCollection);
+  }
+  
+  private void printAlbums(Set<Album> collection) {
+    Iterator<Album> it = collection.iterator();
+    while (it.hasNext()) {
+      System.out.println(it.next());
+    }
+  }
+}
+```
+
+`SetInterface/com.skilldistillery.setinterface.drills.SportsTeamApp`
+```java
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class SportsTeamApp {
+
+	public static void main(String[] args) {
+		SportsTeamApp app = new SportsTeamApp();
+		app.launch();
+	}
+
+	private void launch() {
+		SportsTeam t1 = new SportsTeam("Denver", "Vampires");
+		SportsTeam t2 = new SportsTeam("Michigan", "Werewolves");
+		SportsTeam t3 = new SportsTeam("Derry", "Clowns");
+		SportsTeam t4 = new SportsTeam("Derry", "Clowns");
+		SportsTeam t5 = new SportsTeam("Houston", "Chupacabras");
+
+		Set<SportsTeam> teams = new HashSet<>();
+		addTeam(teams, t1);
+		addTeam(teams, t2);
+		addTeam(teams, t3);
+		addTeam(teams, t4);
+		addTeam(teams, t5);
+
+		// Iterate through the contents of the Set using an iterator, and print them to
+		// the screen.
+		Iterator<SportsTeam> st = teams.iterator();
+		while (st.hasNext()) {
+			SportsTeam s = st.next();
+			System.out.println(s);
+		}
+
+		// If the results are not as expected, fix SportsTeam.
+	}
+
+	// Change addTeam() to add the object to the Set.
+	private void addTeam(Set<SportsTeam> set, SportsTeam t) {
+		boolean added = set.add(t);
+		System.out.println(t.getName() + " added: " + added);
+	}
+}
+```
+
+`SetInterface/com.skilldistillery.setinterface.drills.CollectionTest`
+```java
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+
+public class CollectionTest {
+
+	public static void main(String[] args) {
+		// Assign an ArrayList to c1
+		Collection<String> c1 = new ArrayList<>();
+
+		// Add four Strings to c1 - your choice of Strings.
+		c1.add("A");
+		c1.add("B");
+		c1.add("C");
+		c1.add("D");
+
+		// Call addAll(c1) on c1; you are trying to add the elements of c1
+		// to what is already in c1. Store the result of addAll in a variable
+		// and print it to the screen.
+		boolean result = c1.addAll(c1);
+
+		// Collection classes have good toString() methods, so we will use
+		// System.out.println() to see the contents.
+		System.out.println("Contents of c1: " + c1);
+		System.out.println("Result of addAll is " + result);
+
+		// Repeat the process with c2, using a HashSet
+		Collection<String> c2 = new HashSet<>();
+		c2.add("D");
+		c2.add("E");
+		c2.add("F");
+		c2.add("G");
+
+		result = c2.addAll(c1);
+
+		System.out.println("Contents of c2: " + c2);
+		System.out.println("Result is " + result);
+	}
+}
+```
+
+`Lab 1 - NameApp.java`
+```java
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class NameApp {
+
+	public static void main(String[] args) {
+		NameApp nA = new NameApp();
+		nA.run();
+	}
+
+	public void run() {
+		// Initializes two collections: A List named 'listToFill' and a Set named
+		// 'setToFill'
+		List<String> listFill = new ArrayList<String>();
+		Set<String> setFill = new HashSet<>();
+
+		// Call the readNamesIntoCollections method, passing in the two collections
+		// (listToFill and setToFill)
+		// as arguments and assigns the returned number of lines to the variable
+		// numLines.
+		int numLines = namesInCollection(listFill, setFill);
+
+		// Print the sizes of the List and Set to the console, as well as the number of
+		// lines in the file.
+		System.out.println("List Size: " + listFill.size());
+		System.out.println("Set Size: " + setFill.size());
+		System.out.println("Lines in File: " + numLines);
+	}
+
+	// Define a private method 2 args: 'List<String> namesList, Set<String>
+	// namesSet'
+	private int namesInCollection(List<String> namesList, Set<String> namesSet) {
+		// Initialize a variable numLines to 0 and declare a BufferedReader named reader
+		// and set it to null.
+		BufferedReader reader = null;
+		int numLines = 0;
+		try {
+			reader = new BufferedReader(new FileReader("names.txt"));
+			String line;
+			// While line !=null it adds each line to both namesList and namesSet, and
+			// increments numLines.
+			while ((line = reader.readLine()) != null) {
+				namesList.add(line);
+				namesSet.add(line);
+				numLines++;
+			}
+			// When the program tries to open a file that doesn't exist at the specified
+			// path.
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			// General Exception.
+		} catch (IOException e) {
+			e.printStackTrace();
+			// Object that is null.
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return numLines;
+	}
+}
 ```
 
 #### Project: Name Separator App
