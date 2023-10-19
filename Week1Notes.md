@@ -6469,10 +6469,38 @@ public class ShapeTester {
 5. Closing Streams
 6. Labs
 
-``
+`Lab 1 - SearchEmployees.java`
 ```java
 
 ```
+
+`Lab 2 - PlanetReader.java`
+```java
+
+```
+
+`Lab 3 - PlanetReader2.java`
+```java
+
+```
+
+`Lab 4 - SearchEmployees.java`
+```java
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### The Set Interface
 1. The Set Interface
