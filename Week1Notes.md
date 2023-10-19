@@ -4857,27 +4857,156 @@ public class EmployeeApp {
 
 `Lab 1 - Vehicle.java`
 ```java
+public class Vehicle {
 
+	private double purchasePrice;
+
+	public Vehicle(double purchasePrice) {
+		this.purchasePrice = purchasePrice;
+	}
+
+	public double getPurchasePrice() {
+		return purchasePrice;
+	}
+
+	public void setPurchasePrice(double purchasePrice) {
+		this.purchasePrice = purchasePrice;
+	}
+
+	public String toString() {
+		return "Vehicle [purchasePrice=" + purchasePrice + "]";
+	}
+}
 ```
 
 `Lab 1 - Automobile.java`
 ```java
+import com.skilldistillery.superclasses.labs.vehicles.Vehicle;
 
+public class Automobile extends Vehicle {
+	private String make;
+	private String model;
+	private int year;
+	private int numberOfWheels;
+	private double speedInMph;
+
+	public Automobile(double purchasePrice, String make, String model, int year, int numberOfWheels,
+			double speedInMph) {
+		super(purchasePrice);
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.numberOfWheels = numberOfWheels;
+		this.speedInMph = speedInMph;
+	}
+
+	public String toString() {
+		return "Automobile [purchasePrice=" + getPurchasePrice() + ", make=" + make + ", model=" + model + ", year="
+				+ year + ", numberOfWheels=" + numberOfWheels + ", speedInMph=" + speedInMph + "]";
+	}
+
+	public String getMake() {
+		return make;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public int getNumberOfWheels() {
+		return numberOfWheels;
+	}
+
+	public void setNumberOfWheels(int numberOfWheels) {
+		this.numberOfWheels = numberOfWheels;
+	}
+
+	public double getSpeedInMph() {
+		return speedInMph;
+	}
+
+	public void setSpeedInMph(double speedInMph) {
+		this.speedInMph = speedInMph;
+	}
+}
 ```
 
 `Lab 1 - Truck.java`
 ```java
+import com.skilldistillery.superclasses.labs.vehicles.Automobile;
 
+public class Truck extends Automobile {
+	protected int bedSizeInCubicFeet;
+
+	public Truck(double purchasePrice, String make, String model, int year, int numberOfWheels, double speedInMph,
+			int bedSizeInCubicFeet) {
+		super(purchasePrice, make, model, year, numberOfWheels, speedInMph);
+		this.bedSizeInCubicFeet = bedSizeInCubicFeet;
+	}
+
+	public int getBedSizeInCubicFeet() {
+		return bedSizeInCubicFeet;
+	}
+
+	public void setBedSizeInCubicFeet(int bedSizeInCubicFeet) {
+		this.bedSizeInCubicFeet = bedSizeInCubicFeet;
+	}
+}
 ```
 
 `Lab 1 - Boat.java`
 ```java
+import com.skilldistillery.superclasses.labs.vehicles.Vehicle;
 
+public class Boat extends Vehicle {
+	protected String name;
+	protected double speedInKnots;
+	protected int lengthInFeet;
+
+	public Boat(double purchasePrice, String name, double speedInKnots, int lengthInFeet) {
+		super(purchasePrice);
+		this.name = name;
+		this.speedInKnots = speedInKnots;
+		this.lengthInFeet = lengthInFeet;
+	}
+
+	public String toString() {
+		return "Boat [purchasePrice=" + getPurchasePrice() + ", name=" + name + ", speedInKnots=" + speedInKnots
+				+ ", lengthInFeet=" + lengthInFeet + "]";
+	}
+}
 ```
 
 `Lab 1 - VehicleTestApp`
 ```java
+public class VehicleTestApp {
 
+	public static void main(String[] args) {
+		Automobile a = new Automobile3(90000.00, "Dundreary", "Stretch", 2008, 4, 105);
+		Boat b = new Boat3(145000.00, "Reefer", 21, 25);
+		Truck t = new Truck3(22_000, "Vapid", "Bobcat", 2006, 4, 88, 55);
+
+		System.out.println(a.toString());
+		System.out.println(b.toString());
+		System.out.println(t.toString());
+	}
+}
 ```
 
 #### Polymorphism and Overriding
@@ -5453,9 +5582,109 @@ public class ChangingArrayList {
 }
 ```
 
-`Lab 1 - `
+`Lab 3 - Stack.java`
 ```java
+import java.util.ArrayList;
 
+/**
+ * Note: this Stack implementation has an issue, in that we could add nulls, but
+ * we also return null for an empty list. We will have to live with this.
+ * 
+ */
+public class Stack<E> {
+	private ArrayList<E> list = new ArrayList<>();
+
+	public Stack() {
+
+	}
+
+	public E push(E item) {
+		list.add(item);
+		return item;
+	}
+
+	public E pop() {
+		if (list.size() == 0) {
+			return null;
+		}
+		return list.remove(list.size() - 1);
+	}
+
+	public E peek() {
+		if (list.size() == 0) {
+			return null;
+		}
+		return list.get(list.size() - 1);
+	}
+
+	public int search(Object o) {
+		int index = -1;
+		for (int i = 0; i < list.size(); i++) {
+			E item = list.get(i);
+			if (item.equals(o)) {
+				index = i;
+				break;
+			}
+		}
+		return index;
+	}
+}
+```
+
+`Lab 3 - StackTests.java`
+```java
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class StackTests {
+
+  private Stack<String> stack;
+  
+  @Before
+  public void setUp() throws Exception {
+    stack = new Stack<>();
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    stack = null;
+  }
+
+  @Test
+  public void test_push_adds_to_stack_and_pop_removes_in_order() {
+    stack.push("A");
+    stack.push("B");
+    stack.push("C");
+    assertEquals("C", stack.pop());
+    assertEquals("B", stack.pop());
+    stack.push("D");
+    assertEquals("D", stack.pop());
+    assertEquals("A", stack.pop());
+  }
+  
+  @Test
+  public void test_push_adds_to_stack_and_peek_twice_shows_same_object_on_top_of_stack() {
+    stack.push("A");
+    stack.push("B");
+    stack.push("C");
+    assertEquals("C", stack.peek());
+    assertEquals("C", stack.peek());
+    assertEquals("C", stack.peek());
+  }
+  
+  @Test
+  public void test_pop_empty_stack_returns_null() {
+    assertNull(stack.pop());
+  }
+  
+  @Test
+  public void test_peek_empty_stack_returns_null() {
+    assertNull(stack.peek());
+  }
+}
 ```
 
 #### The List Interface
@@ -5466,10 +5695,155 @@ public class ChangingArrayList {
 5. Using List - Best Practices
 6. Labs
 
-``
+`ListInterface/com.skilldistillery.listinterface.drills.PlanetList`
+```java
+//Planet.java
+import java.util.Objects;
+
+public class Planet {
+	private String name;
+	private long orbit;
+	private int diameter;
+
+	public Planet(String name, long orbit, int diameter) {
+		this.name = name;
+		this.orbit = orbit;
+		this.diameter = diameter;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public long getOrbit() {
+		return orbit;
+	}
+
+	public int getDiameter() {
+		return diameter;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(diameter, name, orbit);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Planet other = (Planet) obj;
+		return diameter == other.diameter && Objects.equals(name, other.name) && orbit == other.orbit;
+	}
+
+	@Override
+	public String toString() {
+		return "Planet [Name=" + name + ", Orbit=" + orbit + ", Diameter=" + diameter + "]";
+	}
+}
+```
+
+```java
+//PlanetList.java
+import java.util.List;
+
+public class PlanetList {
+
+	public static void main(String[] args) {
+		PlanetList p = new PlanetList();
+		p.run();
+	}
+
+	private void run() {
+		List<Planet> planets = PlanetUtilities.getPlanets();
+		System.out.println(planets);
+
+		// Create a new Planet object using the Planet constructor call below.
+		Planet jupiter = new Planet("Jupiter", 778_330_000, 142_984);
+
+		// Print true or false for whether the List contains this planet
+		System.out.println(planets.contains(jupiter));
+
+		// If this was not what you expected, change the Planet class to support
+		// comparison to other Planets. (Hint: what method does Java use to see if
+		// one Object equals another Object?)
+
+		// Try to find the index of this planet in the List, and print out that index.
+		System.out.println(planets.indexOf(jupiter));
+
+		// Now remove Jupiter by passing the object reference you created, and
+		// print true or false for whether removing worked.
+		boolean didRemove = planets.remove(jupiter);
+		System.out.println(didRemove);
+		
+		for (Planet planet : planets) {
+			System.out.println(planet);
+		}
+	}
+}
+```
+
+```java
+//PlanetUtilities.java
+import java.util.ArrayList;
+import java.util.List;
+
+public class PlanetUtilities {
+	public static List<Planet> getPlanets() {
+		List<Planet> planets = new ArrayList<>();
+
+		planets.add(new Planet("Mercury", 57_910_000, 4_880));
+		planets.add(new Planet("Venus", 108_200_000, 12_103));
+		planets.add(new Planet("Earth", 149_600_000, 12_756));
+		planets.add(new Planet("Mars", 227_940_000, 6_794));
+		planets.add(new Planet("Jupiter", 778_330_000, 142_984));
+		planets.add(new Planet("Saturn", 1_429_400_000, 120_536));
+		planets.add(new Planet("Uranus", 2_870_990_000L, 51_118));
+		planets.add(new Planet("Neptune", 4_504_000_000L, 49_532));
+
+		return planets;
+	}
+}
+```
+
+`ListInterface/com.skilldistillery.listinterface.drills.LinkedListAdding`
 ```java
 
 ```
+
+`ListInterface/com.skilldistillery.listinterface.drills.LinkedListPositionalAccess`
+```java
+
+```
+
+`Lab 1 - NumbersList.java`
+```java
+
+```
+
+`Lab 2 - SortNumbersList.java`
+```java
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Exceptions
 1. Introduction to Exceptions
@@ -5522,6 +5896,46 @@ public class TryCatchDrill {
 }
 ```
 
+`Exceptions/com.skilldistillery.exceptions.drills.TryCatchDrill`
+```java
+package com.skilldistillery.exceptions.drills;
+
+import java.util.InputMismatchException;
+
+import java.util.Scanner;
+
+public class TryCatchDrill {
+
+	public static void main(String[] args) {
+		TryCatchDrill drill = new TryCatchDrill();
+		Scanner scanner = new Scanner(System.in);
+		drill.launch(scanner);
+		scanner.close();
+
+	}
+
+	private void launch(Scanner scanner) {
+		String keepGoing = "Y";
+		while (keepGoing.toUpperCase().equals("Y")) {
+			System.out.print("Enter a whole number: ");
+			try {
+				int number = scanner.nextInt();
+				if (number % 2 == 0) {
+					System.out.println(number + " is even.");
+				} else {
+					System.out.println(number + " is odd.");
+				}
+			} catch (InputMismatchException e) {
+				System.err.println("Invalid input.");
+				scanner.nextLine(); // Clear input buffer
+			}
+			System.out.print("Keep going? (Y/N)");
+			keepGoing = scanner.next();
+		}
+	}
+}
+```
+
 `ErrorDrill.java`
 ```java
 public class ErrorDrill {
@@ -5550,20 +5964,324 @@ public class ErrorDrill {
 
 `Exceptions/com.skilldistillery.exceptions.drills.TryCatchDrill`
 ```java
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
+public class TryCatchDrill {
+
+	public static void main(String[] args) {
+		TryCatchDrill drill = new TryCatchDrill();
+		Scanner scanner = new Scanner(System.in);
+		drill.launch(scanner);
+		scanner.close();
+	}
+
+	private void launch(Scanner scanner) {
+		String keepGoing = "Y";
+		while (keepGoing.toUpperCase().equals("Y")) {
+			System.out.print("Enter a whole number: ");
+			try {
+				int number = scanner.nextInt();
+				if (number % 2 == 0) {
+					System.out.println(number + " is even.");
+				} else {
+					System.out.println(number + " is odd.");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Invalid input.");
+				scanner.nextLine(); // Clear input buffer
+			}
+			System.out.print("Keep going? (Y/N)");
+			keepGoing = scanner.next();
+		}
+	}
+}
 ```
 
-`Lab 1 - ExceptionsLab.java`
+`Lab 1 - Circle.java`
+```java
+import static java.lang.Math.*;
+
+public class Circle extends Shape {
+	double radius;
+
+	public double getRadius() {
+		return radius;
+	}
+
+	public void setRadius(double radius) {
+		if (radius <= 0) {
+			throw new IllegalArgumentException("Radius must be greater than zero.");
+		}
+		this.radius = radius;
+
+	}
+
+	@Override
+	public double getArea() {
+		return PI * pow(radius, 2);
+	}
+
+	public Circle(double radius) {
+		super();
+		this.setRadius(radius);
+	}
+
+	public Circle() {
+		super();
+	}
+
+	public Circle(int xCoordinate, int yCoordinate) {
+		super(xCoordinate, yCoordinate);
+	}
+
+	public Circle(int xCoordinate, int yCoordinate, double radius) {
+		super(xCoordinate, yCoordinate);
+		this.setRadius(radius);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Circle [radius=").append(radius).append("]");
+		return builder.toString();
+	}
+}
+```
+
+`Lab 1 - Rectangle.java`
+```java
+public class Rectangle extends Shape {
+	double width;
+	double height;
+
+	public double getWidth() {
+		return width;
+	}
+
+	public void setWidth(double width) {
+		if (width <= 0) {
+			throw new IllegalArgumentException("Width must be greater than zero.");
+		}
+	  this.width = width;
+  }
+
+	public double getHeight() {
+		return height;
+	}
+
+	public void setHeight(double height) {
+		if (height <= 0) {
+			throw new IllegalArgumentException("Height must be greater than zero.");
+		}
+		this.height = height;
+	}
+
+	@Override
+	public double getArea() {
+		return width * height;
+	}
+
+	public Rectangle(double width, double height) {
+		super();
+		this.setWidth(width);
+		this.setHeight(height);
+	}
+
+	public Rectangle() {
+		super();
+	}
+
+	public Rectangle(int xCoordinate, int yCoordinate) {
+		super(xCoordinate, yCoordinate);
+	}
+
+	public Rectangle(int xCoordinate, int yCoordinate, double width, double height) {
+		super(xCoordinate, yCoordinate);
+		this.setWidth(width);
+		this.setHeight(height);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Rectangle [width=").append(width).append(", height=").append(height).append("]");
+		return builder.toString();
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(height);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(width);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Rectangle other = (Rectangle) obj;
+		if (Double.doubleToLongBits(height) != Double.doubleToLongBits(other.height))
+			return false;
+		if (Double.doubleToLongBits(width) != Double.doubleToLongBits(other.width))
+			return false;
+		return true;
+	}
+}
+```
+
+`Lab 1 - ShapeTester.java`
+```java
+public class ShapeTester {
+  private Shape[] shapes;
+
+  public static void main(String[] args) {
+    ShapeTester tester = new ShapeTester();
+    tester.test();
+  }
+
+  private void test() {
+    shapes = new Shape[10];
+    
+    shapes[0] = new Circle(2.2);
+    shapes[1] = new Rectangle(2.0, 4.0);
+    shapes[2] = new Circle(0);  // Exception in thread "main" java.lang.IllegalArgumentException: Radius must be greater than zero.
+    // Execution stops, and the exception propagates to main() and then to the JVM, which exits.
+    shapes[3] = new Rectangle(3.0, -5.0);
+    shapes[4] = new Rectangle(17.7, 31.1);
+    
+    printShapes(shapes);
+  }
+
+  private void printShapes(Shape[] shapes) {
+    for (Shape shape : shapes) {
+      if (shape != null) {
+        System.out.println(shape + ", area="+shape.getArea());
+      }
+    }
+  }
+}
+```
+
+`Lab 2 - ShapeTester.java`
+```java
+public class ShapeTester {
+	private Shape[] shapes;
+
+	public static void main(String[] args) {
+		ShapeTester tester = new ShapeTester();
+		tester.test();
+	}
+
+	private void test() {
+		shapes = new Shape[10];
+
+		try {
+			shapes[0] = new Circle(2.2);
+			shapes[1] = new Rectangle(2.0, 4.0);
+			shapes[2] = new Circle(0); // Exception in thread "main" java.lang.IllegalArgumentException: Radius must be
+										// greater than zero.
+			// Execution stops, and the exception propagates to main() and then to the JVM,
+			// which exits.
+			shapes[3] = new Rectangle(3.0, -5.0);
+			shapes[4] = new Rectangle(17.7, 31.1);
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
+
+		printShapes(shapes);
+	}
+
+	private void printShapes(Shape[] shapes) {
+		for (Shape shape : shapes) {
+			if (shape != null) {
+				System.out.println(shape + ", area=" + shape.getArea());
+			}
+		}
+	}
+}
+```
+
+`Lab 3 - ShapeTester.java`
+```java
+public class ShapeTester {
+	private Shape[] shapes;
+
+	public static void main(String[] args) {
+		ShapeTester tester = new ShapeTester();
+		tester.test();
+	}
+
+	private void test() {
+		shapes = new Shape[10];
+
+		try {
+			shapes[0] = new Circle(2.2);
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
+
+		try {
+			shapes[1] = new Rectangle(2.0, 4.0);
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
+
+		try {
+			shapes[2] = new Circle(0); // Exception in thread "main" java.lang.IllegalArgumentException: Radius must be
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
+
+		// greater than zero.
+		// Execution stops, and the exception propagates to main() and then to the JVM,
+		// which exits.
+
+		try {
+			shapes[3] = new Rectangle(3.0, -5.0);
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
+
+		try {
+			shapes[4] = new Rectangle(17.7, 31.1);
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
+
+		printShapes(shapes);
+	}
+
+	private void printShapes(Shape[] shapes) {
+		for (Shape shape : shapes) {
+			if (shape != null) {
+				System.out.println(shape + ", area=" + shape.getArea());
+			}
+		}
+	}
+}
+```
+
+`Lab 4 - Circle.java`
 ```java
 
 ```
 
-`Lab 2 - ExceptionsLab.java`
+`Lab 4 - Rectangle.java`
 ```java
 
 ```
 
-`Lab 3 - ExceptionsLab.java`
+`Lab 4 - ShapeTester.java`
 ```java
 
 ```
