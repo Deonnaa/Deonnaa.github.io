@@ -4337,7 +4337,236 @@ public class TestLetters {
 7. ArrayList - Size vs. Capacity *
 8. Labs
 
-``
+`GenericsAndArrayList/com.skilldistillery.generics.drills.ArrayListExample`
+```java
+import java.util.ArrayList;
+
+public class ArrayListExample {
+
+	public static void main(String[] args) {
+		ArrayListExample ex = new ArrayListExample();
+		ex.run();
+	}
+
+	private void run() {
+		// Declare and instantiate an ArrayList to hold Strings.
+		// Use the type argument <String> in the constructor call.
+		ArrayList<String> strings = new ArrayList<String>();
+
+		// Declare and instantiate an ArrayList to hold Double objects.
+		// This time use the <> shortcut in the constructor call.
+		ArrayList<Double> doubles = new ArrayList<>();
+
+		// Try to declare an ArrayList to hold double primitives (not Double objects).
+		// What happens?
+		// ArrayList<double> dubs;
+
+		// Now try declaring an ArrayList without type arguments.
+		ArrayList noType = new ArrayList();
+
+		// What is the warning Eclipse gives you?
+		// "ArrayList is a raw type. References to generic type ArrayList<E> should be
+		// parameterized"
+
+		// What combinations of <> and <String> can you put on either side of the =, and
+		// still have the code compile?
+		ArrayList<String> list1 = new ArrayList();
+		ArrayList list2 = new ArrayList<>();
+	}
+}
+```
+
+`GenericsAndArrayList/com.skilldistillery.generics.drills.Container`
+```java
+public class Container<E> {
+	private E field;
+
+	public void set(E obj) {
+		this.field = obj;
+	}
+
+	public E get() {
+		return field;
+	}
+}
+```
+
+`GenericsAndArrayList/com.skilldistillery.generics.drills.GenericContainer`
+```java
+import java.util.ArrayList;
+
+import com.skilldistillery.generics.solutions.Container;
+
+public class GenericContainer {
+
+	public static void main(String[] args) {
+
+		// Declare and instantiate a Container to hold a Character object.
+		Container<Character> cont = new Container<>();
+
+		// Call the object's set method and pass in 'A'.
+		cont.set('A'); // autoboxing
+
+		// get the Character from the object and pass it to printChar.
+		printChar(cont.get());
+
+		// Try to set an Integer or String into the object.
+		// cont.set("a"); // String will not work
+		// cont.set(new Integer(1)); // Integer will not work
+
+		// Create an ArrayList to hold Integer objects.
+		ArrayList<Integer> list = new ArrayList<Integer>();
+
+		// Optional: can you create an ArrayList to hold Container<Character> objects?
+		ArrayList<Container<Character>> contList = new ArrayList<>();
+	}
+
+	private static void printChar(Character c) {
+		System.out.println("The character is " + c);
+	}
+}
+```
+
+`GenericsAndArrayList/com.skilldistillery.generics.drills.AddingAndGetting`
+```java
+import java.util.ArrayList;
+
+public class AddingAndGetting {
+
+	public static void main(String[] args) {
+		AddingAndGetting ag = new AddingAndGetting();
+		ag.run();
+	}
+
+	private void run() {
+		ArrayList<String> strings = new ArrayList<>();
+
+		// Output the list's size.
+		System.out.println("Size is " + strings.size());
+
+		// Add first names of several of your classmates.
+		strings.add("Belinda");
+		strings.add("Jane");
+		strings.add("Charlotte");
+		strings.add("Gina");
+
+		// Output the list's size again.
+		System.out.println("Size is now " + strings.size());
+
+		// Use a for loop and get(index) to iterate through the list and print each name
+		// in uppercase letters.
+		for (int i = 0; i < strings.size(); i++) {
+			String n = strings.get(i);
+			System.out.println(n.toUpperCase());
+		}
+
+		outputLastItem(strings); // Stretch goal: Finish the method below.
+
+	}
+
+	private void outputLastItem(ArrayList<String> list) {
+		// Finish this method to output the last item in the list in lowercase.
+		String last = list.get(list.size() - 1);
+		System.out.println(last.toLowerCase());
+	}
+```
+
+`GenericsAndArrayList/com.skilldistillery.generics.drills.ChangingArrayList`
+```java
+import java.util.ArrayList;
+
+public class ChangingArrayList {
+	public static void main(String[] args) {
+		ChangingArrayList cal = new ChangingArrayList();
+		cal.run();
+	}
+
+	private void run() {
+		ArrayList<String> namesList = new ArrayList<>();
+
+		namesList.add("Alice");
+		namesList.add("Queen of Hearts");
+		namesList.add("Cheshire Cat");
+		namesList.add("Mad Hatter");
+		namesList.add("Tweedle Dee");
+		namesList.add("Tweedle Dum");
+
+		System.out.println("There are " + namesList.size() + " elements in the list.");
+		System.out.println(namesList); // calls toString() for each element
+
+		// Remove Queen of Hearts and store the String in a variable.
+		String queen = namesList.remove(1);
+
+		// Output the contents of namesList with System.out.println()
+		System.out.println(namesList);
+
+		// Output the size of namesList
+		System.out.println("List size is " + namesList.size());
+
+		// Insert Queen of Hearts between Tweedle Dee and Tweedle Dum
+		namesList.add(4, queen);
+
+		// Output the contents of namesList
+		System.out.println(namesList);
+
+		// Replace Mad Hatter with Dormouse
+		namesList.set(2, "Dormouse");
+
+		// Output the contents of namesList
+		System.out.println(namesList);
+
+		// Remove Cheshire Cat
+		namesList.remove(1);
+
+		System.out.println(namesList);
+
+		printMessage(namesList);
+	}
+
+	// This method uses the contents of your ArrayList
+	private void printMessage(ArrayList<String> list) {
+		if (list.size() != 5) {
+			return;
+		}
+		String output = "";
+		int i = 0, index[] = { 0, 7, 4, 2, 7 };
+		int delta[] = { 5, 0, 1, -1, 0 };
+		for (String string : list) {
+			output += (char) (string.charAt(index[i]) + delta[i++]);
+		}
+		for (int j = 0; j < list.size(); j++) {
+			char c = '\u0000';
+			switch (j) {
+			case 0:
+				c = (char) (list.get(j).charAt(0) + 24);
+				break;
+			case 1:
+				c = list.get(j).charAt(4);
+				break;
+			case 2:
+				c = (char) (list.get(j).charAt(1) - 2);
+				break;
+			case 3:
+				c = (char) (list.get(j).charAt(1) - 3);
+				break;
+			case 4:
+				c = (char) (list.get(j).charAt(12 - 5));
+				break;
+			}
+			output += c;
+		}
+		i = 0;
+		index = new int[] { 2, 7, 3, 11, 0 };
+		delta = new int[] { -33, 0, -4, 3, -38 };
+		for (String s : list) {
+			output += (char) (s.charAt(index[i]) + delta[i++]);
+		}
+		System.out.println(output);
+	}
+}
+```
+
+`Lab 1 - `
 ```java
 
 ```
@@ -4366,7 +4595,88 @@ public class TestLetters {
 8. finally
 9. Labs *
 
-``
+`Exceptions/com.skilldistillery.exceptions.drills.TryCatchDrill`
+```java
+package com.skilldistillery.exceptions.drills;
+
+import java.util.InputMismatchException;
+
+import java.util.Scanner;
+
+public class TryCatchDrill {
+
+	public static void main(String[] args) {
+		TryCatchDrill drill = new TryCatchDrill();
+		Scanner scanner = new Scanner(System.in);
+		drill.launch(scanner);
+		scanner.close();
+
+	}
+
+	private void launch(Scanner scanner) {
+		String keepGoing = "Y";
+		while (keepGoing.toUpperCase().equals("Y")) {
+			System.out.print("Enter a whole number: ");
+			try {
+				int number = scanner.nextInt();
+				if (number % 2 == 0) {
+					System.out.println(number + " is even.");
+				} else {
+					System.out.println(number + " is odd.");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Invalid input.");
+				scanner.nextLine(); // Clear input buffer
+			}
+			System.out.print("Keep going? (Y/N)");
+			keepGoing = scanner.next();
+		}
+	}
+}
+```
+
+`ErrorDrill.java`
+```java
+public class ErrorDrill {
+	private static int callCount;
+
+	public static void main(String[] args) {
+		ErrorDrill drill = new ErrorDrill();
+		drill.callMe();
+	}
+
+	private void callMe() {
+		// 1. Increment callCount
+		callCount++;
+
+		// 2. Print out callCount
+		System.out.println(callCount);
+
+		// 3. Call callMe()
+		this.callMe();
+
+		// 4. Print "callMe finished."
+		System.out.println("callMe finished.");
+	}
+}
+```
+
+`Exceptions/com.skilldistillery.exceptions.drills.TryCatchDrill`
+```java
+
+```
+
+`Lab 1 - ExceptionsLab.java`
+```java
+
+```
+
+`Lab 2 - ExceptionsLab.java`
+```java
+
+```
+
+`Lab 3 - ExceptionsLab.java`
 ```java
 
 ```
