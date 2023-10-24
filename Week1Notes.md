@@ -6955,3 +6955,49 @@ public class NameApp {
 ```java
 
 ```
+
+## [Week 4]()
+
+### Test
+
+### Week 4 - Day 4
+
+#### Regular Expressions
+
+#### Regular Expressions in Java
+1. Regular Expressions in Java
+2. The Pattern Class
+3. The Matcher Class
+4. Capturing Groups
+5. String Methods That Use Regular Expressions
+6. Labs
+
+``
+```java
+private void listZipsAndAreaCodes(String fileName) {
+//		 13002 N Pennsylvania Avenue, Oklahoma City, OK 73120 <br />405-936-4264
+//		 999 E. Basse Rd. San Antonio, TX 78209 <br />(210) 824-1603
+		String regex = "\\b[A-Z]{2}\\b\\s+\\d{5}.*?/>\\s*\\(?\\d{3}\\b";
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher("");
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
+			String line = null;
+			while ((line = br.readLine()) != null) {
+				m.reset(line);
+
+				// See if the regex matches the line.
+				if (m.find()) {
+					// If so, print the line
+					System.out.println(line);
+				}
+
+			}
+			br.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+```
