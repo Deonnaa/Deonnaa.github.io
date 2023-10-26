@@ -4470,6 +4470,26 @@ public class ParkingLotTester {
 5. Constant Fields and Variables
 6. private Methods
 7. Labs
+```java
+public class Car2 {
+  private String make, model, color;
+  private int numberOfWheels;
+  private double purchasePrice;
+
+  public Car2(String make, String model, String color, int numberOfWheels) {
+    this(make, model, color, numberOfWheels, 0.0);
+  }
+
+  public Car2(String make, String model, String color, int numberOfWheels, double purchasePrice) {
+    this.make = make;
+    this.model = model;
+    this.color = color;
+    this.numberOfWheels = numberOfWheels;
+    this.purchasePrice = purchasePrice;
+  }
+  //...
+}
+```
 
 #### Inheritance in Java
 1. Inheritance
